@@ -29,3 +29,7 @@ Folder/project structure:
 Known issues
 * Empty directories are ignored by git, which causes issues if an ignored folder was created inside of Unity, which creates a *.meta* file for the folder (placed outside the folder) which will throw an error if the folder specified in the *.meta* file is missing
     * This error is mostly encountered if someone makes an empty folder in unity and uploads it to the git repo, causing everyone elso who downloads the commit to receive the error.
+    * This can be avoided (if you really want to add an empty folder) by adding a placeholder object to the folder, such as an empty prefab, or an empty scene.
+* "case sensetive file system" fatal unity error
+    * Depending on what git GUI client or system terminal you use to clone the repo, you might get this error.
+    * The only solution is to use a different way to clone it, either by downloading the zip with the repo from the web page, or by using the official "GitHub Desktop" application, which has been tested.

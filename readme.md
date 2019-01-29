@@ -25,3 +25,7 @@ Folder/project structure:
         * Individual Test Scenes - Personal folders for personal test scenes that you don't want others to touch
             * \[one folder for every member]
         * Mechanics - Scenes for testing specific mechanics
+
+Known issues
+* Empty directories are ignored by git, which causes issues if an ignored folder was created inside of Unity, which creates a *.meta* file for the folder (placed outside the folder) which will throw an error if the folder specified in the *.meta* file is missing
+    * This error is mostly encountered if someone makes an empty folder in unity and uploads it to the git repo, causing everyone elso who downloads the commit to receive the error.

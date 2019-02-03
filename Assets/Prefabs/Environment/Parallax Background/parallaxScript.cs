@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class parallaxScript : MonoBehaviour {
+public class ParallaxScript : MonoBehaviour {
 
 	public float speed;
 

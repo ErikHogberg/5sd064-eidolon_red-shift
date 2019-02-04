@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a12bd66763cee46a6bab4322919fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipOnRepeat: 0
+  flipOnRepeat: 1
 --- !u!1 &362889164
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126e5de326fc7f0498f3143d49a9fa6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.1
 --- !u!114 &362889167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126e5de326fc7f0498f3143d49a9fa6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.7
 --- !u!114 &592637026
 MonoBehaviour:
   m_ObjectHideFlags: 0

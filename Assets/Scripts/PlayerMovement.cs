@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
-    public float Speed;
+    public float Speed=400;
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-        Speed = 400;
+       // Speed = 400;
 	}
 	
 	void FixedUpdate () {

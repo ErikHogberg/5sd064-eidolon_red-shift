@@ -9,12 +9,12 @@ public class MoveScript : MonoBehaviour {
 	public float globalSpeed = 1;
 
 	//private BoxCollider2D boxCollider;
-	private Rigidbody2D rb;
+	//private Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start() {
 		//speed = 1;
-		rb = GetComponent<Rigidbody2D>();
+		//rb = GetComponent<Rigidbody2D>();
 		//boxCollider = GetComponent<BoxCollider2D>();
 	}
 

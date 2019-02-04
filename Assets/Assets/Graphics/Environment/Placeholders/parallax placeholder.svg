@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1920"
+   height="1080"
+   viewBox="0 0 507.99999 285.75001"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="parallax placeholder.svg"
+   inkscape:export-filename="E:\dev\Resources\foregroundBG.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2">
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="99.999931"
+       height="99.999931"
+       patternTransform="matrix(0.26458334,0,0,0.26458334,22.413998,15.383635)"
+       id="pattern5248">
+      <rect
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:1.977;stroke-miterlimit:4;stroke-dasharray:none"
+         y="0.9885"
+         x="0.9885"
+         height="98.022934"
+         width="98.022934"
+         id="rect28" />
+    </pattern>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern5248-0"
+       id="pattern5265"
+       patternTransform="matrix(0.26458334,0,0,0.26458334,24.602797,-31.364885)" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="99.999931"
+       height="99.999931"
+       patternTransform="matrix(0.26458334,0,0,0.26458334,22.413998,15.383635)"
+       id="pattern5248-0">
+      <rect
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:1.977;stroke-miterlimit:4;stroke-dasharray:none"
+         y="0.9885"
+         x="0.9885"
+         height="98.022934"
+         width="98.022934"
+         id="rect28-7" />
+    </pattern>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5295">
+      <rect
+         style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:1.0583334;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect5297"
+         width="508.00003"
+         height="285.75"
+         x="1.0587912e-022"
+         y="-2.0734863e-006"
+         transform="rotate(-15)" />
+    </clipPath>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="79"
+       height="79"
+       patternTransform="matrix(0.26458334,0,0,0.26458334,50.252045,-86.818351)"
+       id="pattern5325">
+      <rect
+         y="2"
+         x="2"
+         height="75"
+         width="75"
+         id="rect5323"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#800080;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="64"
+       height="64"
+       patternTransform="matrix(0.26458334,0,0,0.26458334,14.437927,-90.560127)"
+       id="pattern5358">
+      <rect
+         y="2"
+         x="2"
+         height="60"
+         width="60"
+         id="rect5356"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#008080;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </pattern>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.74246212"
+     inkscape:cx="877.55178"
+     inkscape:cy="530.90166"
+     inkscape:document-units="px"
+     inkscape:current-layer="g5375"
+     showgrid="false"
+     inkscape:window-width="2496"
+     inkscape:window-height="1417"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     showguides="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5340" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Black Grid"
+     style="display:inline">
+    <rect
+       style="display:inline;opacity:1;fill:url(#pattern5265);fill-opacity:1;stroke:#000000;stroke-width:1.05833352;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5263"
+       width="744.23517"
+       height="473.60422"
+       x="-83.989792"
+       y="-163.16518"
+       transform="rotate(15)"
+       clip-path="url(#clipPath5295)" />
+  </g>
+  <g
+     style="display:none"
+     inkscape:label="Purple Grid"
+     id="g5313"
+     inkscape:groupmode="layer">
+    <rect
+       clip-path="url(#clipPath5295)"
+       transform="rotate(15)"
+       y="-163.16518"
+       x="-83.989792"
+       height="473.60422"
+       width="744.23517"
+       id="rect5311"
+       style="display:inline;opacity:1;fill:url(#pattern5325);fill-opacity:1;stroke:#000000;stroke-width:1.05833352;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g5365"
+     inkscape:label="Teal Grid"
+     style="display:none">
+    <rect
+       style="display:inline;opacity:1;fill:url(#pattern5358);fill-opacity:1;stroke:#000000;stroke-width:1.05833352;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5363"
+       width="744.23517"
+       height="473.60422"
+       x="-83.989792"
+       y="-163.16518"
+       transform="rotate(15)"
+       clip-path="url(#clipPath5295)" />
+  </g>
+  <g
+     inkscape:label="Corners"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline"
+     transform="translate(0,-11.249983)">
+    <rect
+       id="rect283"
+       width="2.2489586"
+       height="21.166668"
+       x="-2.2489586"
+       y="-32.416649"
+       style="stroke-width:1.3741045"
+       transform="scale(-1)" />
+    <rect
+       id="rect283-5"
+       width="22.489584"
+       height="2.1166668"
+       x="-22.489584"
+       y="-13.366653"
+       style="stroke-width:1.37410462"
+       transform="scale(-1)" />
+    <rect
+       id="rect283-4"
+       width="2.2489586"
+       height="21.166666"
+       x="-2.2489586"
+       y="275.83331"
+       style="stroke-width:1.3741045"
+       transform="scale(-1,1)" />
+    <rect
+       id="rect283-5-0"
+       width="22.489584"
+       height="2.1166668"
+       x="-22.489584"
+       y="294.8833"
+       style="stroke-width:1.37410462"
+       transform="scale(-1,1)" />
+    <rect
+       id="rect283-1"
+       width="2.2489586"
+       height="21.166666"
+       x="505.75107"
+       y="-32.416649"
+       style="stroke-width:1.3741045"
+       transform="scale(1,-1)" />
+    <rect
+       id="rect283-5-7"
+       width="22.489584"
+       height="2.1166668"
+       x="485.51041"
+       y="-13.366632"
+       style="stroke-width:1.37410462"
+       transform="scale(1,-1)" />
+    <rect
+       id="rect283-13"
+       width="2.2489586"
+       height="21.166666"
+       x="505.75107"
+       y="275.83331"
+       style="stroke-width:1.3741045" />
+    <rect
+       id="rect283-5-1"
+       width="22.489584"
+       height="2.1166668"
+       x="485.51041"
+       y="294.8833"
+       style="stroke-width:1.37410462" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Ground Text"
+     style="display:none">
+    <flowRoot
+       transform="matrix(0.26458334,0,0,0.26458334,5.6404783,18.97145)"
+       xml:space="preserve"
+       id="flowRoot334"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:pixeled;-inkscape-font-specification:pixeled;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><flowRegion
+         id="flowRegion336"
+         style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><rect
+           id="rect338"
+           width="788.57141"
+           height="235.71428"
+           x="588.57141"
+           y="370"
+           style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></flowRegion><flowPara
+         id="flowPara340">Ground</flowPara></flowRoot>  </g>
+  <g
+     style="display:inline"
+     inkscape:label="Foreground Text"
+     id="g5375"
+     inkscape:groupmode="layer">
+    <flowRoot
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:pixeled;-inkscape-font-specification:pixeled;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="flowRoot5373"
+       xml:space="preserve"
+       transform="matrix(0.26458334,0,0,0.26458334,-46.672609,14.047719)"><flowRegion
+         style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="flowRegion5369"><rect
+           style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           y="370"
+           x="588.57141"
+           height="227.6331"
+           width="1269.4041"
+           id="rect5367" /></flowRegion><flowPara
+         id="flowPara5371">Foreground</flowPara></flowRoot>  </g>
+  <g
+     style="display:none"
+     inkscape:label="Parallax Layer 1 Text"
+     id="g5338"
+     inkscape:groupmode="layer">
+    <flowRoot
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:pixeled;-inkscape-font-specification:pixeled;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="flowRoot5336"
+       xml:space="preserve"
+       transform="matrix(0.26408062,0,0,0.7239893,-87.817803,-196.16693)"><flowRegion
+         style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="flowRegion5332"><rect
+           style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           y="370"
+           x="588.57141"
+           height="239.75493"
+           width="1608.8153"
+           id="rect5330" /></flowRegion><flowPara
+         id="flowPara5334">Parallax Text 1 </flowPara></flowRoot>  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g5352"
+     inkscape:label="Parallax Layer 2 Text"
+     style="display:none">
+    <flowRoot
+       transform="matrix(0.26408062,0,0,0.7239893,-87.817803,-196.16693)"
+       xml:space="preserve"
+       id="flowRoot5350"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:pixeled;-inkscape-font-specification:pixeled;letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><flowRegion
+         id="flowRegion5346"
+         style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"><rect
+           id="rect5344"
+           width="1608.8153"
+           height="239.75493"
+           x="588.57141"
+           y="370"
+           style="font-size:192px;fill:#ffffff;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /></flowRegion><flowPara
+         id="flowPara5348">Parallax Text 2</flowPara><flowPara
+         id="flowPara5354"> </flowPara></flowRoot>  </g>
+</svg>

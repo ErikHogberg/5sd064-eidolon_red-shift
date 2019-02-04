@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatingTileHost : MonoBehaviour {
+public class RepeatingTileLayerScript : MonoBehaviour {
+
+	public bool flipOnRepeat = false;
 
 	// Use this for initialization
 	void Start () {

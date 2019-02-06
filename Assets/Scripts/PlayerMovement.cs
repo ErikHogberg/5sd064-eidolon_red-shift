@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
-    public float Speed=400;
+    public float Speed = 400;
+    private bool lookingRight = true;
 
-	void Start () {
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
-       // Speed = 400;
 	}
 	
 	void FixedUpdate () {
@@ -17,5 +17,19 @@ public class PlayerMovement : MonoBehaviour {
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
         rb.velocity = movement * Speed * Time.deltaTime;
+
+        if(moveHorizontal > 0 && !lookingRight)
+        {
+            Flip();
+        } else if (moveHorizontal < 0 && lookingRight)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        lookingRight = !lookingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 }

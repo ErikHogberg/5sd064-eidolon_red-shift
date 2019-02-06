@@ -4,32 +4,40 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
+    private Vector3 mousePosition;
+    public Transform crosshair;
     public float Speed = 400;
     private bool lookingRight = true;
 
-    void Start () {
+    void Start() {
         rb = GetComponent<Rigidbody2D>();
-	}
-	
-	void FixedUpdate () {
+        Cursor.visible = false;
+    }
+
+    void FixedUpdate() {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        crosshair.position = new Vector2(mousePosition.x, mousePosition.y);
+
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb.velocity = movement * Speed * Time.deltaTime;
 
-        if(moveHorizontal > 0 && !lookingRight)
+        if (mousePosition.x < transform.position.x && lookingRight)
         {
+            lookingRight = !lookingRight;
             Flip();
-        } else if (moveHorizontal < 0 && lookingRight)
+        }
+        else if (mousePosition.x > transform.position.x && !lookingRight)
         {
+            lookingRight = !lookingRight;
             Flip();
         }
     }
 
     void Flip()
     {
-        lookingRight = !lookingRight;
         transform.Rotate(0f, 180f, 0f);
     }
 }

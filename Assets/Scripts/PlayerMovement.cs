@@ -14,12 +14,15 @@ public class PlayerMovement : MonoBehaviour {
         Cursor.visible = false;
     }
 
+    void Update()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        crosshair.position = new Vector2(mousePosition.x, mousePosition.y);
+    }
+
     void FixedUpdate() {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        crosshair.position = new Vector2(mousePosition.x, mousePosition.y);
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rb.velocity = movement * Speed * Time.deltaTime;

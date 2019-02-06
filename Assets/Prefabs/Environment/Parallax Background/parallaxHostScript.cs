@@ -4,28 +4,19 @@ using UnityEngine;
 
 public class ParallaxHostScript : MonoBehaviour {
 
+	public float speed;
+
 	// Use this for initialization
 	void Start() {
 
-
-		/*
-		foreach (Transform tr in transform) {
-			if (tr.tag == "Parallax Layer") {
-				tr.GetComponent<GameObject>();
-				//Debug.Log("fount layer " + tr.name);
-			}
-		}
-		 */
 	}
 
 	// Update is called once per frame
 	void Update() {
-		//Debug.Log("Host update");
 
-		foreach (ParallaxScript item in GetComponentsInChildren<ParallaxScript>()) {
-			//Debug.Log("found layer " + item.name);
+		foreach (SpriteRenderer item in GetComponentsInChildren<SpriteRenderer>()) {
 			item.transform.position = new Vector3(
-				transform.position.x * item.speed,
+				transform.position.x * speed, // FIXME: make compatible with repeating background script
 				item.transform.position.y,
 				item.transform.position.z
 			);

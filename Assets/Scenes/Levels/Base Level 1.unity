@@ -167,7 +167,6 @@ GameObject:
   m_Component:
   - component: {fileID: 362889165}
   - component: {fileID: 362889166}
-  - component: {fileID: 362889167}
   m_Layer: 0
   m_Name: Layer 1
   m_TagString: Parallax Layer
@@ -193,28 +192,15 @@ Transform:
 --- !u!114 &362889166
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114185614605211328, guid: 9026ff383fad21d48b554693ba3f3839,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 362889164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126e5de326fc7f0498f3143d49a9fa6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
---- !u!114 &362889167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 362889164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a12bd66763cee46a6bab4322919fbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d784266822b46c34aabc9b995a6f4cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipOnRepeat: 0
+  speed: 1.1
 --- !u!1 &575827959
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +211,6 @@ GameObject:
   m_Component:
   - component: {fileID: 575827960}
   - component: {fileID: 575827962}
-  - component: {fileID: 575827961}
   m_Layer: 0
   m_Name: Tile 1
   m_TagString: Parallax Layer
@@ -247,18 +232,6 @@ Transform:
   m_Father: {fileID: 592637024}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &575827961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 575827959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126e5de326fc7f0498f3143d49a9fa6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.7
 --- !u!212 &575827962
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -365,7 +338,6 @@ GameObject:
   m_Component:
   - component: {fileID: 592637024}
   - component: {fileID: 592637025}
-  - component: {fileID: 592637026}
   m_Layer: 0
   m_Name: Layer 2
   m_TagString: Parallax Layer
@@ -391,28 +363,15 @@ Transform:
 --- !u!114 &592637025
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114405451551881964, guid: 9026ff383fad21d48b554693ba3f3839,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 592637023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126e5de326fc7f0498f3143d49a9fa6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
---- !u!114 &592637026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592637023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1a12bd66763cee46a6bab4322919fbd, type: 3}
+  m_Script: {fileID: 11500000, guid: d784266822b46c34aabc9b995a6f4cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipOnRepeat: 0
+  speed: 0.7
 --- !u!1 &764900945
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +659,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1688996819}
   - component: {fileID: 1688996821}
-  - component: {fileID: 1688996820}
   m_Layer: 0
   m_Name: Tile 1
   m_TagString: Parallax Layer
@@ -722,18 +680,6 @@ Transform:
   m_Father: {fileID: 362889165}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1688996820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1688996818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 126e5de326fc7f0498f3143d49a9fa6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.1
 --- !u!212 &1688996821
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -790,7 +736,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1998386716}
-  - component: {fileID: 1998386717}
   m_Layer: 0
   m_Name: Background (Parallax Layers)
   m_TagString: Untagged
@@ -814,15 +759,3 @@ Transform:
   m_Father: {fileID: 590884089}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1998386717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114819634690137078, guid: 9026ff383fad21d48b554693ba3f3839,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1998386715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d784266822b46c34aabc9b995a6f4cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

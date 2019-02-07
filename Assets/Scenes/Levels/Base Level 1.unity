@@ -351,6 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592637024}
   - component: {fileID: 592637025}
+  - component: {fileID: 592637026}
   m_Layer: 0
   m_Name: Layer 2
   m_TagString: Parallax Layer
@@ -385,6 +386,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.2
+--- !u!114 &592637026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 592637023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a12bd66763cee46a6bab4322919fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipOnRepeat: 0
 --- !u!1 &764900945
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,8 +578,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 971258951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.23162997, y: -4.3606105, z: -0.0449}
-  m_LocalScale: {x: 0.98486197, y: 0.24749158, z: 14.8279}
+  m_LocalPosition: {x: 0.29, y: -4.3606105, z: -0.0449}
+  m_LocalScale: {x: 0.990463, y: 0.24749158, z: 14.8279}
   m_Children: []
   m_Father: {fileID: 1360196691}
   m_RootOrder: 0

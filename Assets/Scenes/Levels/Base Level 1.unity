@@ -157,6 +157,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.3875028
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 777041eebee8db848975490fc10fb756, type: 2}
   m_IsPrefabAsset: 0
@@ -174,6 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590884089}
+  - component: {fileID: 590884088}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -181,6 +190,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &590884088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 590884087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d493c7128fad1f4c8da335bb5339fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1943282712}
+  speed: 7
+  maxX: 0
+  minY: 2
+  max: 2
 --- !u!4 &590884089
 Transform:
   m_ObjectHideFlags: 0
@@ -442,6 +467,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4201592353350066, guid: 2e41d97479d68ca43871b5916fd194e5,
     type: 2}
   m_PrefabInternal: {fileID: 1075988333}
+--- !u!1 &1943282712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1868829052781526, guid: 09a323737fdc4214f91b1540bf345dd4,
+    type: 2}
+  m_PrefabInternal: {fileID: 2130407226}
 --- !u!4 &1998386716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4449044436315538, guid: f0243fafbee410c4da78961993408565,

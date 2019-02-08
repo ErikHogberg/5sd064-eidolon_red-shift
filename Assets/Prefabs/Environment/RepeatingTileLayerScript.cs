@@ -7,7 +7,7 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 	public bool flipOnRepeat = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		SpriteRenderer tile = GetComponentInChildren<SpriteRenderer>();
 
 		// create copies of tile if it doesn't already have a series of tiles.
@@ -21,7 +21,7 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 			i++;
 			SpriteRenderer newTile = Instantiate<SpriteRenderer>(tile);
 			newTile.transform.parent = transform;
-			newTile.transform.position += new Vector3(tileWidth*i, 0, 0);
+			newTile.transform.position += new Vector3(tileWidth * i, 0, 0);
 
 			if (flipOnRepeat) {
 				newTile.flipX = true;
@@ -36,13 +36,15 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 		foreach (var tile in GetComponentsInChildren<SpriteRenderer>()) {
 			float tileWidth = tile.bounds.size.x;
-			float cameraWidth = Camera.main.orthographicSize * 2f * Camera.main.aspect;
-			if (tile.transform.position.x < -tileWidth) {
+			float cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
+			float cameraWidth = cameraHalfWidth * 2.0f;
+
+			if (tile.transform.position.x - tileWidth / 2 + cameraHalfWidth < -tileWidth) {
 				tile.transform.position += new Vector3(
-					tileWidth * (Mathf.Floor(cameraWidth/tileWidth + 2)), 
+					tileWidth * (Mathf.Floor(cameraWidth / tileWidth) + 2),
 					0, 0);
 			}
 

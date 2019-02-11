@@ -50,7 +50,7 @@ public class ZombieBehaviourScript : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	void FixedUpdate()
 	{
 		switch (state) {
 		//switch (Player.GetComponent<ZombieControlScript>().ZombieState)

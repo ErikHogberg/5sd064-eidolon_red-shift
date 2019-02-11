@@ -37,7 +37,7 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update() {
+	void FixedUpdate() {
 		foreach (var tile in GetComponentsInChildren<SpriteRenderer>()) {
 			float tileWidth = tile.bounds.size.x;
 			float cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;

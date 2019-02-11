@@ -13,7 +13,7 @@ public class ParallaxHostScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update() {
+	void FixedUpdate() {
 
 		transform.localPosition = new Vector3(
 			transform.position.x * speed,

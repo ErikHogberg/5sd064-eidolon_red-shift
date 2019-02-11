@@ -53,7 +53,9 @@ public class ZombieBehaviourScript : MonoBehaviour
 	void Update()
 	{
 		switch (state) {
-			case ZombieState.Aggressive:
+		//switch (Player.GetComponent<ZombieControlScript>().ZombieState)
+        //{
+            case ZombieState.Aggressive:
 				break;
 			case ZombieState.Defensive:
 				FollowPlayer();

@@ -21,7 +21,8 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 			i++;
 			SpriteRenderer newTile = Instantiate<SpriteRenderer>(tile);
 			newTile.transform.parent = transform;
-			newTile.transform.position += new Vector3(tileWidth * i, 0, 0);
+            newTile.transform.localScale = tile.transform.localScale;
+			newTile.transform.position = tile.transform.position + new Vector3(tileWidth * i, 0, 0);
 
 			if (flipOnRepeat) {
 				newTile.flipX = true;

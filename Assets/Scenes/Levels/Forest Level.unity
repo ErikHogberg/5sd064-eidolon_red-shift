@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a12bd66763cee46a6bab4322919fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipOnRepeat: 0
+  flipOnRepeat: 1
 --- !u!114 &635879439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d784266822b46c34aabc9b995a6f4cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.7
+  speed: -0.6
 --- !u!1 &656757592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1873696475643264, guid: f0243fafbee410c4da78961993408565,
@@ -2031,12 +2031,12 @@ PrefabInstance:
     - target: {fileID: 114906281548317774, guid: 09a323737fdc4214f91b1540bf345dd4,
         type: 3}
       propertyPath: Speed
-      value: 160
+      value: 162
       objectReference: {fileID: 0}
     - target: {fileID: 114002460547528480, guid: 09a323737fdc4214f91b1540bf345dd4,
         type: 3}
       propertyPath: Cooldown
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4563952266876706, guid: 09a323737fdc4214f91b1540bf345dd4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a12bd66763cee46a6bab4322919fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipOnRepeat: 0
+  flipOnRepeat: 1
 --- !u!114 &2130848349
 MonoBehaviour:
   m_ObjectHideFlags: 0

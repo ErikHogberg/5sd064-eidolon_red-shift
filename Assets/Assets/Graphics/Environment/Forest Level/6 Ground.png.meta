@@ -88,12 +88,12 @@ TextureImporter:
       name: 6 Ground_0
       rect:
         serializedVersion: 2
-        x: 11
+        x: 21
         y: 0
-        width: 8989
+        width: 8925
         height: 2949
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

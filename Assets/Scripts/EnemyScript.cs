@@ -12,4 +12,20 @@ public class EnemyScript : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    private void Start()
+    {
+        OnBecameInvisible();
+    }
+
+    private void OnBecameVisible()
+    {
+        this.enabled = true;
+        transform.Find("EnemyFirePoint").GetComponent<EnemyWeaponScript>().enabled = true;
+    }
+    private void OnBecameInvisible()
+    {
+        this.enabled = false;
+        transform.Find("EnemyFirePoint").GetComponent<EnemyWeaponScript>().enabled = false;
+    }
 }

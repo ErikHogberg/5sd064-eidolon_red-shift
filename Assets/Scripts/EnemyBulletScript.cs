@@ -14,11 +14,11 @@ public class EnemyBulletScript : MonoBehaviour
         rb.velocity = transform.right * Speed;
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Player"))
+        if (collider.name == "PlayerCollider")
         {
-            collider.GetComponent<PlayerMovement>().health -= Damage;
+            collider.GetComponentInParent<PlayerMovement>().health -= Damage;
             Destroy(gameObject);
         }
     }

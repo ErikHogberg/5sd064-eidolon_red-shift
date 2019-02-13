@@ -5,19 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
     private Vector3 mousePosition;
-    public Transform crosshair;
     public float Speed = 400;
     private bool lookingRight = true;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
-        Cursor.visible = false;
     }
 
     void LateUpdate()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        crosshair.position = new Vector2(mousePosition.x, mousePosition.y);
     }
 
     void FixedUpdate() {

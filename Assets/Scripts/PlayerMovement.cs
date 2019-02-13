@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 mousePosition;
     public Transform crosshair;
     public float Speed = 400;
+    public int health = 100;
     private bool lookingRight = true;
 
     void Start() {
@@ -18,6 +19,11 @@ public class PlayerMovement : MonoBehaviour {
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         crosshair.position = new Vector2(mousePosition.x, mousePosition.y);
+
+        if(health < 0 || health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate() {

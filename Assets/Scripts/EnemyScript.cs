@@ -12,4 +12,11 @@ public class EnemyScript : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    private void OnBecameVisible()
+    {
+    }
+    private void OnBecameInvisible()
+    {
+    }
 }

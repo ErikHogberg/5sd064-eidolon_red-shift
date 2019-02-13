@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour {
         Cursor.visible = false;
     }
 
-    void Update()
+    void LateUpdate()
     {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         crosshair.position = new Vector2(mousePosition.x, mousePosition.y);

@@ -21,7 +21,8 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 			i++;
 			SpriteRenderer newTile = Instantiate<SpriteRenderer>(tile);
 			newTile.transform.parent = transform;
-			newTile.transform.position += new Vector3(tileWidth * i, 0, 0);
+            newTile.transform.localScale = tile.transform.localScale;
+			newTile.transform.position = tile.transform.position + new Vector3(tileWidth * i, 0, 0);
 
 			if (flipOnRepeat) {
 				newTile.flipX = true;
@@ -36,7 +37,7 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update() {
+	void FixedUpdate() {
 		foreach (var tile in GetComponentsInChildren<SpriteRenderer>()) {
 			float tileWidth = tile.bounds.size.x;
 			float cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;

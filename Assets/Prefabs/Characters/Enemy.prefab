@@ -167,4 +167,4 @@ MonoBehaviour:
   firePoint: {fileID: 6546175507128491429}
   bulletPrefab: {fileID: 7923627733041113199, guid: 291d18277011845f58930c06205a8cdd,
     type: 3}
-  Cooldown: 1
+  Cooldown: 1.5

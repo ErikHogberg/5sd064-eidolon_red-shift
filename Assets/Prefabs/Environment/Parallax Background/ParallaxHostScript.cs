@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParallaxHostScript : MonoBehaviour {
 
-	public float speed;
+	public double speed;
 
 
 	// Use this for initialization
@@ -16,7 +16,7 @@ public class ParallaxHostScript : MonoBehaviour {
 	void FixedUpdate() {
 
 		transform.localPosition = new Vector3(
-			transform.position.x * speed,
+			(float)(transform.position.x * speed),
 			transform.localPosition.y,
 			transform.localPosition.z
 		);

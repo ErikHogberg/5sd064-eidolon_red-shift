@@ -19,7 +19,7 @@ public class MoveScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void FixedUpdate() {
+	void Update() {
 		float vertical = Input.GetAxis("Vertical");
 		float horizontal = Input.GetAxis("Horizontal");
 

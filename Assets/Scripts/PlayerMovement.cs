@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
     private Vector3 mousePosition;
     public float Speed = 400;
+    public int health = 100;
     private bool lookingRight = true;
 
     void Start() {
@@ -33,6 +34,16 @@ public class PlayerMovement : MonoBehaviour {
         {
             lookingRight = !lookingRight;
             Flip();
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health = health - damage;
+
+        if(health < 0 || health == 0)
+        {
+            Destroy(gameObject);
         }
     }
 

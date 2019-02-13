@@ -21,7 +21,8 @@ public class GroundMoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 		if (player.transform.position.x > maxX) {
-			transform.localPosition += new Vector3(-Time.deltaTime * speed, 0, 0);
+			//transform.localPosition += new Vector3(-Time.deltaTime * speed, 0, 0);
+			transform.localPosition = new Vector3(-player.transform.localPosition.x + maxX, transform.localPosition.y, transform.localPosition.z);
 		}
 
 		if (player.transform.position.y > maxY) {

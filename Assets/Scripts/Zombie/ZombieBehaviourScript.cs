@@ -58,7 +58,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	private Rigidbody2D rb;
 
 	private bool attacking = false;
-	
+
 
 	// Start is called before the first frame update
 	void Start() {
@@ -91,7 +91,27 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		}
 	}
 
+	/*
 	private void OnTriggerStay2D(Collider2D collision) {
+		switch (State) {
+			case ZombieState.Aggressive:
+				if (collision.tag == "Enemy") {
+					// IDEA: choose an enemy, keep attacking until enemy is dead, out of range, or zombie changes state, then it may choose another target
+					attacking = true;
+					rb.velocity = Vector2.zero;
+				}
+				break;
+			case ZombieState.Defensive:
+				break;
+			case ZombieState.Passive:
+				break;
+			default:
+				break;
+		}
+	}
+	 */
+	
+	public void AttackAreaTriggerStay(Collider2D collision) {
 		switch (State) {
 			case ZombieState.Aggressive:
 				if (collision.tag == "Enemy") {

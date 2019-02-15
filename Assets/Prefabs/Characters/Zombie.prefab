@@ -41,7 +41,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.23669556, y: 0.0828433}
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.5531945, y: 0.35131836}
@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5946e0178610a184ba165bbecbda882c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 35
+  ZombieScript: {fileID: 3317521913021960935}
 --- !u!1 &3317521913021960930
 GameObject:
   m_ObjectHideFlags: 0

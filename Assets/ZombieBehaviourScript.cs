@@ -34,6 +34,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 					break;
 				case ZombieState.Passive:
 					break;
+
 				default:
 					break;
 			}
@@ -43,6 +44,9 @@ public class ZombieBehaviourScript : MonoBehaviour {
 					break;
 				case ZombieState.Defensive:
 					break;
+				case ZombieState.Passive:
+					break;
+
 				default:
 					break;
 			}
@@ -54,7 +58,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	private Rigidbody2D rb;
 
 	private bool attacking = false;
-
+	
 
 	// Start is called before the first frame update
 	void Start() {

@@ -129,6 +129,22 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		}
 	}
 
+	public void AttackAreaTriggerExit(Collider2D collision) {
+		switch (State) {
+			case ZombieState.Aggressive:
+				if (collision.tag == "Enemy") {
+					attacking = false;
+				}
+				break;
+			case ZombieState.Defensive:
+				break;
+			case ZombieState.Passive:
+				break;
+			default:
+				break;
+		}
+	}
+
 	// 
 	private void FollowPlayer() {
 

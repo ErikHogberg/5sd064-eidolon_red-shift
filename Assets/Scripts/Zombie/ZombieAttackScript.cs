@@ -69,6 +69,8 @@ public class ZombieAttackScript : MonoBehaviour {
 
 	private void OnTriggerExit2D(Collider2D collision) {
 
+		ZombieScript.AttackAreaTriggerExit(collision);
+
 		if (collision.tag == "Enemy") {
 			attacking = false;
 		}

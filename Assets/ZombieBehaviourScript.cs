@@ -52,10 +52,15 @@ public class ZombieBehaviourScript : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+
+		// Sets state to player state, skips if state is unchanged in order to avoid calling state accessor too often
+		if ( state != Player.GetComponent<ZombieControlScript>().HordeState) {
+			state = Player.GetComponent<ZombieControlScript>().HordeState;
+		}
+
 		switch (state) {
-		//switch (Player.GetComponent<ZombieControlScript>().ZombieState)
-        //{
-            case ZombieState.Aggressive:
+		//switch (Player.GetComponent<ZombieControlScript>().HordeState) {
+			case ZombieState.Aggressive:
 				break;
 			case ZombieState.Defensive:
 				FollowPlayer();
@@ -67,13 +72,14 @@ public class ZombieBehaviourScript : MonoBehaviour
 		}
 	}
 
+	// 
 	private void FollowPlayer() {
 
 		Vector3 delta = transform.position - Player.transform.position;
 		if (delta.sqrMagnitude > MaxFollowDistance * MaxFollowDistance) {
 
 			float angle = Mathf.Atan2(delta.y, delta.x);
-				//Vector2.SignedAngle(transform.position, Player.transform.position);
+			//Vector2.SignedAngle(transform.position, Player.transform.position);
 
 			Vector2 direction = new Vector2(
 				Mathf.Cos(angle),

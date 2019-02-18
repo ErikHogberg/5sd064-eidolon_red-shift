@@ -34,7 +34,8 @@ public class EnemyWeaponScript : MonoBehaviour
             Vector2 direction = player.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+			bullet.transform.parent = transform.parent; // same parent as enemy that shot it
         }
     }
 }

@@ -112,9 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
---- !u!1001 &1056037702267013937
-=======
 --- !u!1 &79625739
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,23 +322,20 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &320645781
->>>>>>> matek
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 703769339}
     m_Modifications:
-    - target: {fileID: 1056037700520766616, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960930, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_Name
-      value: Level
+      value: Zombie
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
-=======
       value: -4.758427
       objectReference: {fileID: 0}
     - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
@@ -392,13 +386,15 @@ PrefabInstance:
     - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
->>>>>>> matek
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960935, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
-<<<<<<< HEAD
-=======
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1943282712}
+    - target: {fileID: 3317521913021960935, guid: 03f3330669146ad4dbe4109d24bcee38,
+        type: 3}
       propertyPath: InitialState
       value: 1
       objectReference: {fileID: 0}
@@ -1055,13 +1051,21 @@ PrefabInstance:
       value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 4436450752349770, guid: 2e9e31735657337479aea82cbf800474, type: 3}
->>>>>>> matek
       propertyPath: m_LocalPosition.y
+      value: -0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436450752349770, guid: 2e9e31735657337479aea82cbf800474, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436450752349770, guid: 2e9e31735657337479aea82cbf800474, type: 3}
+      propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
-=======
+    - target: {fileID: 4436450752349770, guid: 2e9e31735657337479aea82cbf800474, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4436450752349770, guid: 2e9e31735657337479aea82cbf800474, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
@@ -1133,55 +1137,61 @@ PrefabInstance:
       value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
->>>>>>> matek
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
+    - target: {fileID: 3317521913021960929, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3317521913021960935, guid: 03f3330669146ad4dbe4109d24bcee38,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1943282712}
+    - target: {fileID: 3317521913021960935, guid: 03f3330669146ad4dbe4109d24bcee38,
+        type: 3}
+      propertyPath: InitialState
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-<<<<<<< HEAD
-  m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}
-=======
   m_SourcePrefab: {fileID: 100100000, guid: 03f3330669146ad4dbe4109d24bcee38, type: 3}
 --- !u!1001 &951874049
 PrefabInstance:
@@ -2448,4 +2458,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.4
->>>>>>> matek

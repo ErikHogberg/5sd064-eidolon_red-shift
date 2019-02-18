@@ -802,6 +802,11 @@ PrefabInstance:
       propertyPath: health
       value: 1000000
       objectReference: {fileID: 0}
+    - target: {fileID: 1098867412508794949, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Speed
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 2354811046271397963, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_IsActive
@@ -846,7 +851,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ZombieTypeToSpawn
       value: 
-      objectReference: {fileID: 3317521913021960930, guid: 03f3330669146ad4dbe4109d24bcee38,
+      objectReference: {fileID: 3317521913021960930, guid: 01817bf4f7b160b4383263173b7bc316,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}

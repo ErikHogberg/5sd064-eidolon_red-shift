@@ -6,6 +6,8 @@ public class RespawnScript : MonoBehaviour
 {
     private SpriteRenderer spr;
 
+    public GameObject ZombieTypeToSpawn;
+
     private float m_Cooldown = 0f;
     public float Cooldown = 0.1f;
 
@@ -24,7 +26,7 @@ public class RespawnScript : MonoBehaviour
             spr.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && (m_Cooldown == 0f || m_Cooldown < 0f))
+        if (Input.GetKeyDown(KeyCode.Space) && (m_Cooldown == 0f || m_Cooldown < 0f))
         {
             spr.enabled = true;
             m_Cooldown = Cooldown;
@@ -35,7 +37,7 @@ public class RespawnScript : MonoBehaviour
     {
         if (spr.enabled && col.name == "Corpse(Clone)")
         {
-            col.GetComponent<CorpseScript>().SpawnZombie(transform.parent.gameObject);
+            col.GetComponent<CorpseScript>().SpawnZombie(transform.parent.gameObject, ZombieTypeToSpawn);
         }
     }
 }

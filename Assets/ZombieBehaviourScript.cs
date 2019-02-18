@@ -14,7 +14,7 @@ public class ZombieBehaviourScript : MonoBehaviour
 {
 
 	// IDEA: create container script for assigning player semi-automatically, similar to parallax and repeating tile layers
-	public GameObject Player;
+	private GameObject Player;
 
 	public float MaxFollowDistance = 3.0f;
 	public float FollowSpeed = 5;
@@ -45,6 +45,7 @@ public class ZombieBehaviourScript : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+        Player = GameObject.Find("Player");
 		state = InitialState;
 		rb = GetComponent<Rigidbody2D>();
 	}

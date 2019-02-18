@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour {
 
     public int health = 100;
+    public GameObject Corpse;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class EnemyScript : MonoBehaviour {
     void Update () {
 		if(health < 0 || health == 0)
         {
+            Instantiate(Corpse, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
 	}

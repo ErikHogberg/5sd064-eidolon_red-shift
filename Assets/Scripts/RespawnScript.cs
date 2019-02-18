@@ -35,7 +35,7 @@ public class RespawnScript : MonoBehaviour
     {
         if (spr.enabled && col.name == "Corpse(Clone)")
         {
-            col.GetComponent<CorpseScript>().SpawnZombie();
+            col.GetComponent<CorpseScript>().SpawnZombie(transform.parent.gameObject);
         }
     }
 }

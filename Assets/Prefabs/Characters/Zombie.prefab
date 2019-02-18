@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.5531945, y: 0.35131836}
+  m_Offset: {x: 1.5531945, y: 0.11444467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3698077, y: 2.849041}
+  m_Size: {x: 1.3698077, y: 3.3227882}
   m_EdgeRadius: 0
 --- !u!114 &1761773505220439115
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5946e0178610a184ba165bbecbda882c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 35
+  Damage: 15
   ZombieScript: {fileID: 3317521913021960935}
 --- !u!1 &3317521913021960930
 GameObject:

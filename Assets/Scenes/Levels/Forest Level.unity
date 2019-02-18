@@ -487,6 +487,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e41d97479d68ca43871b5916fd194e5, type: 3}
+--- !u!1 &1507602108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1056037700520766616, guid: ae57cf3e19a76d843a1798cf084aa853,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056037702267013937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1507602110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507602108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e7d53ebb26a9b449fc58a3b3b9e959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1621696113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -644,6 +662,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1056037700520766616, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_Name
+      value: Level
+      objectReference: {fileID: 0}
     - target: {fileID: 1054971629540728574, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_Name
@@ -663,11 +686,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyArcher3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056037700520766616, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_Name
-      value: Level
       objectReference: {fileID: 0}
     - target: {fileID: 1056037700520766619, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}

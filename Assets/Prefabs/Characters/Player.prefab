@@ -152,7 +152,7 @@ Rigidbody2D:
   m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &114906281548317774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd168747aa55a24ea2035311ca51c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 400
+  Speed: 162
   health: 100
 --- !u!61 &5289650434451561713
 BoxCollider2D:
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 3199430024428689844}
   m_Layer: 0
   m_Name: PlayerCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,11 +16,14 @@ public class EnemyBulletScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.name == "PlayerCollider")
+        if (collider.tag == "Player")
         {
             collider.GetComponentInParent<PlayerMovement>().TakeDamage(Damage);
             Destroy(gameObject);
-        }
+        } else if (collider.tag == "Zombie") {
+			collider.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
+			Destroy(gameObject);
+		}
     }
     void OnBecameInvisible()
     {

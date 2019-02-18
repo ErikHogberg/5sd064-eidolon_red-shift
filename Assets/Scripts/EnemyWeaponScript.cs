@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyWeaponScript : MonoBehaviour
 {
+	public float BulletSpeed = 12f;
     public Transform firePoint;
     public GameObject bulletPrefab;
     private GameObject player;
@@ -36,6 +37,7 @@ public class EnemyWeaponScript : MonoBehaviour
             firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 			bullet.transform.parent = transform.parent; // same parent as enemy that shot it
+			bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
         }
     }
 }

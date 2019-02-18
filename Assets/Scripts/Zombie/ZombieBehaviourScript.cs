@@ -12,6 +12,8 @@ public enum ZombieState {
 
 public class ZombieBehaviourScript : MonoBehaviour {
 
+	public int Health = 100;
+
 	// IDEA: create container script for assigning player semi-automatically, similar to parallax and repeating tile layers
 	public GameObject Player;
 
@@ -145,6 +147,14 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		}
 	}
 
+	public void TakeDamage(int damage) {
+		Health = Health - damage;
+
+		if (Health < 0 || Health == 0) {
+			Destroy(gameObject);
+		}
+	}
+
 	// 
 	private void FollowPlayer() {
 
@@ -171,7 +181,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	}
 
 	private void FindEnemy() {
-		rb.velocity = new Vector2(FollowSpeed * Time.deltaTime, 0);
+		rb.velocity = new Vector2(AggressiveSpeed * Time.deltaTime, 0);
 		//Collider cl;
 	}
 

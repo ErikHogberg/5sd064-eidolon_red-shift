@@ -16,7 +16,8 @@ public class EnemyScript : MonoBehaviour {
     void Update () {
 		if(health < 0 || health == 0)
         {
-            Instantiate(Corpse, gameObject.transform.position, gameObject.transform.rotation);
+            var corpse = Instantiate(Corpse, transform.position, transform.rotation);
+			corpse.transform.parent = transform.parent;
             Destroy(gameObject);
         }
 	}

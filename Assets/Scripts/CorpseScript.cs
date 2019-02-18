@@ -7,7 +7,8 @@ public class CorpseScript : MonoBehaviour
     public GameObject Zombie;
     public void SpawnZombie()
     {
-        Instantiate(Zombie, gameObject.transform.position, gameObject.transform.rotation);
+        var zombie = Instantiate(Zombie, transform.position, transform.rotation);
+		zombie.transform.parent = transform.parent;
         Destroy(gameObject);
     }
 }

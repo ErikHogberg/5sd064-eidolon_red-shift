@@ -13,9 +13,14 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 	private float displacementAmount = 0;
 
 	private float tileWidth;
+	private float tilingLength;
+
+	float cameraHalfWidth;
+	float cameraWidth;
 
 	// Use this for initialization
 	void Start() {
+
 		SpriteRenderer tile = GetComponentInChildren<SpriteRenderer>();
 
 
@@ -25,8 +30,16 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 		tileWidth = tile.bounds.size.x;
 		tileOffsetX = tile.transform.localPosition.x;
 
-		float cameraWidth = Camera.main.orthographicSize * 2f * Camera.main.aspect;
-		int i = 0;
+		tilingLength = tileWidth;
+
+		if (flipOnRepeat) {
+			tilingLength *= 2;
+		}
+
+
+		cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
+		cameraWidth = cameraHalfWidth * 2.0f;
+
 
 		float limit = cameraWidth;
 		if (flipOnRepeat) {
@@ -34,8 +47,10 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 			tileOffsetX += tileWidth / 2;
 		}
 
+		int i = 0;
 		while (tileWidth * i < limit) {
 			i++;
+
 			SpriteRenderer newTile = Instantiate<SpriteRenderer>(tile);
 			newTile.transform.parent = transform;
 			newTile.transform.localScale = tile.transform.localScale;
@@ -55,34 +70,12 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 
-		float tilingLength = tileWidth;
-
-		// TODO: move to init
-		if (flipOnRepeat) {
-			tilingLength *= 2;
-		} 
-
-		//foreach (var tile in GetComponentsInChildren<SpriteRenderer>()) {
-
-		//float tileWidth = tile.bounds.size.x;
-		float cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
-		float cameraWidth = cameraHalfWidth * 2.0f;
-
-		//float tileRightX = tile.transform.position.x + tileWidth / 2;
+		
 		float tileRightX = transform.position.x + tilingLength / 2 + tileOffsetX;
 		float cameraLeftX = -cameraHalfWidth;
 
 		if (tileRightX < cameraLeftX) {
-			//float displacementAmount = tileWidth * (Mathf.Floor(cameraWidth / tileWidth) + 2);
-			//float displacementAmount = tileWidth;
 			displacementAmount += tilingLength;
-			//tile.transform.position += new Vector3(
-
-			//transform.localPosition += new Vector3(
-			//	displacementAmount,
-			//	0, 0
-			//);
-
 		}
 
 		// displacement, parallax speed
@@ -90,7 +83,6 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 		localPosition.x = (float)(transform.parent.position.x * ParallaxSpeed) + displacementAmount;
 
 		transform.localPosition = localPosition;
-
-		//}
+		
 	}
 }

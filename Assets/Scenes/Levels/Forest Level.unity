@@ -863,5 +863,15 @@ PrefabInstance:
       propertyPath: flipOnRepeat
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1094726266766124456, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: flipOnRepeat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054468627035555477, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}

@@ -23,27 +23,24 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 
 		SpriteRenderer tile = GetComponentInChildren<SpriteRenderer>();
 
-
-		// create copies of tile if it doesn't already have a series of tiles.
-		//if (Layer.GetComponentsInChildren<SpriteRenderer>().Length == 1) {
-
 		tileWidth = tile.bounds.size.x;
 		tileOffsetX = tile.transform.localPosition.x;
 
 		tilingLength = tileWidth;
 
 		if (flipOnRepeat) {
+			// increase tiling to 2 tiles if cloned tile is flipped
 			tilingLength *= 2;
 		}
-
 
 		cameraHalfWidth = Camera.main.orthographicSize * Camera.main.aspect;
 		cameraWidth = cameraHalfWidth * 2.0f;
 
-
 		float limit = cameraWidth;
 		if (flipOnRepeat) {
+			// double amount of tiles created
 			limit *= 2;
+			// move the center of the tile to the center of both tiles, when measuring distance from center of camera
 			tileOffsetX += tileWidth / 2;
 		}
 
@@ -51,12 +48,12 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 		while (tileWidth * i < limit) {
 			i++;
 
-			SpriteRenderer newTile = Instantiate<SpriteRenderer>(tile);
+			SpriteRenderer newTile = Instantiate(tile);
 			newTile.transform.parent = transform;
 			newTile.transform.localScale = tile.transform.localScale;
 			newTile.transform.position = tile.transform.position + new Vector3(tileWidth * i, 0, 0);
 
-			if (flipOnRepeat && i%2 == 1) {
+			if (flipOnRepeat && i % 2 == 1) {
 				newTile.flipX = true;
 			}
 
@@ -67,10 +64,8 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
 	void FixedUpdate() {
 
-		
 		float tileRightX = transform.position.x + tilingLength / 2 + tileOffsetX;
 		float cameraLeftX = -cameraHalfWidth;
 
@@ -80,9 +75,10 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 
 		// displacement, parallax speed
 		Vector3 localPosition = transform.localPosition;
-		localPosition.x = (float)(transform.parent.position.x * ParallaxSpeed) + displacementAmount;
+		// FIXME: slower backgrounds are lagging again, precision error?
+		localPosition.x = (float) (transform.parent.position.x * ParallaxSpeed) + displacementAmount;
 
 		transform.localPosition = localPosition;
-		
+
 	}
 }

@@ -27,18 +27,25 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 
 		float cameraWidth = Camera.main.orthographicSize * 2f * Camera.main.aspect;
 		int i = 0;
-		while (tileWidth * i < cameraWidth) {
+
+		float limit = cameraWidth;
+		if (flipOnRepeat) {
+			limit *= 2;
+			tileOffsetX += tileWidth / 2;
+		}
+
+		while (tileWidth * i < limit) {
 			i++;
 			SpriteRenderer newTile = Instantiate<SpriteRenderer>(tile);
 			newTile.transform.parent = transform;
 			newTile.transform.localScale = tile.transform.localScale;
 			newTile.transform.position = tile.transform.position + new Vector3(tileWidth * i, 0, 0);
 
-			if (flipOnRepeat) {
+			if (flipOnRepeat && i%2 == 1) {
 				newTile.flipX = true;
 			}
 
-			if (i > 10) {
+			if (i > 20) {
 				break;
 			}
 		}
@@ -48,11 +55,12 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 
-		if (flipOnRepeat) {
-			// TODO: set wide repeat for whole pattern
-		} else {
+		float tilingLength = tileWidth;
 
-		}
+		// TODO: move to init
+		if (flipOnRepeat) {
+			tilingLength *= 2;
+		} 
 
 		//foreach (var tile in GetComponentsInChildren<SpriteRenderer>()) {
 
@@ -61,13 +69,13 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 		float cameraWidth = cameraHalfWidth * 2.0f;
 
 		//float tileRightX = tile.transform.position.x + tileWidth / 2;
-		float tileRightX = transform.position.x + tileWidth / 2 + tileOffsetX;
+		float tileRightX = transform.position.x + tilingLength / 2 + tileOffsetX;
 		float cameraLeftX = -cameraHalfWidth;
 
 		if (tileRightX < cameraLeftX) {
 			//float displacementAmount = tileWidth * (Mathf.Floor(cameraWidth / tileWidth) + 2);
 			//float displacementAmount = tileWidth;
-			displacementAmount += tileWidth;
+			displacementAmount += tilingLength;
 			//tile.transform.position += new Vector3(
 
 			//transform.localPosition += new Vector3(
@@ -77,7 +85,7 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 
 		}
 
-		// displacement
+		// displacement, parallax speed
 		Vector3 localPosition = transform.localPosition;
 		localPosition.x = (float)(transform.parent.position.x * ParallaxSpeed) + displacementAmount;
 

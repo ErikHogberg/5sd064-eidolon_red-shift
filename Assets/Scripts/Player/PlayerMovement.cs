@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
     private Vector3 mousePosition;
     public float Speed = 400;
-	public float DodgeSpeed = 1;
-	public float DodgeCooldownTime = .3f;
+	public float DodgeSpeed = 300;
+	public float DodgeCooldownTime = .15f;
 	public float DodgeDurationTime = .6f;
 	
     public int health = 100;
@@ -38,9 +38,12 @@ public class PlayerMovement : MonoBehaviour {
 		
 		if (dodgeTimer.IsRunning()) {
 			Vector2 direction = rb.velocity.normalized;
-			rb.velocity = direction * DodgeSpeed;
+			rb.velocity = direction * DodgeSpeed * .05f;
 			if (dodgeTimer.Update(Time.deltaTime)) {
 				dodgeCooldown.Restart();
+				Color color = GetComponent<SpriteRenderer>().color;
+				color.a = 1.0f;
+				GetComponent<SpriteRenderer>().color = color;
 			}
 			return; // NOTE: early return
 		}
@@ -48,6 +51,9 @@ public class PlayerMovement : MonoBehaviour {
 		dodgeCooldown.Update(Time.deltaTime);
 		if (Input.GetKeyDown(KeyCode.LeftControl) && !dodgeCooldown.IsRunning()) {
 			dodgeTimer.Restart();
+			Color color = GetComponent<SpriteRenderer>().color;
+			color.a = .5f;
+			GetComponent<SpriteRenderer>().color = color; 
 		}
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
@@ -68,9 +74,8 @@ public class PlayerMovement : MonoBehaviour {
     public void TakeDamage(int damage)
     {
 
-		// IDEA: invulnerability frames
+		// invulnerability frames
 		if (dodgeTimer.IsRunning()) {
-			// IDEA: blink while dodging, make transparent?
 			return;
 		}
 

@@ -180,7 +180,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -4.3409405}
+  m_Offset: {x: -0.27808887, y: -3.2285843}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -191,7 +191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.84, y: 4.208119}
+  m_Size: {x: 3.9895854, y: 1.983407}
   m_EdgeRadius: 0
 --- !u!1 &1826679589639329010
 GameObject:
@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a5c35bffcb42d4f838d292b0cefe32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZombieTypeToSpawn: {fileID: 0}
   Cooldown: 1
 --- !u!58 &6492050060108829806
 CircleCollider2D:

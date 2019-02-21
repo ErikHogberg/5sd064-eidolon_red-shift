@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieControlScript : MonoBehaviour {
+public class ZombieControlScript1 : MonoBehaviour {
 
 	public ZombieState HordeState = ZombieState.Defensive;
 	public float ManualSpeed = 0.1f;

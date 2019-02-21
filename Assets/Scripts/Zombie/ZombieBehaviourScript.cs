@@ -7,6 +7,7 @@ public enum ZombieState {
 	Defensive,
 	Passive,
 	Manual,
+	Scatter,
 	// knocked down?
 }
 

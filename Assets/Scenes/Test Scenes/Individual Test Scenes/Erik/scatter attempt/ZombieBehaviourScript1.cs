@@ -4,17 +4,7 @@ using UnityEngine;
 
 using Assets.Scripts.Utilities;
 
-public enum ZombieState {
-	Aggressive,
-	Defensive,
-	Passive,
-	Manual,
-	Scatter,
-	// knocked down?
-}
-
-
-public class ZombieBehaviourScript : MonoBehaviour {
+public class ZombieBehaviourScript1 : MonoBehaviour {
 
 	public int Health = 100;
 

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Levels/Fast Forest Level 1.unity
+    guid: 074862d5a0b392a40b2b6cd645a1ae39
+  - enabled: 1
     path: Assets/Scenes/Levels/Forest Level.unity
     guid: caaa83172e3666f48acc0e86c8e3cd70
   - enabled: 1

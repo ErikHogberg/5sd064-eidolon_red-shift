@@ -35,9 +35,9 @@ public class RespawnScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (spr.enabled && col.name == "Corpse(Clone)")
+        if (spr.enabled && col.tag == "Corpse")
         {
-            col.GetComponent<CorpseScript>().SpawnZombie(transform.parent.gameObject, ZombieTypeToSpawn);
+            col.GetComponent<CorpseScript>().SpawnZombie(transform.parent.gameObject.GetComponent<ZombieControlScript>(), ZombieTypeToSpawn);
         }
     }
 }

@@ -6,6 +6,7 @@ public class ParallaxHostScript : MonoBehaviour {
 
 	public double speed;
 
+	private float offsetX = 0.0f;
 
 	// Use this for initialization
 	void Start() {
@@ -15,11 +16,17 @@ public class ParallaxHostScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 
-		transform.localPosition = new Vector3(
-			(float)(transform.position.x * speed),
-			transform.localPosition.y,
-			transform.localPosition.z
-		);
+		/*
+		Vector3 localPosition = transform.localPosition;
+		localPosition.x = (float)(transform.parent.localPosition.x * speed) + offsetX;
+
+		transform.localPosition = localPosition;
+		 */
 
 	}
+
+	public void AddOffset(float offsetX) {
+		this.offsetX += offsetX;
+	}
+
 }

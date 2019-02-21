@@ -14,7 +14,7 @@ public class WeaponScript : MonoBehaviour {
         {
             m_Cooldown -= Time.deltaTime;
         }
-        if (Input.GetButtonDown("Fire1") && (m_Cooldown == 0f || m_Cooldown < 0f))
+        if (Input.GetMouseButtonDown(0) && (m_Cooldown == 0f || m_Cooldown < 0f))
         {
             Shoot();
             m_Cooldown = Cooldown;

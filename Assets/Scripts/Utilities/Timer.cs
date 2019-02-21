@@ -7,8 +7,14 @@ namespace Assets.Scripts.Utilities {
 
 
 	class Timer {
-		float time;
-		bool running;
+
+		// Time left
+		private float time;
+		// If timer is counting down
+		// IDEA: remove bool just check if time is larger than 0 instead
+		private bool running;
+		// Time to reset to
+		private float resetTime;
 
 		/// <summary>
 		/// Creates a timer, doesn't start it
@@ -31,7 +37,17 @@ namespace Assets.Scripts.Utilities {
 		/// <param name="time">Countdown time</param>
 		public void Restart(float time) {
 			this.time = time;
+			resetTime = time;
 			running = true;
+		}
+
+		public void Restart() {
+			this.time = resetTime;
+			running = true;
+		}
+
+		public void Stop() {
+			running = false;
 		}
 
 		/// <summary>
@@ -44,7 +60,7 @@ namespace Assets.Scripts.Utilities {
 		/// Returns true if it counts past 0 this update.
 		/// Returns false if it hasn't reached 0 yet, or if it has already reached 0 and is no longer running.
 		/// </returns>
-		public bool Update( float dt ) {
+		public bool Update(float dt) {
 			if (!running) {
 				return false;
 			}
@@ -56,6 +72,10 @@ namespace Assets.Scripts.Utilities {
 			}
 
 			return false;
+		}
+
+		public bool Update() {
+			return Update(UnityEngine.Time.deltaTime);
 		}
 
 		/// <summary>

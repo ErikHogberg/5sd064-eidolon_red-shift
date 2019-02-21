@@ -74,6 +74,10 @@ namespace Assets.Scripts.Utilities {
 			return false;
 		}
 
+		public bool Update() {
+			return Update(UnityEngine.Time.deltaTime);
+		}
+
 		/// <summary>
 		/// Check wether the timer is running.
 		/// </summary>

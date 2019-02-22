@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockAxisScript : MonoBehaviour
-{
+public class LockAxisScript : MonoBehaviour {
 
 	public bool LockX = false;
 	public bool LockY = false;
@@ -11,15 +10,13 @@ public class LockAxisScript : MonoBehaviour
 	private Vector2 initPos;
 
 	// Start is called before the first frame update
-    void Start()
-    {
+	void Start() {
 		initPos = transform.position;
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		Vector2 pos = transform.position;
+	// Update is called once per frame
+	void LateUpdate() {
+		Vector3 pos = transform.position;
 
 		if (LockX) {
 			pos.x = initPos.x;
@@ -30,5 +27,5 @@ public class LockAxisScript : MonoBehaviour
 		}
 
 		transform.position = pos;
-    }
+	}
 }

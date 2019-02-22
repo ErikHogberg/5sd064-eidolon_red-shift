@@ -7,7 +7,7 @@ using Assets.Scripts;
 
 public class TextScript : MonoBehaviour {
 
-	private int tempScore = 0;
+	private float tempScore = 0;
 	private Text scoreText;
 	private string text;
 
@@ -18,7 +18,7 @@ public class TextScript : MonoBehaviour {
 		scoreText.text = text + " " + tempScore;
 	}
 
-	protected void UpdateValue(int value) {
+	protected void UpdateValue(float value) {
 		if (tempScore != value) {
 			tempScore = value;
 			scoreText.text = text + " " + tempScore;

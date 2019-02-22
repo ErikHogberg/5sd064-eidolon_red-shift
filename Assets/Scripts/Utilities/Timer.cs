@@ -6,7 +6,7 @@ using System.Text;
 namespace Assets.Scripts.Utilities {
 
 
-	class Timer {
+	public class Timer {
 
 		// Time left
 		private float time;
@@ -84,6 +84,14 @@ namespace Assets.Scripts.Utilities {
 		/// <returns>Returns false if the timer either has not been started or has run out of time.</returns>
 		public bool IsRunning() {
 			return running;
+		}
+
+		public float TimeLeft() {
+			if (running) {
+				return time;
+			} else {
+				return resetTime;
+			}
 		}
 
 	}

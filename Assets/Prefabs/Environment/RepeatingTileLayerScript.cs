@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RepeatingTileLayerScript : MonoBehaviour {
 
-	public double ParallaxSpeed = 0;
+	public float ParallaxSpeed = 0;
 
 	public bool flipOnRepeat = false;
 
@@ -76,7 +76,7 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 		// displacement, parallax speed
 		Vector3 localPosition = transform.localPosition;
 		// FIXME: slower backgrounds are lagging again, precision error?
-		localPosition.x = (float) (transform.parent.position.x * ParallaxSpeed) + displacementAmount;
+		localPosition.x = transform.parent.position.x * ParallaxSpeed + displacementAmount;
 
 		transform.localPosition = localPosition;
 

@@ -8,7 +8,6 @@ public class CorpseScript : MonoBehaviour {
 	public void SpawnZombie(ZombieControlScript player, GameObject ZombieTypeToSpawn) {
 		var zombie = Instantiate(ZombieTypeToSpawn, transform.position, transform.rotation);
 		zombie.transform.parent = transform.parent;
-		zombie.GetComponent<ZombieBehaviourScript>().Player = player;
 		Destroy(gameObject);
 	}
 }

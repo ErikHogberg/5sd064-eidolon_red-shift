@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 50553165998784182}
   - component: {fileID: 114906281548317774}
   - component: {fileID: 5289650434451561713}
+  - component: {fileID: 8119102696414828179}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -166,7 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 162
-  health: 100
+  DodgeSpeed: 300
+  DodgeCooldownTime: 0.15
+  DodgeDurationTime: 0.6
+  Health: 100
 --- !u!61 &5289650434451561713
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -193,6 +197,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9895854, y: 1.983407}
   m_EdgeRadius: 0
+--- !u!114 &8119102696414828179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868829052781526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824cbd1fafa991b4fb3a418533353387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1826679589639329010
 GameObject:
   m_ObjectHideFlags: 0

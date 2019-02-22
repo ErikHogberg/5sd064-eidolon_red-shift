@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	public int Health = 100;
 
 	// IDEA: create container script for assigning player semi-automatically, similar to parallax and repeating tile layers
-	public ZombieControlScript Player;
+	private ZombieControlScript Player;
 
 	public float MaxFollowDistance = 3.0f;
 	public float FollowSpeed = 5;
@@ -71,13 +72,20 @@ public class ZombieBehaviourScript : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Start() {
+		//Player = Globals.Player.GetComponent<ZombieControlScript>();
+		//ManualSpeed = Player.ManualSpeed;
 		state = InitialState;
 		rb = GetComponent<Rigidbody2D>();
-		ManualSpeed = Player.ManualSpeed;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate() {
+
+		if (Player == null) {
+			Player = Globals.Player.GetComponent<ZombieControlScript>();
+			ManualSpeed = Player.ManualSpeed;
+
+		}
 
 		// Sets state to player state, skips if state is unchanged in order to avoid calling state accessor too often
 		if (State != Player.HordeState) {

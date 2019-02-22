@@ -7,7 +7,7 @@ using Assets.Scripts;
 
 public class TextScript : MonoBehaviour {
 
-	private float tempScore = 0;
+	private float tempScore = 0.0f;
 	private Text scoreText;
 	private string text;
 
@@ -21,7 +21,7 @@ public class TextScript : MonoBehaviour {
 	protected void UpdateValue(float value) {
 		if (tempScore != value) {
 			tempScore = value;
-			scoreText.text = text + " " + tempScore;
+			scoreText.text = text + " " + tempScore.ToString("0.00");
 		}
 	}
 }

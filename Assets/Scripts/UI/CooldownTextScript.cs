@@ -17,7 +17,7 @@ public class CooldownTextScript : TextScript {
 		if (cooldown == null) {
 			cooldown = Globals.Player.GetComponentInChildren<WeaponScript>().AttackTimers[CooldownIndex];
 		}
-		UpdateValue(cooldown.TimeLeft());
 
+		UpdateValue(cooldown.TimeLeft());
 	}
 }

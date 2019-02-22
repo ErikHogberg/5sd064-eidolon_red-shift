@@ -48,6 +48,7 @@ public class WeaponScript : MonoBehaviour {
 				if (!timer.IsRunning()) {
 					Shoot();
 					timer.Restart(Cooldown);
+					break;
 				}
 			}
 		}

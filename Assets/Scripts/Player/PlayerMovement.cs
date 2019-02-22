@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float Speed = 400;
 	public float DodgeSpeed = 300;
-	public float DodgeCooldownTime = .15f;
-	public float DodgeDurationTime = .6f;
+	public float DodgeCooldownTime = .6f;
+	public float DodgeDurationTime = .15f;
 
 	public int Health = 100;
 	private bool lookingRight = true;

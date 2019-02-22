@@ -75,7 +75,7 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 
 		// displacement, parallax speed
 		Vector3 localPosition = transform.localPosition;
-		// FIXME: slower backgrounds are lagging again, precision error?
+		// FIXME: slower backgrounds are lagging again
 		localPosition.x = transform.parent.position.x * ParallaxSpeed + displacementAmount;
 
 		transform.localPosition = localPosition;

@@ -13,10 +13,10 @@ public class WeaponScript : MonoBehaviour {
 
 	public List<Timer> AttackTimers;
 
-	private PlayerMovement player;
+	//private PlayerMovement player;
 
 	private void Start() {
-		player = GetComponentInParent<PlayerMovement>();
+		//player = GetComponentInParent<PlayerMovement>();
 		AttackTimers = new List<Timer> {
 			new Timer(Cooldown),
 			new Timer(Cooldown),

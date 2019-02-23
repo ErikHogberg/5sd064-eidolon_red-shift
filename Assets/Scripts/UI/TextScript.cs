@@ -12,7 +12,7 @@ public class TextScript : MonoBehaviour {
 	private string text;
 
 	// Start is called before the first frame update
-	void Start() {
+	protected void Start() {
 		scoreText = GetComponent<Text>();
 		text = scoreText.text;
 		scoreText.text = text + " " + tempScore;

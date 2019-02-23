@@ -2,42 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnScript : MonoBehaviour
-{
-    private SpriteRenderer spr;
+using Assets.Scripts;
+using Assets.Scripts.Utilities;
 
-    public GameObject ZombieTypeToSpawn;
+public class RespawnScript : MonoBehaviour {
+	private SpriteRenderer spr;
 
-    private float m_Cooldown = 0f;
-    public float Cooldown = 0.1f;
+	public GameObject ZombieTypeToSpawn;
 
-    void Start()
-    {
-        spr = GetComponent<SpriteRenderer>();
-    }
+	//private float m_Cooldown = 0f;
+	public float Cooldown = 0.1f;
+	public float Duration = 0.1f;
 
-    void Update()
-    {
-        if (m_Cooldown > 0f)
-        {
-            m_Cooldown -= Time.deltaTime;
-        } else
-        {
-            spr.enabled = false;
-        }
+	public Timer DurationTimer;
+	public Timer CooldownTimer;
 
-        if (Input.GetKeyDown(KeyCode.Space) && (m_Cooldown == 0f || m_Cooldown < 0f))
-        {
-            spr.enabled = true;
-            m_Cooldown = Cooldown;
-        }
-    }
 
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        if (spr.enabled && col.tag == "Corpse")
-        {
-            col.GetComponent<CorpseScript>().SpawnZombie(transform.parent.gameObject.GetComponent<ZombieControlScript>(), ZombieTypeToSpawn);
-        }
-    }
+	void Start() {
+		spr = GetComponent<SpriteRenderer>();
+
+		DurationTimer = new Timer(Duration);
+		DurationTimer.Stop();
+
+		CooldownTimer = new Timer(Cooldown);
+		CooldownTimer.Stop();
+
+	}
+
+	void Update() {
+
+		/*
+		if (m_Cooldown > 0f)
+		{
+			m_Cooldown -= Time.deltaTime;
+		} else
+		{
+			spr.enabled = false;
+		}
+		 */
+
+		CooldownTimer.Update();
+
+		if (DurationTimer.Update()) {
+			spr.enabled = false;
+			CooldownTimer.Restart(Cooldown);
+		}
+
+
+		//if (Input.GetKeyDown(KeyCode.Space) && (m_Cooldown == 0f || m_Cooldown < 0f)) {
+		if (Input.GetKeyDown(KeyCode.Space) && !CooldownTimer.IsRunning() &&!DurationTimer.IsRunning()) {
+			spr.enabled = true;
+			//m_Cooldown = Cooldown;
+			DurationTimer.Restart(Duration);
+		}
+	}
+
+	private void OnTriggerStay2D(Collider2D col) {
+		if (spr.enabled && col.tag == "Corpse") {
+			col.GetComponent<CorpseScript>().SpawnZombie(transform.parent.gameObject.GetComponent<ZombieControlScript>(), ZombieTypeToSpawn);
+		}
+	}
 }

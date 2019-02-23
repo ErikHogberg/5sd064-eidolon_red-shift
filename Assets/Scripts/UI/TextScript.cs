@@ -21,7 +21,7 @@ public class TextScript : MonoBehaviour {
 	protected void UpdateValue(float value) {
 		if (tempScore != value) {
 			tempScore = value;
-			scoreText.text = text + " " + tempScore.ToString("0.00");
+			scoreText.text = text + " " + tempScore.ToString("0.0");
 		}
 	}
 }

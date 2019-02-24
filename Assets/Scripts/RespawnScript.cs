@@ -20,6 +20,7 @@ public class RespawnScript : MonoBehaviour {
 
 	void Start() {
 		spr = GetComponent<SpriteRenderer>();
+		spr.enabled = false;
 
 		DurationTimer = new Timer(Duration);
 		DurationTimer.Stop();

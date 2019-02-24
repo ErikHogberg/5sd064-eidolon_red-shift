@@ -7,6 +7,6 @@ using UnityEngine;
 namespace Assets.Scripts {
 	public static class Globals {
 		public static int Score = 0;
-		public static PlayerMovement Player;
+		public static PlayerMovementScript Player;
 	}
 }

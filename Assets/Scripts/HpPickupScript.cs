@@ -8,7 +8,7 @@ public class HpPickupScript : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Player") {
-			collision.gameObject.GetComponent<PlayerMovement>().Health += RecoveryAmount; 
+			collision.gameObject.GetComponent<PlayerMovementScript>().Health += RecoveryAmount; 
 			Destroy(gameObject);
 		}
 	}

@@ -5,7 +5,7 @@ using UnityEngine;
 using Assets.Scripts;
 using Assets.Scripts.Utilities;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovementScript: MonoBehaviour {
 	private Rigidbody2D rb;
 	private Vector3 mousePosition;
 
@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 	public int Health = 100;
 	private bool lookingRight = true;
 
-	private Timer dodgeCooldown; // time until next dodge
-	private Timer dodgeTimer; // time until dodge ends
+	public Timer DodgeCooldown; // time until next dodge
+	public Timer DodgeTimer; // time until dodge ends
 
 	void Start() {
 
@@ -26,13 +26,22 @@ public class PlayerMovement : MonoBehaviour {
 
 		rb = GetComponent<Rigidbody2D>();
 
-		dodgeTimer = new Timer(DodgeDurationTime);
-		dodgeCooldown = new Timer(DodgeCooldownTime);
+		DodgeCooldown = new Timer(DodgeCooldownTime);
+		DodgeCooldown.Stop();
+		DodgeTimer = new Timer(DodgeDurationTime);
+		DodgeTimer.Stop();
 
 	}
 
-	void LateUpdate() {
-		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	private void Update() {
+		DodgeCooldown.Update(Time.deltaTime);
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning()) {
+			DodgeTimer.Restart(DodgeDurationTime);
+			DodgeCooldown.Restart(DodgeCooldownTime);
+			Color color = GetComponent<SpriteRenderer>().color;
+			color.a = .5f;
+			GetComponent<SpriteRenderer>().color = color;
+		}
 	}
 
 	void FixedUpdate() {
@@ -40,11 +49,11 @@ public class PlayerMovement : MonoBehaviour {
 		float moveVertical = Input.GetAxis("Vertical");
 
 
-		if (dodgeTimer.IsRunning()) {
+		if (DodgeTimer.IsRunning()) {
 			Vector2 direction = rb.velocity.normalized;
 			rb.velocity = direction * DodgeSpeed * .05f;
-			if (dodgeTimer.Update(Time.deltaTime)) {
-				dodgeCooldown.Restart();
+			if (DodgeTimer.Update(Time.deltaTime)) {
+				//DodgeCooldown.Restart(DodgeCooldownTime);
 				Color color = GetComponent<SpriteRenderer>().color;
 				color.a = 1.0f;
 				GetComponent<SpriteRenderer>().color = color;
@@ -52,13 +61,7 @@ public class PlayerMovement : MonoBehaviour {
 			return; // NOTE: early return
 		}
 
-		dodgeCooldown.Update(Time.deltaTime);
-		if (Input.GetKeyDown(KeyCode.LeftControl) && !dodgeCooldown.IsRunning()) {
-			dodgeTimer.Restart();
-			Color color = GetComponent<SpriteRenderer>().color;
-			color.a = .5f;
-			GetComponent<SpriteRenderer>().color = color;
-		}
+		
 
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		rb.velocity = movement * Speed * Time.deltaTime;
@@ -72,10 +75,14 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
+	void LateUpdate() {
+		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	}
+
 	public void TakeDamage(int damage) {
 
 		// invulnerability frames
-		if (dodgeTimer.IsRunning()) {
+		if (DodgeTimer.IsRunning()) {
 			return;
 		}
 

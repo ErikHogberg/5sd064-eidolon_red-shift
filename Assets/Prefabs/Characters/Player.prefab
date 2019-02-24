@@ -168,8 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 162
   DodgeSpeed: 300
-  DodgeCooldownTime: 0.15
-  DodgeDurationTime: 0.6
+  DodgeCooldownTime: 0.6
+  DodgeDurationTime: 0.15
   Health: 100
 --- !u!61 &5289650434451561713
 BoxCollider2D:
@@ -360,7 +360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZombieTypeToSpawn: {fileID: 0}
-  Cooldown: 1
+  Cooldown: 0.7
+  Duration: 0.1
 --- !u!58 &6492050060108829806
 CircleCollider2D:
   m_ObjectHideFlags: 0

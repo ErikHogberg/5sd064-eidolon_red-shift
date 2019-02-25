@@ -89,7 +89,8 @@ public class PlayerMovementScript: MonoBehaviour {
 		Health = Health - damage;
 
 		if (Health < 0 || Health == 0) {
-			Destroy(gameObject);
+			//Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 

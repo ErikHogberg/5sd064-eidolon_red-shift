@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour {
 	public GameObject Corpse;
     public float Speed = 0.01f;
 
-    private float yMax = 3f;
+    private float yMax = 2f;
     private float yMin = -2f;
     private float yTarget;
     private bool arrived = false;

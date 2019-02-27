@@ -7,6 +7,7 @@ public class DialogueTriggerScript : MonoBehaviour
 {
 
 	// TODO: dialogue text to load as public field
+	public TextAsset text;
 
 	private bool activated;
 	
@@ -30,8 +31,8 @@ public class DialogueTriggerScript : MonoBehaviour
 		}
 
 		if (collision.tag == "Player") {
-			Debug.Log("dialoge trigger");
 			Globals.DialogueWindow.gameObject.SetActive(true);
+			Globals.DialogueWindow.SetText(text);
 			//activated = true;
 		}
 	}

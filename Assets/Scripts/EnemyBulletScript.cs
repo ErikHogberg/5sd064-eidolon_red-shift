@@ -10,7 +10,6 @@ public class EnemyBulletScript : MonoBehaviour {
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		rb.velocity = transform.right * Speed;
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {

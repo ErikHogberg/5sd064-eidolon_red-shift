@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Type
+{
+    Archer,
+    Knight,
+    Peasant,
+}
+
 public class EnemyScript : MonoBehaviour {
 
 	public int health = 100;
 	public GameObject Corpse;
-    public float Speed = 0.01f;
+    public float Speed = 0.05f;
+    public Type EnemyType;
 
     private float yMax = 2f;
     private float yMin = -2f;
     private float yTarget;
-    private bool arrived = false;
 
 	public int ScoreWorth = 10;
 

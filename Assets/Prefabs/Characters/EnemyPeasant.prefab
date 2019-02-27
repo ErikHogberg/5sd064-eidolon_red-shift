@@ -123,6 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   Corpse: {fileID: 4236745857078329283, guid: db619c8b59329bb4694b79eb7ad2b47d, type: 3}
+  Speed: 0.05
+  EnemyType: 2
+  ScoreWorth: 10
 --- !u!61 &1886894862679297255
 BoxCollider2D:
   m_ObjectHideFlags: 0

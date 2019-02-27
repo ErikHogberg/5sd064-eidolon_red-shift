@@ -36,7 +36,7 @@ public class EnemyWeaponScript : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-			bullet.transform.parent = transform.parent; // same parent as enemy that shot it
+			//bullet.transform.parent = transform.parent; // same parent as enemy that shot it
 			bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
         }
     }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class DialoguePanelScript : MonoBehaviour {
 
 	public Text DialogueText;
+	public Text PageNumberText;
 
 	private string[] textPages;
 	private int currentPage = 0;
@@ -21,7 +22,7 @@ public class DialoguePanelScript : MonoBehaviour {
 			} else {
 				currentPage = value;
 			}
-			DialogueText.text = textPages[currentPage];
+			UpdatePage();
 		}
 	}
 
@@ -33,6 +34,11 @@ public class DialoguePanelScript : MonoBehaviour {
 
 	}
 
+	private void UpdatePage() {
+		DialogueText.text = textPages[currentPage];
+		PageNumberText.text = "Page " + (currentPage + 1) + "/" + textPages.Length;
+	}
+
 	public void SetText(string[] text) {
 		textPages = text;
 	}
@@ -42,14 +48,13 @@ public class DialoguePanelScript : MonoBehaviour {
 		//textPages = allText.Split('-');
 		textPages = Regex.Split(allText, "\r\n-\r\n");
 		currentPage = 0;
-		DialogueText.text = textPages[currentPage];
-
+		UpdatePage();
 	}
 
 	// return true if flipped to last page
 	public bool NextPage() {
 		CurrentPage++;
-		if (CurrentPage == textPages.Length-1) {
+		if (CurrentPage == textPages.Length - 1) {
 			return true;
 		}
 		return false;

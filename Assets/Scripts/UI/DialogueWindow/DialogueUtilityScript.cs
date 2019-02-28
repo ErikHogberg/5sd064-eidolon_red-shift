@@ -6,16 +6,18 @@ using UnityEngine.UI;
 
 public class DialogueUtilityScript : MonoBehaviour {
 
+	private string initText;
+
 	// Start is called before the first frame update
 	void Start() {
-
+		initText = GetComponentInChildren<Text>().text;
 	}
 
 	private void OnEnable() {
 		//if (Globals.DialogueWindow.IsOnLastPage()) {
 		//	GetComponentInChildren<Text>().text = "Close";
 		//} else {
-		GetComponentInChildren<Text>().text = "Next";
+		GetComponentInChildren<Text>().text = initText;
 		//}
 	}
 
@@ -40,7 +42,7 @@ public class DialogueUtilityScript : MonoBehaviour {
 		if (Globals.DialogueWindow.NextPage()) {
 			buttonText.text = "Close";
 		} else {
-			buttonText.text = "Next";
+			buttonText.text = initText;
 			// TODO: change next text back on prev button click
 		}
 	}

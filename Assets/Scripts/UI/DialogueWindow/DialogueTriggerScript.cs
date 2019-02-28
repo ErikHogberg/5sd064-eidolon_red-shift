@@ -31,8 +31,8 @@ public class DialogueTriggerScript : MonoBehaviour
 		}
 
 		if (collision.tag == "Player") {
-			Globals.DialogueWindow.gameObject.SetActive(true);
 			Globals.DialogueWindow.SetText(text);
+			Globals.DialogueWindow.gameObject.SetActive(true);
 			//activated = true;
 		}
 	}

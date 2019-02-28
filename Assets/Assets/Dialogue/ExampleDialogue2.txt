@@ -1,0 +1,8 @@
+Example 2.
+
+new line
+-
+page 2
+-
+last page
+

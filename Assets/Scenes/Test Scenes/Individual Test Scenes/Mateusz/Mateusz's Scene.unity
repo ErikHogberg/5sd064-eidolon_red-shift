@@ -119,6 +119,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6492050060108829806, guid: 09a323737fdc4214f91b1540bf345dd4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 78229627147126155, guid: 09a323737fdc4214f91b1540bf345dd4,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 875468281
+      objectReference: {fileID: 0}
+    - target: {fileID: 78229627147126155, guid: 09a323737fdc4214f91b1540bf345dd4,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 78229627147126155, guid: 09a323737fdc4214f91b1540bf345dd4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1868829052781526, guid: 09a323737fdc4214f91b1540bf345dd4, type: 3}
       propertyPath: m_Name
       value: Player

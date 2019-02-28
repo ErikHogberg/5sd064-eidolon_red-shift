@@ -1,0 +1,10 @@
+Example dialogue.
+new line
+
+blank line
+
+-
+New page
+-
+
+3rd page

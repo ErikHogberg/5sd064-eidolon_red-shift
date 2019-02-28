@@ -15,6 +15,11 @@ public class PlayerMovementScript: MonoBehaviour {
 	public float DodgeDurationTime = .15f;
 
 	public int Health = 100;
+	public bool HpRegen = false;
+	public int HpRegenCap = 100;
+	public float HpRegenRate = 2.0f; // amount restored per second
+	private Timer hpRegenTimer;
+
 	private bool lookingRight = true;
 
 	public Timer DodgeCooldown; // time until next dodge
@@ -26,6 +31,8 @@ public class PlayerMovementScript: MonoBehaviour {
 
 		rb = GetComponent<Rigidbody2D>();
 
+		hpRegenTimer = new Timer(1.0f / HpRegenRate);
+
 		DodgeCooldown = new Timer(DodgeCooldownTime);
 		DodgeCooldown.Stop();
 		DodgeTimer = new Timer(DodgeDurationTime);
@@ -34,6 +41,14 @@ public class PlayerMovementScript: MonoBehaviour {
 	}
 
 	private void Update() {
+
+		if (HpRegen && Health < HpRegenCap) {
+			if (hpRegenTimer.Update()) {
+				Health += 1;
+				hpRegenTimer.RestartWithDelta();
+			}
+		}
+
 		DodgeCooldown.Update(Time.deltaTime);
 		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning()) {
 			DodgeTimer.Restart(DodgeDurationTime);

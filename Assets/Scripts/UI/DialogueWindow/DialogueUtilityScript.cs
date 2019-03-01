@@ -8,8 +8,7 @@ public class DialogueUtilityScript : MonoBehaviour {
 
 	private string initText;
 
-	// Start is called before the first frame update
-	void Start() {
+	private void Awake() {
 		initText = GetComponentInChildren<Text>().text;
 	}
 
@@ -21,7 +20,10 @@ public class DialogueUtilityScript : MonoBehaviour {
 		//}
 	}
 
-	// Update is called once per frame
+	void Start() {
+
+	}
+
 	void Update() {
 
 	}

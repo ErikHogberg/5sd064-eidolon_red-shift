@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
 
 // Source: https://gist.github.com/unity3dcollege/c1efea3f87d3775bee3e010e9c6d7648#file-replacewithprefab-cs
@@ -47,3 +48,4 @@ public class ReplaceWithPrefab : EditorWindow {
 		EditorGUILayout.LabelField("Selection count: " + Selection.objects.Length);
 	}
 }
+#endif

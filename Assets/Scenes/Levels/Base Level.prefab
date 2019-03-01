@@ -5220,6 +5220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueText: {fileID: 3871330328074731177}
   PageNumberText: {fileID: 6104715205323153911}
+  NextButton: {fileID: 1905108021477103428}
 --- !u!1 &9195489004273363202
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class DialoguePanelScript : MonoBehaviour {
 
 	public Text DialogueText;
 	public Text PageNumberText;
+	public DialogueUtilityScript NextButton;
 
 	private string[] textPages;
 	private int currentPage = 0;
@@ -31,7 +32,9 @@ public class DialoguePanelScript : MonoBehaviour {
 	}
 
 	void Update() {
-
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			NextButton.ClickNext();
+		}
 	}
 
 	private void UpdatePage() {

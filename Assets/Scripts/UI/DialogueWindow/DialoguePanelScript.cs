@@ -9,9 +9,14 @@ public class DialoguePanelScript : MonoBehaviour {
 
 	public Text DialogueText;
 	public Text PageNumberText;
+	public Text SpeakerTitleText;
 	public DialogueUtilityScript NextButton;
 
 	private string[] textPages;
+	private Color[] pageColors;
+	private string[] pageSpeakerTitles;
+	private string[] pageSpeakerPortraits;
+
 	private int currentPage = 0;
 	public int CurrentPage {
 		get { return currentPage; }
@@ -40,6 +45,7 @@ public class DialoguePanelScript : MonoBehaviour {
 	private void UpdatePage() {
 		DialogueText.text = textPages[currentPage];
 		PageNumberText.text = "Page " + (currentPage + 1) + "/" + textPages.Length;
+		SpeakerTitleText.text = "|"+pageSpeakerTitles[currentPage]+"|";
 	}
 
 	public void SetText(string[] text) {
@@ -50,6 +56,20 @@ public class DialoguePanelScript : MonoBehaviour {
 		string allText = text.text;
 		//textPages = allText.Split('-');
 		textPages = Regex.Split(allText, "\r\n-\r\n");
+		pageColors = new Color[textPages.Length];
+		pageSpeakerTitles = new string[textPages.Length];
+		pageSpeakerPortraits = new string[textPages.Length];
+
+		for (int i = 0; i < textPages.Length; i++) {
+			string page = textPages[i];
+
+			textPages[i] = Regex.Replace(page, @"\btitle:\s\w*\b"+ System.Environment.NewLine, delegate (Match match) {
+				pageSpeakerTitles[i] = match.Value.Split(':')[1].Trim();
+				return "";
+			}, RegexOptions.Singleline);
+
+		}
+
 		currentPage = 0;
 		UpdatePage();
 	}

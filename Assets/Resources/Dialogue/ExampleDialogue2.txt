@@ -2,6 +2,7 @@ Example 2.
 
 new line
 -
+title: title
 page 2
 -
 last page

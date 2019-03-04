@@ -28,7 +28,7 @@ public class ZombieControlScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-		//*
+		/*
 		if (Input.GetAxis("Zombie State 1") > 0) {
 			HordeState = ZombieState.Aggressive;
 		}

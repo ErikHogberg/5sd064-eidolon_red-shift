@@ -45,7 +45,8 @@ public class DialoguePanelScript : MonoBehaviour {
 	private void UpdatePage() {
 		DialogueText.text = textPages[currentPage];
 		PageNumberText.text = "Page " + (currentPage + 1) + "/" + textPages.Length;
-		SpeakerTitleText.text = "|"+pageSpeakerTitles[currentPage]+"|";
+		SpeakerTitleText.text = "|" + pageSpeakerTitles[currentPage] + "|";
+		GetComponent<Image>().color = pageColors[currentPage];
 	}
 
 	public void SetText(string[] text) {
@@ -54,20 +55,51 @@ public class DialoguePanelScript : MonoBehaviour {
 
 	public void SetText(TextAsset text) {
 		string allText = text.text;
-		//textPages = allText.Split('-');
+
 		textPages = Regex.Split(allText, "\r\n-\r\n");
+
 		pageColors = new Color[textPages.Length];
+		for (int i = 0; i < textPages.Length; i++) {
+			pageColors[i] = new Color(0, 0, 0, 0.75f);
+		}
+
 		pageSpeakerTitles = new string[textPages.Length];
 		pageSpeakerPortraits = new string[textPages.Length];
 
 		for (int i = 0; i < textPages.Length; i++) {
 			string page = textPages[i];
 
-			textPages[i] = Regex.Replace(page, @"\btitle:\s\w*\b"+ System.Environment.NewLine, delegate (Match match) {
-				pageSpeakerTitles[i] = match.Value.Split(':')[1].Trim();
+			bool foundSpeaker = false;
+			page = Regex.Replace(page, @"\btitle:\s(\w+)\r*" + System.Environment.NewLine, delegate (Match match) {
+				pageSpeakerTitles[i] = match.Groups[1].Value.Trim();
+				foundSpeaker = true;
+				return "";
+			}, RegexOptions.Multiline);
+
+			if (!foundSpeaker) {
+				if (i == 0) {
+					pageSpeakerTitles[i] = "Necromancer";
+				} else {
+					pageSpeakerTitles[i] = pageSpeakerTitles[i - 1];
+				}
+			}
+
+			page = Regex.Replace(page, @"\brgb:\s(.*?)\n", delegate (Match match) {
+				string[] colors = match.Groups[1].Value.Trim().Split(',');
+				float[] rgb = new float[colors.Length];
+				for (int j = 0; j < colors.Length; j++) {
+					rgb[j] = (float) double.Parse(colors[j]);
+				}
+				if (colors.Length == 3) {
+					pageColors[i] = new Color(rgb[0], rgb[1], rgb[2]);
+				} else if (colors.Length == 4) {
+					pageColors[i] = new Color(rgb[0], rgb[1], rgb[2], rgb[3]);
+				}
+
 				return "";
 			}, RegexOptions.Singleline);
 
+			textPages[i] = page;
 		}
 
 		currentPage = 0;

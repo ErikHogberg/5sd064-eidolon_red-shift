@@ -6944,6 +6944,11 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.00000044703484
       objectReference: {fileID: 0}
+    - target: {fileID: 2720227861386867586, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: RecoveryAmount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 706999760223764643, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_IsActive

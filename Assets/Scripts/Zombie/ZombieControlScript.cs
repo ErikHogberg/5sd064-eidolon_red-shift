@@ -28,6 +28,7 @@ public class ZombieControlScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
+		/*
 		if (Input.GetAxis("Zombie State 1") > 0) {
 			HordeState = ZombieState.Aggressive;
 		}
@@ -36,6 +37,15 @@ public class ZombieControlScript : MonoBehaviour {
 		}
 		if (Input.GetAxis("Zombie State 3") > 0) {
 			HordeState = ZombieState.Passive;
+		}
+		 */
+		if (Input.GetKeyDown("f")) {
+			if (HordeState == ZombieState.Aggressive) {
+				HordeState = ZombieState.Defensive;
+			} else if (HordeState == ZombieState.Defensive) {
+				HordeState = ZombieState.Aggressive;
+			}
+
 		}
 
 		// right click

@@ -1,14 +1,14 @@
-title: title1
+title: title 1
 Example dialogue.
 new line
 
 blank line
 
 -
-rgb: 0.5, 1.0, 0.0
-New page
+rgb: 1.0, 0.0, 0.0
+New page, colored red
 -
 title: title2
-rgb: 0.5, 1.0, 0.0, 0.7
+rgb: 0.2, 0.5, 0.7, 0.25
 
-3rd page
+3rd page, empty line above, 25% opacity

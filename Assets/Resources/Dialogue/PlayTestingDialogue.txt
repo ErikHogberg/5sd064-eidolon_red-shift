@@ -1,0 +1,30 @@
+title: A helpful voice
+You're playing Red Shift, made by group Eidolon.
+The game is about ressurrecting dead enemies as zombies under your control.
+Use your army of zombies to get past the enemies.
+Win state has been disabled for this play test.
+
+Press space or click next to advance the dialogue ->
+-
+	~ Player Controls (1/2) ~
+WASD:			Player movement
+Left click:		Shoot projectiles, you have a buffer of 3 recharging shots
+Right click:	Move all zombies
+F:				Change state of all zombies, more on this later.
+-
+	~ Player Controls (2/2) ~
+Shift:			Dodge
+Space:			Create zombies from nearby corpses
+
+-
+	~ Zombie behaviour ~
+Pressing F will change the state of all zombies between Agressive and Defensive.
+In Agressive mode, the zombies will keep walking forward until they bump into an enemy, at which point they'll stop and attack the enemy until it's dead.
+
+In Defensive mode, the zombies will move to the player and act like a barrier against projectiles, moving with the player.
+-
+title: Team Eidolon
+rgb: 0.2, 0.5, 0.7
+
+		That's it!
+			Have fun!

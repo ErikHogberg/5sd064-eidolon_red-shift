@@ -15,7 +15,7 @@ public class DialoguePanelScript : MonoBehaviour {
 	private string[] textPages;
 	private Color[] pageColors;
 	private string[] pageSpeakerTitles;
-	private string[] pageSpeakerPortraits;
+	//private string[] pageSpeakerPortraits;
 
 	private int currentPage = 0;
 	public int CurrentPage {
@@ -45,7 +45,7 @@ public class DialoguePanelScript : MonoBehaviour {
 	private void UpdatePage() {
 		DialogueText.text = textPages[currentPage];
 		PageNumberText.text = "Page " + (currentPage + 1) + "/" + textPages.Length;
-		SpeakerTitleText.text = "|" + pageSpeakerTitles[currentPage] + "|";
+		SpeakerTitleText.text = pageSpeakerTitles[currentPage];
 		GetComponent<Image>().color = pageColors[currentPage];
 	}
 
@@ -64,13 +64,13 @@ public class DialoguePanelScript : MonoBehaviour {
 		}
 
 		pageSpeakerTitles = new string[textPages.Length];
-		pageSpeakerPortraits = new string[textPages.Length];
+		//pageSpeakerPortraits = new string[textPages.Length];
 
 		for (int i = 0; i < textPages.Length; i++) {
 			string page = textPages[i];
 
 			bool foundSpeaker = false;
-			page = Regex.Replace(page, @"\btitle:\s(\w+)\r*" + System.Environment.NewLine, delegate (Match match) {
+			page = Regex.Replace(page, @"\btitle:\s(.*?)\r?\n", delegate (Match match) {
 				pageSpeakerTitles[i] = match.Groups[1].Value.Trim();
 				foundSpeaker = true;
 				return "";
@@ -86,12 +86,14 @@ public class DialoguePanelScript : MonoBehaviour {
 
 			page = Regex.Replace(page, @"\brgb:\s(.*?)\n", delegate (Match match) {
 				string[] colors = match.Groups[1].Value.Trim().Split(',');
+
 				float[] rgb = new float[colors.Length];
 				for (int j = 0; j < colors.Length; j++) {
 					rgb[j] = (float) double.Parse(colors[j]);
 				}
+
 				if (colors.Length == 3) {
-					pageColors[i] = new Color(rgb[0], rgb[1], rgb[2]);
+					pageColors[i] = new Color(rgb[0], rgb[1], rgb[2], 0.75f);
 				} else if (colors.Length == 4) {
 					pageColors[i] = new Color(rgb[0], rgb[1], rgb[2], rgb[3]);
 				}

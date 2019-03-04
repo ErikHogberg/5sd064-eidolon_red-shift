@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114129026045484896}
   - component: {fileID: 1886894862679297255}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyArcher
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   Corpse: {fileID: 4236745857078329283, guid: 71d2a5c881fb0f24f980b7abfbc7c5be, type: 3}
+  Speed: 0.05
+  EnemyType: 0
+  ScoreWorth: 10
 --- !u!61 &1886894862679297255
 BoxCollider2D:
   m_ObjectHideFlags: 0

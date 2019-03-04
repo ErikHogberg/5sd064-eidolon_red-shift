@@ -87,10 +87,15 @@ public class EnemyScript : MonoBehaviour {
         if(movementCooldown > 0)
         {
             movementCooldown -= Time.deltaTime;
+            if(movementCooldown < 0.5f)
+            {
+                GetComponentInChildren<EnemyWeaponScript>().enabled = true;
+            }
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, destination, Speed);
+            GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         }
     }
 

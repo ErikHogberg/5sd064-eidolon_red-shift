@@ -104,7 +104,18 @@ public class ZombieBehaviourScript : MonoBehaviour {
 			case ZombieState.Passive:
 				break;
 			case ZombieState.Manual:
-				rb.velocity = Player.DragDelta * ManualSpeed;
+				Vector2 speed = Player.DragDelta * ManualSpeed;
+				if (speed.x > 0) {
+					speed.x = Mathf.Min(speed.x, AggressiveSpeed * 0.01667f);
+				} else {
+					speed.x = Mathf.Max(speed.x, -AggressiveSpeed * 0.01667f);
+				}
+				if (speed.y > 0) {
+					speed.y = Mathf.Min(speed.y, AggressiveSpeed * 0.01667f);
+				} else {
+					speed.y = Mathf.Max(speed.y, -AggressiveSpeed * 0.01667f);
+				}
+				rb.velocity = speed;
 				break;
 			default:
 				break;
@@ -203,7 +214,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	}
 
 	private void FindEnemy() {
-		rb.velocity = new Vector2(AggressiveSpeed * Time.deltaTime, 0);
+		rb.velocity = new Vector2(AggressiveSpeed * 0.01667f, 0);
 		// TODO: target/lock on to nearby enemy when in range
 	}
 

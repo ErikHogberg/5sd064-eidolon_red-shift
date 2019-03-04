@@ -124,6 +124,7 @@ MonoBehaviour:
   health: 100
   Corpse: {fileID: 4236745857078329283, guid: 71d2a5c881fb0f24f980b7abfbc7c5be, type: 3}
   Speed: 0.05
+  EnemyType: 0
   ScoreWorth: 10
 --- !u!61 &1886894862679297255
 BoxCollider2D:

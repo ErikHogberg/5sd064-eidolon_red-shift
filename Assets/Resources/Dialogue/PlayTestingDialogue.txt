@@ -19,6 +19,7 @@ Space:			Create zombies from nearby corpses
 -
 	~ Zombie behaviour ~
 Pressing F will change the state of all zombies between Agressive and Defensive.
+
 In Agressive mode, the zombies will keep walking forward until they bump into an enemy, at which point they'll stop and attack the enemy until it's dead.
 
 In Defensive mode, the zombies will move to the player and act like a barrier against projectiles, moving with the player.

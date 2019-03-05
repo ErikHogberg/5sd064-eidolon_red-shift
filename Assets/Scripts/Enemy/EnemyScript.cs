@@ -17,6 +17,10 @@ public class EnemyScript : MonoBehaviour {
     public Type EnemyType;
     public float movementCooldown = 1f;
 
+    public float scaleMin = 0.2f;
+    public float scaleMax = 0.3f;
+    public float randomScale;
+
     private float yMax = 2f;
     private float yMin = -2f;
     private float yTarget;
@@ -31,6 +35,8 @@ public class EnemyScript : MonoBehaviour {
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         yTarget = Random.Range(yMin, yMax);
+        randomScale = Random.Range(scaleMin, scaleMax);
+        transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
 	void Update () {

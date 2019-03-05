@@ -7242,6 +7242,12 @@ PrefabInstance:
       propertyPath: ParallaxSpeed
       value: -0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 888377223579548772, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f93d66f46f4a8cc44a1a58b5d9cee12e,
+        type: 3}
     - target: {fileID: 1056037701795269439, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: ParallaxSpeed

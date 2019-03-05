@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 150
-  MaxFollowDistance: 3.5
+  MaxFollowDistance: 5
   FollowSpeed: 200
   AggressiveSpeed: 130
   ManualSpeed: 0

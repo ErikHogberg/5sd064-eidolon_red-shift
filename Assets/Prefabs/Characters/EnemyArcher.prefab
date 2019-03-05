@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 114129026045484896}
   - component: {fileID: 1886894862679297255}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyArcher
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   Corpse: {fileID: 4236745857078329283, guid: 71d2a5c881fb0f24f980b7abfbc7c5be, type: 3}
+  Speed: 0.035
+  EnemyType: 0
+  movementCooldown: 1.5
+  ScoreWorth: 10
 --- !u!61 &1886894862679297255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,4 +200,5 @@ MonoBehaviour:
   firePoint: {fileID: 6546175507128491429}
   bulletPrefab: {fileID: 7923627733041113199, guid: 291d18277011845f58930c06205a8cdd,
     type: 3}
+  Damage: 10
   Cooldown: 1.5

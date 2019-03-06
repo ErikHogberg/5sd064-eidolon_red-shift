@@ -46,6 +46,12 @@ namespace Assets.Scripts.Utilities {
 			running = true;
 		}
 
+		public void RestartWithDelta(float time) {
+			this.time += time;
+			resetTime = time;
+			running = true;
+		}
+
 		// keeps amount ticked past zero when restarting
 		public void RestartWithDelta() {
 			this.time += resetTime;

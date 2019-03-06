@@ -10,12 +10,12 @@ public class DepthScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		Vector3 position = transform.localPosition;
+		Vector3 position = transform.parent.localPosition;
 
 		float cameraHalfHeight = Camera.main.orthographicSize;
 
-		position.z = -1.0f + (position.y + cameraHalfHeight)/(cameraHalfHeight*2.0f) * 1.0f;
+		position.z = -1.0f + (position.y + cameraHalfHeight) / (cameraHalfHeight * 2.0f) * 1.0f;
 
-		transform.localPosition = position;
+		transform.parent.localPosition = position;
 	}
 }

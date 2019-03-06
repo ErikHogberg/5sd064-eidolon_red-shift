@@ -23,7 +23,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	public float MaxFollowDistance = 3.0f;
 	public float FollowSpeed = 5;
 	public float AggressiveSpeed = 1;
-	public float ManualSpeed;
+	private float ManualSpeed;
 
 	// State of zombie, decides its behaviour. Uses accessor to trigger transition events between state changes
 	public ZombieState InitialState = ZombieState.Defensive;
@@ -105,6 +105,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 				break;
 			case ZombieState.Manual:
 				Vector2 speed = Player.DragDelta * ManualSpeed;
+				speed.x += Player.GetComponent<Rigidbody2D>().velocity.x;
 				if (speed.x > 0) {
 					speed.x = Mathf.Min(speed.x, AggressiveSpeed * 0.01667f);
 				} else {

@@ -5226,6 +5226,11 @@ PrefabInstance:
       propertyPath: Duration
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 3540959496611128322, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1056037702328920962, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_IsActive
@@ -5378,6 +5383,16 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 7.08
       objectReference: {fileID: 0}
+    - target: {fileID: 1095157646748832555, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: MinBulletInterval
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095157646748832555, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Cooldown
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2291706435785281224, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_Offset.y
@@ -5397,6 +5412,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 0.35820842
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131003702362300800, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6147052934298752822, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}

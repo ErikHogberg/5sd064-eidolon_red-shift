@@ -14,7 +14,7 @@ public class DepthScript : MonoBehaviour {
 
 		float cameraHalfHeight = Camera.main.orthographicSize;
 
-		position.z = -1.0f + (position.y + cameraHalfHeight) / (cameraHalfHeight * 2.0f) * 1.0f;
+		position.z = -1.0f + (transform.position.y + cameraHalfHeight) / (cameraHalfHeight * 2.0f) * 1.0f;
 
 		transform.parent.localPosition = position;
 	}

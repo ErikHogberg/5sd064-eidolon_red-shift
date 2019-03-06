@@ -12,6 +12,7 @@ public class WeaponScript : MonoBehaviour {
 	public float Cooldown = 0.8f;
 	public float MinBulletInterval = 0.1f;
 
+	public int StartBatteryCount = 1;
 	public List<Timer> AttackTimers;
 	private Timer MinBulletIntervalTimer;
 
@@ -19,11 +20,17 @@ public class WeaponScript : MonoBehaviour {
 
 	private void Start() {
 		//player = GetComponentInParent<PlayerMovement>();
-		AttackTimers = new List<Timer> {
-			new Timer(Cooldown),
+		AttackTimers = new List<Timer>()// {
 			//new Timer(Cooldown),
 			//new Timer(Cooldown),
-		};
+			//new Timer(Cooldown),
+		//}
+		;
+		int i = 0;
+		while (i < StartBatteryCount) {
+			AddCooldownTimer();
+			i++;
+		}
 
 		MinBulletIntervalTimer = new Timer(MinBulletInterval);
 		MinBulletIntervalTimer.Stop();
@@ -58,6 +65,14 @@ public class WeaponScript : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public void AddCooldownTimer() {
+		Timer attackTimer = new Timer(Cooldown);
+		AttackTimers.Add(attackTimer);
+		attackTimer.Stop();
+
+		transform.parent.GetComponentInChildren<BatteryBackpackScript>().SetActiveBatteries(AttackTimers.Count-1);
 	}
 
 	void Shoot() {

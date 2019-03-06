@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67708b330d217943a6b87202aab9f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Zombie: {fileID: 3317521913021960930, guid: 03f3330669146ad4dbe4109d24bcee38, type: 3}
+  Zombie: {fileID: 3317521913021960930, guid: 6a51efaf7347e104daace39eb6557f90, type: 3}

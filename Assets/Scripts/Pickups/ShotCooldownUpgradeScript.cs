@@ -13,7 +13,7 @@ public class ShotCooldownUpgradeScript : MonoBehaviour
 			if (player == null) {
 				player = collision.transform.parent.GetComponentInChildren<WeaponScript>();
 			}
-			player.AttackTimers.Add(new Assets.Scripts.Utilities.Timer(player.Cooldown));
+			player.AddCooldownTimer();
 
 			Destroy(gameObject);
 		}

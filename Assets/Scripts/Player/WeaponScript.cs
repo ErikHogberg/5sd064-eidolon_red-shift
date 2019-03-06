@@ -6,11 +6,15 @@ using Assets.Scripts.Utilities;
 
 public class WeaponScript : MonoBehaviour {
 
+	// TODO: bullet scale
+	// IDEA: grow bullet the longer its in air
+
 	public Transform firePoint;
 	public GameObject bulletPrefab;
 	//private float m_Cooldown = 0f;
 	public float Cooldown = 0.8f;
 	public float MinBulletInterval = 0.1f;
+	public bool FullAuto = false;
 
 	public int StartBatteryCount = 1;
 	public List<Timer> AttackTimers;
@@ -47,22 +51,23 @@ public class WeaponScript : MonoBehaviour {
 			timer.Update();
 		}
 		MinBulletIntervalTimer.Update();
+		if (FullAuto) {
+			if (Input.GetMouseButton(0) && !MinBulletIntervalTimer.IsRunning()) {
+				TryShoot();
+			}
+		} else {
+			if (Input.GetMouseButtonDown(0) && !MinBulletIntervalTimer.IsRunning()) {
+				TryShoot();
+			}
+		}
+	}
 
-		//if (m_Cooldown > 0f) {
-		//	m_Cooldown -= Time.deltaTime;
-		//}
-		//if (Input.GetMouseButtonDown(0) && (m_Cooldown == 0f || m_Cooldown < 0f)) 
-		//{
-		//Shoot();
-		//m_Cooldown = Cooldown;
-		//}
-		if (Input.GetMouseButtonDown(0) && !MinBulletIntervalTimer.IsRunning()) {
-			foreach (var timer in AttackTimers) {
-				if (!timer.IsRunning()) {
-					Shoot();
-					timer.Restart(Cooldown);
-					break;
-				}
+	private void TryShoot() {
+		foreach (var timer in AttackTimers) {
+			if (!timer.IsRunning()) {
+				Shoot();
+				timer.Restart(Cooldown);
+				break;
 			}
 		}
 	}

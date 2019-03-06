@@ -46,16 +46,25 @@ namespace Assets.Scripts.Utilities {
 			running = true;
 		}
 
-		public void RestartWithDelta(float time) {
-			this.time += time;
-			resetTime = time;
-			running = true;
+		/// <summary>
+		/// Keeps amount of ms overflown when updated past 0, retur
+		/// </summary>
+		/// <returns>
+		/// return number of times overflown, 0 on normal reset, 
+		/// 1 or more if last tick was more than entire length of countdown
+		/// </returns>
+		public int RestartWithDelta() {
+			return RestartWithDelta(resetTime);
 		}
 
-		// keeps amount ticked past zero when restarting
-		public void RestartWithDelta() {
-			this.time += resetTime;
+		public int RestartWithDelta(float time) {
+			int overflowTimes = -1;
+			while (this.time < 0) {
+				this.time += time;
+				overflowTimes++;
+			}
 			running = true;
+			return overflowTimes;
 		}
 
 		public void Extend(float time) {

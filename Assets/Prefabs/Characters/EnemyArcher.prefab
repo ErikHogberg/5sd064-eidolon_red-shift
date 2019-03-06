@@ -201,4 +201,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7923627733041113199, guid: 291d18277011845f58930c06205a8cdd,
     type: 3}
   Damage: 10
-  Cooldown: 1.5
+  Cooldown: 1

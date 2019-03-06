@@ -195,10 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd168747aa55a24ea2035311ca51c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 162
-  DodgeSpeed: 300
+  Speed: 165
+  DodgeSpeed: 200
   DodgeCooldownTime: 0.6
-  DodgeDurationTime: 0.15
+  DodgeDurationTime: 0.06
   Health: 100
   HpRegen: 0
   HpRegenCap: 100

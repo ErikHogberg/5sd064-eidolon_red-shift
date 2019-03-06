@@ -45,7 +45,8 @@ public class EnemyScript : MonoBehaviour {
 			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
 			corpse.transform.parent = transform.parent;
 			Destroy(gameObject);
-			Assets.Scripts.Globals.Score += ScoreWorth;
+            Assets.Scripts.Globals.Score += ScoreWorth;
+            GameObject.Find("Main Camera").GetComponent<EnemyRespawn>().EnemiesAlive -= 1;
 		}
 
         switch(EnemyType)
@@ -126,7 +127,16 @@ public class EnemyScript : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-		this.enabled = false;
-		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+        if(transform.position.x < GameObject.Find("Main Camera").transform.position.x)
+        {
+            Destroy(gameObject);
+            GameObject.Find("Main Camera").GetComponent<EnemyRespawn>().EnemiesAlive -= 1;
+        }
+        else
+        {
+            this.enabled = false;
+            gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+        }
+
 	}
 }

@@ -10,4 +10,9 @@ public class CorpseScript : MonoBehaviour {
 		zombie.transform.parent = transform.parent;
 		Destroy(gameObject);
 	}
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

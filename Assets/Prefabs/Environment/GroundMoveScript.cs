@@ -22,12 +22,13 @@ public class GroundMoveScript : MonoBehaviour {
 	void Start() {
 		//offset = transform.position - player.transform.position;
 		//buffer = new Vector3(3, 3, 3);
+		Assets.Scripts.Globals.Ground = gameObject;
 	}
 
 	//*
 	// Update is called once per frame
 	void LateUpdate() {
-		// FIXME: null ref exception on player death, as player game object is destroyed
+
 		if (player.transform.position.x > maxX) {
 			//transform.localPosition += new Vector3(-Time.deltaTime * speed, 0, 0);
 			transform.localPosition = new Vector3(-player.transform.localPosition.x + maxX, transform.localPosition.y, transform.localPosition.z);

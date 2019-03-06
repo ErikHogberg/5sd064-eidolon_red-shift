@@ -9,9 +9,11 @@ public class WeaponScript : MonoBehaviour {
 	public Transform firePoint;
 	public GameObject bulletPrefab;
 	//private float m_Cooldown = 0f;
-	public float Cooldown = 0.1f;
+	public float Cooldown = 0.8f;
+	public float MinBulletInterval = 0.1f;
 
 	public List<Timer> AttackTimers;
+	private Timer MinBulletIntervalTimer;
 
 	//private PlayerMovement player;
 
@@ -22,6 +24,9 @@ public class WeaponScript : MonoBehaviour {
 			//new Timer(Cooldown),
 			//new Timer(Cooldown),
 		};
+
+		MinBulletIntervalTimer = new Timer(MinBulletInterval);
+		MinBulletIntervalTimer.Stop();
 
 		foreach (var timer in AttackTimers) {
 			timer.Stop();
@@ -34,6 +39,7 @@ public class WeaponScript : MonoBehaviour {
 		foreach (var timer in AttackTimers) {
 			timer.Update();
 		}
+		MinBulletIntervalTimer.Update();
 
 		//if (m_Cooldown > 0f) {
 		//	m_Cooldown -= Time.deltaTime;
@@ -43,7 +49,7 @@ public class WeaponScript : MonoBehaviour {
 		//Shoot();
 		//m_Cooldown = Cooldown;
 		//}
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButtonDown(0) && !MinBulletIntervalTimer.IsRunning()) {
 			foreach (var timer in AttackTimers) {
 				if (!timer.IsRunning()) {
 					Shoot();
@@ -60,5 +66,6 @@ public class WeaponScript : MonoBehaviour {
 		firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		bullet.transform.parent = transform.parent.parent;
+		MinBulletIntervalTimer.RestartWithDelta(MinBulletInterval);
 	}
 }

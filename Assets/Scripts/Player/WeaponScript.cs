@@ -19,8 +19,8 @@ public class WeaponScript : MonoBehaviour {
 		//player = GetComponentInParent<PlayerMovement>();
 		AttackTimers = new List<Timer> {
 			new Timer(Cooldown),
-			new Timer(Cooldown),
-			new Timer(Cooldown),
+			//new Timer(Cooldown),
+			//new Timer(Cooldown),
 		};
 
 		foreach (var timer in AttackTimers) {

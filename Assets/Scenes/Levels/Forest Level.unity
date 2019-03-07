@@ -139,13 +139,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
-      propertyPath: InfiniteSpawn
+      propertyPath: EnemiesToKill
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
-      propertyPath: EnemiesToKill
-      value: 0
+      propertyPath: InfiniteSpawn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1056037700520766616, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
@@ -422,6 +422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -85.799805
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550282610865069982, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}

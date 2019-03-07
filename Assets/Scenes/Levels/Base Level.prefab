@@ -1775,7 +1775,7 @@ MonoBehaviour:
   Enemy5: {fileID: 0}
   MaxEnemies: 5
   EnemiesToKill: 20
-  InfiniteSpawn: 1
+  InfiniteSpawn: 0
 --- !u!1 &1056037701980563389
 GameObject:
   m_ObjectHideFlags: 0

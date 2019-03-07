@@ -6,6 +6,8 @@ using UnityEngine;
 public class InitScript : MonoBehaviour {
 
 	public DialoguePanelScript DialogueWindow;
+	public Texture2D CursorTexture;
+	public Vector2 CursorOffset;
 
 	void Start() {
 		Globals.DialogueWindow = DialogueWindow;
@@ -13,6 +15,11 @@ public class InitScript : MonoBehaviour {
 
 	void Update() {
 
+	}
+
+	private void OnMouseEnter() {
+		//Cursor.visible = false;
+		//Cursor.SetCursor(CursorTexture, CursorOffset, CursorMode.Auto);
 	}
 
 }

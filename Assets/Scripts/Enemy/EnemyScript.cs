@@ -127,7 +127,11 @@ public class EnemyScript : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-        if(transform.position.x < GameObject.Find("Main Camera").transform.position.x)
+        if(!GameObject.Find("Main Camera").active)
+        {
+            return;
+        }
+        if (transform.position.x < GameObject.Find("Main Camera").transform.position.x)
         {
             Destroy(gameObject);
             GameObject.Find("Main Camera").GetComponent<EnemyRespawn>().EnemiesAlive -= 1;

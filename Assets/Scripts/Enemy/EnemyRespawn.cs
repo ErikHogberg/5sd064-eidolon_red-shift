@@ -21,6 +21,7 @@ public class EnemyRespawn : MonoBehaviour
     private void Update()
     {
         respawnPosition = new Vector3(stageDimensions.x + Random.Range(4f, 10f), Random.Range(-2f, 2f), 0);
+        Debug.Log(EnemiesAlive);
         if (EnemiesAlive < 3)
         {
             switch (Random.Range(0, 3))

@@ -8291,7 +8291,12 @@ PrefabInstance:
     - target: {fileID: 1095157646748832555, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: StartBatteryCount
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095157646748832555, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Cooldown
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4820413922814701940, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
@@ -8496,6 +8501,16 @@ PrefabInstance:
     - target: {fileID: 1056037702345258300, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: ParallaxSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: InfiniteSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

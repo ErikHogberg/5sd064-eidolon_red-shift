@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118810338407939804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.99, y: -0.13, z: 0}
-  m_LocalScale: {x: 0.447, y: 0.612, z: 1}
+  m_LocalPosition: {x: 1.03, y: -0.96, z: 0}
+  m_LocalScale: {x: 0.447, y: 0.421668, z: 1}
   m_Children: []
   m_Father: {fileID: 1056037701863154122}
   m_RootOrder: 5
@@ -903,6 +903,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueWindow: {fileID: 4759994928760105503}
+  CursorTexture: {fileID: 0}
+  CursorOffset: {x: 0, y: 0}
 --- !u!1 &1056037700605944168
 GameObject:
   m_ObjectHideFlags: 0
@@ -6539,12 +6541,12 @@ PrefabInstance:
     - target: {fileID: 5289650434451561713, guid: 09a323737fdc4214f91b1540bf345dd4,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 4.57
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 5289650434451561713, guid: 09a323737fdc4214f91b1540bf345dd4,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 6.43
+      value: 6.48
       objectReference: {fileID: 0}
     - target: {fileID: 114002460547528480, guid: 09a323737fdc4214f91b1540bf345dd4,
         type: 3}

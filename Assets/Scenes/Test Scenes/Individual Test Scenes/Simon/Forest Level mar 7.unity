@@ -5502,6 +5502,21 @@ PrefabInstance:
       propertyPath: TargetLevel
       value: Village level mar 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2488775400490897545, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 141.40002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719963419893903685, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60.10498
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}
 --- !u!1001 &4611752146042082706

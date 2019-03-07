@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatteryBackpackScript : MonoBehaviour
-{
+public class BatteryBackpackScript : MonoBehaviour {
 
 	public GameObject Battery1;
 	public GameObject Battery2;
 	public GameObject Battery3;
 
-	// Start is called before the first frame update
-	void Start()
-    {
-        
-    }
+	void Start() {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
+
+	void Update() {
+
+	}
 
 	/*
 	private int CountBatteries() {

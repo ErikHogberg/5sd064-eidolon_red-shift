@@ -13,8 +13,9 @@ public class PlayerMovementScript: MonoBehaviour {
 	public float DodgeSpeed = 300;
 	public float DodgeCooldownTime = .6f;
 	public float DodgeDurationTime = .15f;
+    public Animator animator;
 
-	public int Health = 100;
+    public int Health = 100;
 	public bool HpRegen = false;
 	public int HpRegenCap = 100;
 	public float HpRegenRate = 2.0f; // amount restored per second
@@ -30,6 +31,7 @@ public class PlayerMovementScript: MonoBehaviour {
 		Globals.Player = this;
 
 		rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
 		hpRegenTimer = new Timer(1.0f / HpRegenRate);
 
@@ -79,6 +81,7 @@ public class PlayerMovementScript: MonoBehaviour {
 
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		rb.velocity = movement * Speed * Time.deltaTime;
+        animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
 
 		if (mousePosition.x < transform.position.x && lookingRight) {
 			lookingRight = !lookingRight;

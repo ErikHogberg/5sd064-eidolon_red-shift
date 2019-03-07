@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 5289650434451561713}
   - component: {fileID: 114906281548317774}
   - component: {fileID: 2737626011791277804}
+  - component: {fileID: 3567437342258969493}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -202,6 +203,7 @@ MonoBehaviour:
   DodgeSpeed: 200
   DodgeCooldownTime: 0.6
   DodgeDurationTime: 0.06
+  animator: {fileID: 0}
   Health: 100
   HpRegen: 0
   HpRegenCap: 100
@@ -220,6 +222,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HordeState: 1
   ManualSpeed: 0.03
+--- !u!95 &3567437342258969493
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868829052781526}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d4f9a737269e4117a288d52536fa3cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1826679589639329010
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,11 +811,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
-    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
-        type: 3}
-      propertyPath: m_Name
-      value: DodgeBattery
-      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -849,6 +865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
+        type: 3}
+      propertyPath: m_Name
+      value: DodgeBattery
       objectReference: {fileID: 0}
     - target: {fileID: 8744200278172667073, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}
@@ -945,17 +966,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.5225618
       objectReference: {fileID: 0}
-    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8551defbc3ee40144852f5ae77f8863a,
-        type: 3}
-    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: ReadyColor.a
@@ -970,6 +980,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8551defbc3ee40144852f5ae77f8863a,
+        type: 3}
+    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8dc43760c494a1409ad0248ddfe8d51, type: 3}

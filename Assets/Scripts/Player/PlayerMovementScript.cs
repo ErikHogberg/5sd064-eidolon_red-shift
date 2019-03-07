@@ -76,7 +76,6 @@ public class PlayerMovementScript: MonoBehaviour {
 			return; // NOTE: early return
 		}
 
-		
 
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		rb.velocity = movement * Speed * Time.deltaTime;
@@ -110,6 +109,9 @@ public class PlayerMovementScript: MonoBehaviour {
 	}
 
 	void Flip() {
-		transform.Rotate(0f, 180f, 0f);
+		//transform.Rotate(0f, 180f, 0f);
+		Vector3 scale = transform.localScale;
+		scale.x *= -1;
+		transform.localScale = scale;
 	}
 }

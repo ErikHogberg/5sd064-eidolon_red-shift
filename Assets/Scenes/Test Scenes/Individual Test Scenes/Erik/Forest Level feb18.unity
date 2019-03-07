@@ -179,5 +179,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7030614899699475786, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085319430657021287, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5998535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085319430657021287, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31.800049
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247765756411520790, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -78.3999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606475703417175166, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.9001465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651839675618767801, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -74.67993
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399470090198848569, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188823194887594650, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 104.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856274308343829385, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856274308343829385, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}

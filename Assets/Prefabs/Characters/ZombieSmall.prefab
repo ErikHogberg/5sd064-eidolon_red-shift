@@ -142,7 +142,6 @@ GameObject:
   - component: {fileID: 3317521913021960933}
   - component: {fileID: 3317521913021960934}
   - component: {fileID: 3317521913021960935}
-  - component: {fileID: 4201897866870733641}
   m_Layer: 0
   m_Name: ZombieSmall
   m_TagString: Zombie
@@ -163,6 +162,7 @@ Transform:
   m_Children:
   - {fileID: 3332661101954258155}
   - {fileID: 6041056993136896204}
+  - {fileID: 5483671133188681010}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -273,19 +273,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e36ade68b95fb4182a3e4841fad425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 150
+  Health: 80
   MaxFollowDistance: 5
   FollowSpeed: 200
-  AggressiveSpeed: 130
-  ManualSpeed: 0
+  AggressiveSpeed: 140
   InitialState: 1
---- !u!114 &4201897866870733641
+--- !u!1 &7654518716667829762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5483671133188681010}
+  - component: {fileID: 4487043411379541873}
+  m_Layer: 0
+  m_Name: DepthReferencePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5483671133188681010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654518716667829762}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.35, y: -1.81, z: 0}
+  m_LocalScale: {x: 0.7141086, y: 0.7141086, z: 0.7141086}
+  m_Children: []
+  m_Father: {fileID: 3317521913021960929}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4487043411379541873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3317521913021960930}
+  m_GameObject: {fileID: 7654518716667829762}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 824cbd1fafa991b4fb3a418533353387, type: 3}

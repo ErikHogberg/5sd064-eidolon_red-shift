@@ -7,8 +7,8 @@ using UnityEngine;
 namespace Assets.Scripts {
 	public static class Globals {
 		public static int Score = 0;
-        public static int EnemiesAlive = 0;
-        public static PlayerMovementScript Player;
+		public static PlayerMovementScript Player;
+		public static GameObject Ground;
 		public static DialoguePanelScript DialogueWindow;
 	}
 }

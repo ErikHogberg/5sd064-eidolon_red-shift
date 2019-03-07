@@ -80,10 +80,10 @@ public class PlayerMovementScript: MonoBehaviour {
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		rb.velocity = movement * Speed * Time.deltaTime;
 
-		if (mousePosition.x < transform.position.x && lookingRight) {
+		if (mousePosition.x < transform.parent.position.x && lookingRight) {
 			lookingRight = !lookingRight;
 			Flip();
-		} else if (mousePosition.x > transform.position.x && !lookingRight) {
+		} else if (mousePosition.x > transform.parent.position.x && !lookingRight) {
 			lookingRight = !lookingRight;
 			Flip();
 		}
@@ -110,8 +110,8 @@ public class PlayerMovementScript: MonoBehaviour {
 
 	void Flip() {
 		//transform.Rotate(0f, 180f, 0f);
-		Vector3 scale = transform.localScale;
+		Vector3 scale = transform.parent.localScale;
 		scale.x *= -1;
-		transform.localScale = scale;
+		transform.parent.localScale = scale;
 	}
 }

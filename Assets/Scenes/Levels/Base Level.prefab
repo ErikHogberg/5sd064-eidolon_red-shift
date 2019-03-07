@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 1056037701924224357}
   - component: {fileID: 1056037701924224354}
   - component: {fileID: 1056037701924224355}
-  - component: {fileID: 3779039894383933172}
+  - component: {fileID: 2315753155888107392}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1756,7 +1756,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056037701924224352}
   m_Enabled: 1
---- !u!114 &3779039894383933172
+--- !u!114 &2315753155888107392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1768,10 +1768,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3729340bce3f4245a00b4d1faaa7b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Archer: {fileID: 1072754609493932, guid: 2e41d97479d68ca43871b5916fd194e5, type: 3}
-  Peasant: {fileID: 1072754609493932, guid: dab3e2e5d21d7624b8c3845ccfd57046, type: 3}
-  Knight: {fileID: 1072754609493932, guid: e28834b09aae64b45b27c242f852acf8, type: 3}
-  EnemiesAlive: 0
+  Enemy1: {fileID: 1072754609493932, guid: 2e41d97479d68ca43871b5916fd194e5, type: 3}
+  Enemy2: {fileID: 1072754609493932, guid: e28834b09aae64b45b27c242f852acf8, type: 3}
+  Enemy3: {fileID: 1072754609493932, guid: dab3e2e5d21d7624b8c3845ccfd57046, type: 3}
+  Enemy4: {fileID: 0}
+  Enemy5: {fileID: 0}
+  MaxEnemies: 5
+  EnemiesToKill: 20
+  InfiniteSpawn: 1
 --- !u!1 &1056037701980563389
 GameObject:
   m_ObjectHideFlags: 0
@@ -6554,15 +6558,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09a323737fdc4214f91b1540bf345dd4, type: 3}
---- !u!1 &1054245838473570269 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1868829052781526, guid: 09a323737fdc4214f91b1540bf345dd4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1056037700637877259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1056137260840196227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4481127110671496, guid: 09a323737fdc4214f91b1540bf345dd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056037700637877259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1054245838473570269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1868829052781526, guid: 09a323737fdc4214f91b1540bf345dd4,
     type: 3}
   m_PrefabInstance: {fileID: 1056037700637877259}
   m_PrefabAsset: {fileID: 0}
@@ -7290,11 +7294,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 776263736686365204}
     m_Modifications:
-    - target: {fileID: 6588121686497067832, guid: 0e8b1ed59f781d343b8d31bd1c35df42,
-        type: 3}
-      propertyPath: m_Name
-      value: HpPowerup
-      objectReference: {fileID: 0}
     - target: {fileID: 33586074037837346, guid: 0e8b1ed59f781d343b8d31bd1c35df42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7344,6 +7343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8364768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588121686497067832, guid: 0e8b1ed59f781d343b8d31bd1c35df42,
+        type: 3}
+      propertyPath: m_Name
+      value: HpPowerup
       objectReference: {fileID: 0}
     - target: {fileID: 7471426413354030776, guid: 0e8b1ed59f781d343b8d31bd1c35df42,
         type: 3}

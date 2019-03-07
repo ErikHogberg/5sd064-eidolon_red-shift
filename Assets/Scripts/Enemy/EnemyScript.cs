@@ -24,6 +24,7 @@ public class EnemyScript : MonoBehaviour {
     private float yMax = 2f;
     private float yMin = -2f;
     private float yTarget;
+    private GameObject camera;
 
     private bool lookingRight = false;
 
@@ -34,23 +35,24 @@ public class EnemyScript : MonoBehaviour {
         this.enabled = false;
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+        camera = GameObject.Find("Main Camera");
         yTarget = Random.Range(yMin, yMax);
         randomScale = Random.Range(scaleMin, scaleMax);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
 	void Update () {
-		if(health < 0 || health == 0)
+        if (health < 0 || health == 0)
 		{
-			if (lookingRight) {
+            if (lookingRight) {
 				Flip();
 			}
 			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
 			corpse.transform.parent = transform.parent;
 			Destroy(gameObject);
             Assets.Scripts.Globals.Score += ScoreWorth;
-            GameObject.Find("Main Camera").GetComponent<EnemyRespawn>().EnemiesAlive -= 1;
-		}
+            camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+        }
 
         switch(EnemyType)
         {
@@ -124,26 +126,19 @@ public class EnemyScript : MonoBehaviour {
 
     private void OnBecameVisible()
 	{
-		this.enabled = true;
+        this.enabled = true;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = true;
 	}
 
 	private void OnBecameInvisible()
 	{
-        if(!GameObject.Find("Main Camera").active)
-        {
-            return;
-        }
-        if (transform.position.x < GameObject.Find("Main Camera").transform.position.x)
+        if (gameObject.active == true && gameObject.transform.position.x < camera.transform.position.x)
         {
             Destroy(gameObject);
-            GameObject.Find("Main Camera").GetComponent<EnemyRespawn>().EnemiesAlive -= 1;
-        }
-        else
-        {
-            this.enabled = false;
-            gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+            camera.GetComponent<EnemyRespawn>().EnemyKilled(true);
         }
 
+        this.enabled = false;
+        gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
 	}
 }

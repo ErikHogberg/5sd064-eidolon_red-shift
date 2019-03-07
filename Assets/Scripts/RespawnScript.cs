@@ -59,6 +59,9 @@ public class RespawnScript : MonoBehaviour {
 	}
 
 	private void OnTriggerStay2D(Collider2D col) {
+		if (spr == null) {
+			return;
+		}
 		if (spr.enabled && col.tag == "Corpse") {
 			CorpseScript corpseScript = col.GetComponent<CorpseScript>();
 			ZombieControlScript zombieControlScript = transform.parent.gameObject.GetComponent<ZombieControlScript>();

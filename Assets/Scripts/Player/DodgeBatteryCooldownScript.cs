@@ -21,7 +21,11 @@ public class DodgeBatteryCooldownScript : MonoBehaviour {
 		if (cooldown == null) {
 			cooldown = Globals.Player.DodgeCooldown;
 		}
-		
+		if (cooldown == null) {
+			sprite.color = ReadyColor;
+			return;
+		}
+
 		if (cooldown.IsRunning()) {
 			sprite.color = ChargingColor;
 		} else {

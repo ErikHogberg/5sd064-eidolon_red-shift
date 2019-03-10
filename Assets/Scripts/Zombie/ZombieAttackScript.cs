@@ -20,7 +20,7 @@ public class ZombieAttackScript : MonoBehaviour {
 	// Start is called before the first frame update
 	void Start() {
 		attackTimer = new Timer(1);
-		colorTimer = new Timer();
+		colorTimer = new Timer(.2f);
 
 		attackCollider = GetComponent<BoxCollider2D>();
 	}
@@ -45,9 +45,9 @@ public class ZombieAttackScript : MonoBehaviour {
 
 				}
 
-				attackTimer.Restart(1);
+				attackTimer.Restart();
 				transform.parent.GetComponent<SpriteRenderer>().color = Color.green;
-				colorTimer.Restart(.2f);
+				colorTimer.Restart();
 			} 
 		}
 

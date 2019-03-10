@@ -40,7 +40,7 @@ public class ZombieAttackScript : MonoBehaviour {
 
 					var enemy = item.GetComponent<EnemyScript>();
 					if (enemy != null) {
-						enemy.health -= Damage;
+						enemy.TakeDamage(Damage);
 					}
 
 				}

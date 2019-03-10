@@ -18,7 +18,6 @@ public class ZombieBehaviourScript : MonoBehaviour {
 
 	public int Health = 100;
 
-	// IDEA: create container script for assigning player semi-automatically, similar to parallax and repeating tile layers
 	private ZombieControlScript Player;
 
 	public float MaxFollowDistance = 3.0f;

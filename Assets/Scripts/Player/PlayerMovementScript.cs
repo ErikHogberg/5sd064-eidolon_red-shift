@@ -25,6 +25,8 @@ public class PlayerMovementScript: MonoBehaviour {
 	public Timer DodgeCooldown; // time until next dodge
 	public Timer DodgeTimer; // time until dodge ends
 
+	private Timer colorTimer;
+
 	void Start() {
 
 		Globals.Player = this;
@@ -38,9 +40,15 @@ public class PlayerMovementScript: MonoBehaviour {
 		DodgeTimer = new Timer(DodgeDurationTime);
 		DodgeTimer.Stop();
 
+		colorTimer = new Timer(.1f);
+
 	}
 
 	private void Update() {
+
+		if (colorTimer.Update()) {
+			GetComponentInChildren<SpriteRenderer>().color = Color.white;
+		}
 
 		if (HpRegen && Health < HpRegenCap) {
 			if (hpRegenTimer.Update()) {
@@ -49,13 +57,13 @@ public class PlayerMovementScript: MonoBehaviour {
 			}
 		}
 
-		DodgeCooldown.Update(Time.deltaTime);
+		DodgeCooldown.Update();
 		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning()) {
 			DodgeTimer.Restart(DodgeDurationTime);
 			DodgeCooldown.Restart(DodgeCooldownTime);
-			Color color = GetComponent<SpriteRenderer>().color;
-			color.a = .5f;
-			GetComponent<SpriteRenderer>().color = color;
+			//Color color = GetComponent<SpriteRenderer>().color;
+			//color.a = .5f;
+			//GetComponent<SpriteRenderer>().color = color;
 		}
 	}
 
@@ -67,11 +75,11 @@ public class PlayerMovementScript: MonoBehaviour {
 		if (DodgeTimer.IsRunning()) {
 			Vector2 direction = rb.velocity.normalized;
 			rb.velocity = direction * DodgeSpeed * .05f;
-			if (DodgeTimer.Update(Time.deltaTime)) {
+			if (DodgeTimer.Update()) {
 				//DodgeCooldown.Restart(DodgeCooldownTime);
-				Color color = GetComponent<SpriteRenderer>().color;
-				color.a = 1.0f;
-				GetComponent<SpriteRenderer>().color = color;
+				//Color color = GetComponent<SpriteRenderer>().color;
+				//color.a = 1.0f;
+				//GetComponent<SpriteRenderer>().color = color;
 			}
 			return; // NOTE: early return
 		}
@@ -99,6 +107,9 @@ public class PlayerMovementScript: MonoBehaviour {
 		if (DodgeTimer.IsRunning()) {
 			return;
 		}
+
+		GetComponentInChildren<SpriteRenderer>().color = Color.red;
+		colorTimer.Restart();
 
 		Health = Health - damage;
 

@@ -79,7 +79,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		state = InitialState;
 		rb = GetComponent<Rigidbody2D>();
 
-		colorTimer = new Timer(.2f);
+		colorTimer = new Timer(.1f);
 
 	}
 

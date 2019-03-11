@@ -5,15 +5,18 @@ using UnityEngine;
 using Assets.Scripts;
 using Assets.Scripts.Utilities;
 
-public class PlayerMovementScript: MonoBehaviour {
+public class PlayerMovementScript : MonoBehaviour {
 	private Rigidbody2D rb;
 	private Vector3 mousePosition;
+
+	public SpriteRenderer PlayerSprite;
 
 	public float Speed = 400;
 	public float DodgeSpeed = 300;
 	public float DodgeCooldownTime = .6f;
 	public float DodgeDurationTime = .15f;
 
+	private int startHealth;
 	public int Health = 100;
 	public bool HpRegen = false;
 	public int HpRegenCap = 100;
@@ -30,6 +33,8 @@ public class PlayerMovementScript: MonoBehaviour {
 	void Start() {
 
 		Globals.Player = this;
+
+		startHealth = Health;
 
 		rb = GetComponent<Rigidbody2D>();
 
@@ -125,4 +130,9 @@ public class PlayerMovementScript: MonoBehaviour {
 		scale.x *= -1;
 		transform.localScale = scale;
 	}
+
+	public float GetHpPercentage() {
+		return (float)Health / (float)startHealth;
+	}
+
 }

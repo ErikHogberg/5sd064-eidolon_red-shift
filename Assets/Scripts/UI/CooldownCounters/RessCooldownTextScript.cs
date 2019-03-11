@@ -24,6 +24,9 @@ public class RessCooldownTextScript : TextScript
 		if (cooldown == null) {
 			cooldown = Globals.Player.GetComponentInChildren<RespawnScript>().CooldownTimer;
 		}
+		if (cooldown == null) {
+			return;
+		}
 
 		if (cooldown.IsRunning()) {
 			panel.color = ChargingColor;

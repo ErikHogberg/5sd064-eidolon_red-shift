@@ -122,8 +122,11 @@ public class WeaponScript : MonoBehaviour {
 		Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + offsetAngle;
 		firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
 		var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-		bullet.transform.parent = transform.parent.parent;
+		//bullet.transform.parent = transform.parent.parent.parent;
+		bullet.transform.parent = Assets.Scripts.Globals.Ground.transform;
+
 		MinBulletIntervalTimer.RestartWithDelta(MinBulletInterval);
 	}
 }

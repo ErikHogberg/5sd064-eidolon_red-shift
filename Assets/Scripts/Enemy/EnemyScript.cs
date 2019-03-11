@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Utilities;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,41 +12,47 @@ public enum Type
 
 public class EnemyScript : MonoBehaviour {
 
-	public int health = 100;
+	private int health = 100;
 	public GameObject Corpse;
     public float Speed = 0.05f;
     public Type EnemyType;
     public float movementCooldown = 1f;
 
+    public float scaleMin = 0.2f;
+    public float scaleMax = 0.3f;
+    public float randomScale;
+
     private float yMax = 2f;
     private float yMin = -2f;
     private float yTarget;
+    private GameObject camera;
 
     private bool lookingRight = false;
 
     public int ScoreWorth = 10;
 
+	private Timer colorTimer;
+
 	private void Start()
 	{
-        this.enabled = false;
+		colorTimer = new Timer(.1f);
+
+		this.enabled = false;
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+        camera = GameObject.Find("Main Camera");
         yTarget = Random.Range(yMin, yMax);
+        randomScale = Random.Range(scaleMin, scaleMax);
+        transform.localScale = new Vector3(randomScale, randomScale, randomScale);
     }
 
 	void Update () {
-		if(health < 0 || health == 0)
-		{
-			if (lookingRight) {
-				Flip();
-			}
-			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
-			corpse.transform.parent = transform.parent;
-			Destroy(gameObject);
-			Assets.Scripts.Globals.Score += ScoreWorth;
+
+		if (colorTimer.Update(Time.deltaTime)) {
+			GetComponent<SpriteRenderer>().color = Color.white;
 		}
 
-        switch(EnemyType)
+		switch (EnemyType)
         {
             case Type.Archer:
                 RangeMove();
@@ -72,7 +79,27 @@ public class EnemyScript : MonoBehaviour {
         }
     }
 
-    private void Flip()
+	public void TakeDamage(int damage) {
+
+		health -= damage;
+
+		GetComponent<SpriteRenderer>().color = Color.red;
+		colorTimer.Restart();
+
+		if (health <= 0) {
+			if (lookingRight) {
+				Flip();
+			}
+			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
+			corpse.transform.parent = transform.parent;
+			Destroy(gameObject);
+			Assets.Scripts.Globals.Score += ScoreWorth;
+			camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+		}
+
+	}
+
+	private void Flip()
     {
         transform.Rotate(0f, 180f, 0f);
     }
@@ -111,19 +138,27 @@ public class EnemyScript : MonoBehaviour {
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Speed);
-            GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+			if (!colorTimer.IsRunning()) {
+				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+			}
         }
     }
 
     private void OnBecameVisible()
 	{
-		this.enabled = true;
+        this.enabled = true;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = true;
 	}
 
 	private void OnBecameInvisible()
 	{
-		this.enabled = false;
-		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+        if (gameObject.activeInHierarchy == true && gameObject.transform.position.x < camera.transform.position.x)
+        {
+            Destroy(gameObject);
+            camera.GetComponent<EnemyRespawn>().EnemyKilled(true);
+        }
+
+        this.enabled = false;
+        gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
 	}
 }

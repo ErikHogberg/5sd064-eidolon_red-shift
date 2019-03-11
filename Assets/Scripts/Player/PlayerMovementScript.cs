@@ -5,15 +5,18 @@ using UnityEngine;
 using Assets.Scripts;
 using Assets.Scripts.Utilities;
 
-public class PlayerMovementScript: MonoBehaviour {
+public class PlayerMovementScript : MonoBehaviour {
 	private Rigidbody2D rb;
 	private Vector3 mousePosition;
+
+	public SpriteRenderer PlayerSprite;
 
 	public float Speed = 400;
 	public float DodgeSpeed = 300;
 	public float DodgeCooldownTime = .6f;
 	public float DodgeDurationTime = .15f;
 
+	private int startHealth;
 	public int Health = 100;
 	public bool HpRegen = false;
 	public int HpRegenCap = 100;
@@ -25,9 +28,13 @@ public class PlayerMovementScript: MonoBehaviour {
 	public Timer DodgeCooldown; // time until next dodge
 	public Timer DodgeTimer; // time until dodge ends
 
+	private Timer colorTimer;
+
 	void Start() {
 
 		Globals.Player = this;
+
+		startHealth = Health;
 
 		rb = GetComponent<Rigidbody2D>();
 
@@ -38,9 +45,15 @@ public class PlayerMovementScript: MonoBehaviour {
 		DodgeTimer = new Timer(DodgeDurationTime);
 		DodgeTimer.Stop();
 
+		colorTimer = new Timer(.1f);
+
 	}
 
 	private void Update() {
+
+		if (colorTimer.Update()) {
+			GetComponentInChildren<SpriteRenderer>().color = Color.white;
+		}
 
 		if (HpRegen && Health < HpRegenCap) {
 			if (hpRegenTimer.Update()) {
@@ -49,13 +62,13 @@ public class PlayerMovementScript: MonoBehaviour {
 			}
 		}
 
-		DodgeCooldown.Update(Time.deltaTime);
+		DodgeCooldown.Update();
 		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning()) {
 			DodgeTimer.Restart(DodgeDurationTime);
 			DodgeCooldown.Restart(DodgeCooldownTime);
-			Color color = GetComponent<SpriteRenderer>().color;
-			color.a = .5f;
-			GetComponent<SpriteRenderer>().color = color;
+			//Color color = GetComponent<SpriteRenderer>().color;
+			//color.a = .5f;
+			//GetComponent<SpriteRenderer>().color = color;
 		}
 	}
 
@@ -67,11 +80,11 @@ public class PlayerMovementScript: MonoBehaviour {
 		if (DodgeTimer.IsRunning()) {
 			Vector2 direction = rb.velocity.normalized;
 			rb.velocity = direction * DodgeSpeed * .05f;
-			if (DodgeTimer.Update(Time.deltaTime)) {
+			if (DodgeTimer.Update()) {
 				//DodgeCooldown.Restart(DodgeCooldownTime);
-				Color color = GetComponent<SpriteRenderer>().color;
-				color.a = 1.0f;
-				GetComponent<SpriteRenderer>().color = color;
+				//Color color = GetComponent<SpriteRenderer>().color;
+				//color.a = 1.0f;
+				//GetComponent<SpriteRenderer>().color = color;
 			}
 			return; // NOTE: early return
 		}
@@ -100,6 +113,9 @@ public class PlayerMovementScript: MonoBehaviour {
 			return;
 		}
 
+		GetComponentInChildren<SpriteRenderer>().color = Color.red;
+		colorTimer.Restart();
+
 		Health = Health - damage;
 
 		if (Health < 0 || Health == 0) {
@@ -114,4 +130,9 @@ public class PlayerMovementScript: MonoBehaviour {
 		scale.x *= -1;
 		transform.localScale = scale;
 	}
+
+	public float GetHpPercentage() {
+		return (float)Health / (float)startHealth;
+	}
+
 }

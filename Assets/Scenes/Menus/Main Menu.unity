@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 557594098}
   - component: {fileID: 557594097}
   - component: {fileID: 557594096}
+  - component: {fileID: 557594099}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -406,6 +407,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557594094}
   m_CullTransparentMesh: 0
+--- !u!114 &557594099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557594094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1111ef0b55cb34bac62c136b790b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonAction: 0
+  LevelToStart: Forest Level
 --- !u!1 &726497736
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,8 +712,9 @@ GameObject:
   - component: {fileID: 1512869382}
   - component: {fileID: 1512869381}
   - component: {fileID: 1512869380}
+  - component: {fileID: 1512869383}
   m_Layer: 5
-  m_Name: OptionsButton
+  m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,6 +819,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512869378}
   m_CullTransparentMesh: 0
+--- !u!114 &1512869383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512869378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1111ef0b55cb34bac62c136b790b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonAction: 0
+  LevelToStart: Credits
 --- !u!1 &1522937351
 GameObject:
   m_ObjectHideFlags: 0

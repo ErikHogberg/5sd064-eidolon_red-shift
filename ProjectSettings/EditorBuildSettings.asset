@@ -26,4 +26,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/Palace level mar
       5.unity
     guid: a0e9b9882465d944f833097b35ca0109
+  - enabled: 1
+    path: Assets/Scenes/Menus/Credits.unity
+    guid: 854a3d9029de849bc99f15374028efe7
   m_configObjects: {}

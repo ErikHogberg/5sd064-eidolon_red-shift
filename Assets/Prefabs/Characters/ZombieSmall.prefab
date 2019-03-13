@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e36ade68b95fb4182a3e4841fad425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 80
+  Health: 50
   MaxFollowDistance: 5
   FollowSpeed: 200
   AggressiveSpeed: 140
@@ -321,3 +321,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824cbd1fafa991b4fb3a418533353387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WorldZ: 0

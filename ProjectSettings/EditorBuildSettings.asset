@@ -6,6 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/Forest Level mar
+      7.unity
+    guid: d502dab6e0c1f5a4199baa5c11233349
+  - enabled: 1
     path: Assets/Scenes/Levels/Fast Forest Level 1.unity
     guid: 074862d5a0b392a40b2b6cd645a1ae39
   - enabled: 1
@@ -18,4 +22,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/Village level mar
       7.unity
     guid: 8aa700796b61cb742b1d1cbbfbcd6db6
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/Palace level mar
+      5.unity
+    guid: a0e9b9882465d944f833097b35ca0109
+  - enabled: 1
+    path: Assets/Scenes/Menus/Credits.unity
+    guid: 854a3d9029de849bc99f15374028efe7
   m_configObjects: {}

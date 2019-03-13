@@ -58,9 +58,15 @@ public class EnemyWeaponScript : MonoBehaviour
 
     void Melee()
     {
-        if(playerInRange != null && playerInRange.name == "Player")
+        if(playerInRange != null && playerInRange.tag == "Player")
         {
             playerInRange.GetComponent<PlayerMovementScript>().TakeDamage(Damage);
+            m_Cooldown = Cooldown;
+            GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
+            GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+        } else if (playerInRange != null && playerInRange.tag == "Zombie")
+        {
+            playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;
@@ -69,17 +75,11 @@ public class EnemyWeaponScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Player")
-        {
-            playerInRange = collision;
-        }
+        playerInRange = collision;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.name == "Player")
-        {
-            playerInRange = null;
-        }
+        playerInRange = null;
     }
 }

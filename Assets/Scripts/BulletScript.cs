@@ -19,7 +19,7 @@ public class BulletScript : MonoBehaviour
     {
         if (collider.CompareTag("Enemy"))
         {
-            collider.GetComponent<EnemyScript>().health -= Damage;
+            collider.GetComponent<EnemyScript>().TakeDamage(Damage);
             Destroy(gameObject);
         }
     }

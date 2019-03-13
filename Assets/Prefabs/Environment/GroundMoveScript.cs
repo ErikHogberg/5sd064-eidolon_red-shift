@@ -18,6 +18,8 @@ public class GroundMoveScript : MonoBehaviour {
 
 	public Vector3 buffer;
 
+	public bool HaltScroll = false;
+
 	// Use this for initialization
 	void Start() {
 		//offset = transform.position - player.transform.position;
@@ -28,6 +30,10 @@ public class GroundMoveScript : MonoBehaviour {
 	//*
 	// Update is called once per frame
 	void LateUpdate() {
+
+		if (HaltScroll) {
+			return;
+		}
 
 		if (player.transform.position.x > maxX) {
 			//transform.localPosition += new Vector3(-Time.deltaTime * speed, 0, 0);

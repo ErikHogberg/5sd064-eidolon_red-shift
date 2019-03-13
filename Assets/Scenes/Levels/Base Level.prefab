@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 1056037701056973577}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -949,7 +949,7 @@ GameObject:
   - component: {fileID: 1056037701589218771}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,6 +1096,7 @@ MonoBehaviour:
   maxY: 1
   minY: -1
   buffer: {x: 0, y: 0, z: 0}
+  HaltScroll: 0
 --- !u!1 &1056037701795269434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,7 +1702,7 @@ GameObject:
   - component: {fileID: 1056037702148959363}
   m_Layer: 0
   m_Name: Lower
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1849,7 +1850,7 @@ GameObject:
   - component: {fileID: 1056037702373445612}
   m_Layer: 0
   m_Name: Upper
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3628,6 +3629,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6806302934244921116}
   - component: {fileID: 5997490502216195430}
+  - component: {fileID: 8692142780888521878}
+  - component: {fileID: 8283297361073636926}
   m_Layer: 0
   m_Name: Stopper 1
   m_TagString: Untagged
@@ -3697,6 +3700,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8692142780888521878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431396422665868022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58506638864eaa346809b741d87e5882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &8283297361073636926
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431396422665868022}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.77, y: 4.88}
+    newSize: {x: 4.77, y: 4.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.77, y: 4.88}
+  m_EdgeRadius: 0
 --- !u!1 &5675328804886126316
 GameObject:
   m_ObjectHideFlags: 0
@@ -5418,6 +5459,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4026727277249826585}
   - component: {fileID: 4418597798664663748}
+  - component: {fileID: 5250799790491219830}
+  - component: {fileID: 1369774072644467315}
   m_Layer: 0
   m_Name: Stopper 1 disable trigger
   m_TagString: Untagged
@@ -5487,6 +5530,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5250799790491219830
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115442110447714582}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.59000003, y: 0.78000003}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1369774072644467315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115442110447714582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7078dad5a9b7f42b997e46c8be5c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScrollStopper: {fileID: 8692142780888521878}
 --- !u!1 &9195489004273363202
 GameObject:
   m_ObjectHideFlags: 0
@@ -5846,15 +5928,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09a323737fdc4214f91b1540bf345dd4, type: 3}
---- !u!1 &1054245838473570269 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1868829052781526, guid: 09a323737fdc4214f91b1540bf345dd4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1056037700637877259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1056137260840196227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4481127110671496, guid: 09a323737fdc4214f91b1540bf345dd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056037700637877259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1054245838473570269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1868829052781526, guid: 09a323737fdc4214f91b1540bf345dd4,
     type: 3}
   m_PrefabInstance: {fileID: 1056037700637877259}
   m_PrefabAsset: {fileID: 0}

@@ -12,7 +12,7 @@ public enum Type
 
 public class EnemyScript : MonoBehaviour {
 
-	public int health = 100;
+	private int health = 100;
 	public GameObject Corpse;
     public float Speed = 0.05f;
     public Type EnemyType;

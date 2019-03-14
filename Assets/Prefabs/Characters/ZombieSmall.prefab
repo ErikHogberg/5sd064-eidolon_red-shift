@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e36ade68b95fb4182a3e4841fad425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 80
+  Health: 50
   MaxFollowDistance: 5
   FollowSpeed: 200
   AggressiveSpeed: 140
@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldZ: 0
+<<<<<<< HEAD
 --- !u!1 &9186708066443613641
 GameObject:
   m_ObjectHideFlags: 0
@@ -5082,3 +5083,5 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+=======
+>>>>>>> master

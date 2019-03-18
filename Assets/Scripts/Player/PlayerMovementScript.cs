@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Assets.Scripts;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Pickups;
 
 public class PlayerMovementScript : MonoBehaviour {
 	private Rigidbody2D rb;
@@ -30,6 +31,9 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	private Timer colorTimer;
 
+	public BuffSystem Buffs;
+
+
 	void Start() {
 
 		Globals.Player = this;
@@ -53,6 +57,18 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (colorTimer.Update()) {
 			GetComponentInChildren<SpriteRenderer>().color = Color.white;
+		}
+
+		// Update buffs and disable expired buffs
+		foreach (Buff expiredBuff in Buffs.Update()) {
+			switch (expiredBuff.Type) {
+				case BuffType.HpRegen:
+					break;
+				case BuffType.Invulnerability:
+					break;
+				default:
+					break;
+			}
 		}
 
 		if (HpRegen && Health < HpRegenCap) {
@@ -121,6 +137,19 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (Health < 0 || Health == 0) {
 			//Destroy(gameObject);
 			gameObject.SetActive(false);
+		}
+	}
+
+	void AddBuff(Buff buff) {
+		Buffs.AddBuff(buff);
+
+		switch (buff.Type) {
+			case BuffType.HpRegen:
+				break;
+			case BuffType.Invulnerability:
+				break;
+			default:
+				break;
 		}
 	}
 

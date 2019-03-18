@@ -156,7 +156,7 @@ MonoBehaviour:
   Speed: 165
   DodgeSpeed: 200
   DodgeCooldownTime: 0.6
-  DodgeDurationTime: 0.06
+  DodgeDurationTime: 1
   Health: 100
   HpRegen: 0
   HpRegenCap: 100
@@ -5292,6 +5292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2503326475572947914}
   - component: {fileID: 2706174520780987572}
+  - component: {fileID: 6677280093989532403}
   m_Layer: 0
   m_Name: Player Sprite
   m_TagString: Player
@@ -5361,6 +5362,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6677280093989532403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907949110016831048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74d04df4333b4646a6ea988b589e34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReadyColor: {r: 1, g: 1, b: 1, a: 1}
+  ChargingColor: {r: 0.3820755, g: 0.8172521, b: 1, a: 0.5882353}
 --- !u!1 &7106130035206463861
 GameObject:
   m_ObjectHideFlags: 0
@@ -5466,6 +5481,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Name
+      value: Battery 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5521,16 +5546,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -226.499
       objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Name
-      value: Battery 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: CooldownIndex
@@ -5557,6 +5572,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Name
+      value: Battery 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5611,16 +5636,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -226.499
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Name
-      value: Battery 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
@@ -5733,6 +5748,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Name
+      value: Staff Battery
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5793,27 +5818,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.5225618
       objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Name
-      value: Staff Battery
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8551defbc3ee40144852f5ae77f8863a,
-        type: 3}
-    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: ReadyColor.a
@@ -5828,6 +5832,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8551defbc3ee40144852f5ae77f8863a,
+        type: 3}
+    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8dc43760c494a1409ad0248ddfe8d51, type: 3}
@@ -5844,6 +5859,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_Name
+      value: Battery 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5898,16 +5923,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -226.499
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Name
-      value: Battery 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}

@@ -81,9 +81,9 @@ public class PlayerMovementScript : MonoBehaviour {
 		}
 
 		DodgeCooldown.Update();
-		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning()) {
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning() && !DodgeTimer.IsRunning()) {
 			DodgeTimer.Restart(DodgeDurationTime);
-			DodgeCooldown.Restart(DodgeCooldownTime);
+			//DodgeCooldown.Restart(DodgeCooldownTime);
 			//Color color = GetComponent<SpriteRenderer>().color;
 			//color.a = .5f;
 			//GetComponent<SpriteRenderer>().color = color;
@@ -94,22 +94,25 @@ public class PlayerMovementScript : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
 
+		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
 		if (DodgeTimer.IsRunning()) {
 			Vector2 direction = rb.velocity.normalized;
-			rb.velocity = direction * DodgeSpeed * .05f;
+			//rb.velocity = direction * DodgeSpeed * .05f;
 			if (DodgeTimer.Update()) {
-				//DodgeCooldown.Restart(DodgeCooldownTime);
+				DodgeCooldown.Restart(DodgeCooldownTime);
 				//Color color = GetComponent<SpriteRenderer>().color;
 				//color.a = 1.0f;
 				//GetComponent<SpriteRenderer>().color = color;
 			}
-			return; // NOTE: early return
+			//return; // NOTE: early return
+
+			rb.velocity = movement * DodgeSpeed * Time.deltaTime;
+		} else {
+			rb.velocity = movement * Speed * Time.deltaTime;
 		}
 
 
-		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-		rb.velocity = movement * Speed * Time.deltaTime;
 
 		if (mousePosition.x < transform.position.x && lookingRight) {
 			lookingRight = !lookingRight;

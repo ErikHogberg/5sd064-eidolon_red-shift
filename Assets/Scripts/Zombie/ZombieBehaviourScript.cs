@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,6 @@ public class ZombieBehaviourScript : MonoBehaviour {
 
 	public int Health = 100;
 
-	// IDEA: create container script for assigning player semi-automatically, similar to parallax and repeating tile layers
 	private ZombieControlScript Player;
 
 	public float MaxFollowDistance = 3.0f;
@@ -69,6 +69,8 @@ public class ZombieBehaviourScript : MonoBehaviour {
 
 	private bool attacking = false;
 
+	private Timer colorTimer;
+
 
 	// Start is called before the first frame update
 	void Start() {
@@ -76,10 +78,17 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		//ManualSpeed = Player.ManualSpeed;
 		state = InitialState;
 		rb = GetComponent<Rigidbody2D>();
+
+		colorTimer = new Timer(.1f);
+
 	}
 
 	// Update is called once per frame
 	void FixedUpdate() {
+
+		if (colorTimer.Update(Time.deltaTime)) {
+			GetComponent<SpriteRenderer>().color = Color.white;
+		}
 
 		if (Player == null) {
 			Player = Globals.Player.GetComponent<ZombieControlScript>();
@@ -183,6 +192,9 @@ public class ZombieBehaviourScript : MonoBehaviour {
 
 	public void TakeDamage(int damage) {
 		Health = Health - damage;
+
+		GetComponent<SpriteRenderer>().color = Color.red;
+		colorTimer.Restart();
 
 		if (Health < 0 || Health == 0) {
 			Destroy(gameObject);

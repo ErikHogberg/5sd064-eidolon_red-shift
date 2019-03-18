@@ -21,7 +21,11 @@ public class ResurrectionBatteryCooldownScript : MonoBehaviour {
 		if (cooldown == null) {
 			cooldown = Globals.Player.GetComponentInChildren<RespawnScript>().CooldownTimer;
 		}
-		
+		if (cooldown == null) {
+			sprite.color = new Color(0.0f,0.0f,0.0f,0.0f);
+			return;
+		}
+
 		if (cooldown.IsRunning()) {
 			sprite.color = ChargingColor;
 		} else {

@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: db805d0188da7db43b23cea44765e22e
+guid: af200182e67f4b54ea028391f5d003c6
 TextureImporter:
   fileIDToRecycleName:
     21300000: fore ground forest_0
+    21300002: fore ground forest_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,10 +89,10 @@ TextureImporter:
       name: fore ground forest_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 0
-        width: 8056
-        height: 1076
+        x: 0
+        y: 361
+        width: 8980
+        height: 715
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -99,7 +100,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3a5475d559a20241becfdf0a4193fcc
+      spriteID: b482e7da2b3ccd3498611e12b08b3ed9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fore ground forest_1
+      rect:
+        serializedVersion: 2
+        x: 8989
+        y: 345
+        width: 6
+        height: 671
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ae2c4c78fa6dc44aae308ed78f0e09
       vertices: []
       indices: 
       edges: []
@@ -107,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cf11b97cd6f51394b9103327ebc3f1ae
+    spriteID: 88504603013a1714e81df7713ebbfcaf
     vertices: []
     indices: 
     edges: []

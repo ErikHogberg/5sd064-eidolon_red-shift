@@ -10,5 +10,6 @@ namespace Assets.Scripts {
 		public static PlayerMovementScript Player;
 		public static GameObject Ground;
 		public static DialoguePanelScript DialogueWindow;
+		public static string PausedScene;
 	}
 }

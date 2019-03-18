@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DepthScript : MonoBehaviour {
-	// Start is called before the first frame update
+
+	public float WorldZ;
+
 	void Start() {
 
 	}
 
-	// Update is called once per frame
 	void Update() {
 		Vector3 position = transform.parent.localPosition;
 
@@ -17,5 +18,7 @@ public class DepthScript : MonoBehaviour {
 		position.z = -1.0f + (transform.position.y + cameraHalfHeight) / (cameraHalfHeight * 2.0f) * 1.0f;
 
 		transform.parent.localPosition = position;
+
+		WorldZ = transform.parent.position.z;
 	}
 }

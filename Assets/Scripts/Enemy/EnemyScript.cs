@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Utilities;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,9 +31,13 @@ public class EnemyScript : MonoBehaviour {
 
     public int ScoreWorth = 10;
 
+	private Timer colorTimer;
+
 	private void Start()
 	{
-        this.enabled = false;
+		colorTimer = new Timer(.1f);
+
+		this.enabled = false;
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         camera = GameObject.Find("Main Camera");
@@ -42,19 +47,12 @@ public class EnemyScript : MonoBehaviour {
     }
 
 	void Update () {
-        if (health < 0 || health == 0)
-		{
-            if (lookingRight) {
-				Flip();
-			}
-			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
-			corpse.transform.parent = transform.parent;
-			Destroy(gameObject);
-            Assets.Scripts.Globals.Score += ScoreWorth;
-            camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
-        }
 
-        switch(EnemyType)
+		if (colorTimer.Update(Time.deltaTime)) {
+			GetComponent<SpriteRenderer>().color = Color.white;
+		}
+
+		switch (EnemyType)
         {
             case Type.Archer:
                 RangeMove();
@@ -81,7 +79,27 @@ public class EnemyScript : MonoBehaviour {
         }
     }
 
-    private void Flip()
+	public void TakeDamage(int damage) {
+
+		health -= damage;
+
+		GetComponent<SpriteRenderer>().color = Color.red;
+		colorTimer.Restart();
+
+		if (health <= 0) {
+			if (lookingRight) {
+				Flip();
+			}
+			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
+			corpse.transform.parent = transform.parent;
+			Destroy(gameObject);
+			Assets.Scripts.Globals.Score += ScoreWorth;
+			camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+		}
+
+	}
+
+	private void Flip()
     {
         transform.Rotate(0f, 180f, 0f);
     }
@@ -120,7 +138,9 @@ public class EnemyScript : MonoBehaviour {
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Speed);
-            GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+			if (!colorTimer.IsRunning()) {
+				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+			}
         }
     }
 
@@ -132,7 +152,7 @@ public class EnemyScript : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-        if (gameObject.active == true && gameObject.transform.position.x < camera.transform.position.x)
+        if (gameObject.activeInHierarchy == true && gameObject.transform.position.x < camera.transform.position.x)
         {
             Destroy(gameObject);
             camera.GetComponent<EnemyRespawn>().EnemyKilled(true);

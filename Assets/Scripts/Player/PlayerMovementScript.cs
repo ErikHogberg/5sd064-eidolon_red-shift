@@ -51,6 +51,8 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		colorTimer = new Timer(.1f);
 
+		Buffs = new BuffSystem();
+
 	}
 
 	private void Update() {

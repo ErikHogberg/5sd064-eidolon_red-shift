@@ -5388,7 +5388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7106130035206463861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.119998634, y: -0.95, z: -1}
+  m_LocalPosition: {x: -0.119998634, y: -0.95, z: 0}
   m_LocalScale: {x: 0.605, y: 0.605, z: 0.605}
   m_Children:
   - {fileID: 3187990365814864340}
@@ -5648,11 +5648,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
-    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
-        type: 3}
-      propertyPath: m_Name
-      value: DodgeBattery
-      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5707,6 +5702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
+        type: 3}
+      propertyPath: m_Name
+      value: DodgeBattery
       objectReference: {fileID: 0}
     - target: {fileID: 8744200278172667073, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}
@@ -5793,27 +5793,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.5225618
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8551defbc3ee40144852f5ae77f8863a,
-        type: 3}
-    - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
-    - target: {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51,
-        type: 3}
-      propertyPath: ReadyColor.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51,
-=======
     - target: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
->>>>>>> master
         type: 3}
       propertyPath: m_Name
       value: Staff Battery
@@ -5823,8 +5803,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-=======
     - target: {fileID: 8744200278172667073, guid: e8dc43760c494a1409ad0248ddfe8d51,
         type: 3}
       propertyPath: m_Sprite
@@ -5851,7 +5829,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
->>>>>>> master
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8dc43760c494a1409ad0248ddfe8d51, type: 3}
 --- !u!4 &2383499012235033444 stripped

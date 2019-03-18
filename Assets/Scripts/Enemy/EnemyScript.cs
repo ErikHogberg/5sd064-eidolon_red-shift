@@ -8,6 +8,8 @@ public enum Type
     Archer,
     Knight,
     Peasant,
+    King,
+    Queen,
 }
 
 public class EnemyScript : MonoBehaviour {
@@ -36,7 +38,6 @@ public class EnemyScript : MonoBehaviour {
 	private void Start()
 	{
 		colorTimer = new Timer(.1f);
-
 		this.enabled = false;
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;

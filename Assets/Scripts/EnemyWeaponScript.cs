@@ -82,7 +82,8 @@ public class EnemyWeaponScript : MonoBehaviour
     {
         if(playerInRange != null && playerInRange.tag == "Player")
         {
-			PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
+            GetComponentInParent<EnemyScript>().animator.SetTrigger("Attack");
+            PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
 			if (movementScript == null) {
 				movementScript = playerInRange.GetComponentInParent<PlayerMovementScript>();
 			}
@@ -92,6 +93,7 @@ public class EnemyWeaponScript : MonoBehaviour
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;
         } else if (playerInRange != null && playerInRange.tag == "Zombie")
         {
+            GetComponentInParent<EnemyScript>().animator.SetTrigger("Attack");
             playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);

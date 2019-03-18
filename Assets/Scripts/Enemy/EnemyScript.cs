@@ -19,6 +19,7 @@ public class EnemyScript : MonoBehaviour {
     public float Speed = 0.05f;
     public Type EnemyType;
     public float movementCooldown = 1f;
+    public Animator animator;
 
     public float scaleMin = 0.2f;
     public float scaleMax = 0.3f;
@@ -135,10 +136,12 @@ public class EnemyScript : MonoBehaviour {
         if (movementCooldown > 0)
         {
             movementCooldown -= Time.deltaTime;
+            animator.SetBool("isMoving", false);
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Speed);
+            animator.SetBool("isMoving", true);
 			if (!colorTimer.IsRunning()) {
 				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 			}

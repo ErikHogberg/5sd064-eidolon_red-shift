@@ -3312,12 +3312,12 @@ PrefabInstance:
     - target: {fileID: 4536936809736870677, guid: 1da12fd7e320fc54d82e2df9139df2c5,
         type: 3}
       propertyPath: BuffType
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4536936809736870677, guid: 1da12fd7e320fc54d82e2df9139df2c5,
         type: 3}
       propertyPath: Duration
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da12fd7e320fc54d82e2df9139df2c5, type: 3}
@@ -23265,7 +23265,7 @@ PrefabInstance:
     - target: {fileID: 4536936809736870677, guid: 1da12fd7e320fc54d82e2df9139df2c5,
         type: 3}
       propertyPath: BuffType
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4536936809736870677, guid: 1da12fd7e320fc54d82e2df9139df2c5,
         type: 3}
@@ -23989,6 +23989,11 @@ PrefabInstance:
       propertyPath: DodgeSpeed
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1098867412508794949, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: HpRegenCap
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 1147082761136625727, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -24007,7 +24012,7 @@ PrefabInstance:
     - target: {fileID: 1820231513736538243, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -603.8999
+      value: -603.89996
       objectReference: {fileID: 0}
     - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
@@ -24113,7 +24118,7 @@ PrefabInstance:
     - target: {fileID: 5352609923001578005, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -603.8999
+      value: -603.89996
       objectReference: {fileID: 0}
     - target: {fileID: 6085319430657021287, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
@@ -24426,7 +24431,7 @@ PrefabInstance:
     - target: {fileID: 4536936809736870677, guid: 1da12fd7e320fc54d82e2df9139df2c5,
         type: 3}
       propertyPath: BuffType
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4536936809736870677, guid: 1da12fd7e320fc54d82e2df9139df2c5,
         type: 3}

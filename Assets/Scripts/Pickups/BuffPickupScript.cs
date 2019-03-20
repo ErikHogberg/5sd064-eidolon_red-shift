@@ -23,12 +23,13 @@ public class BuffPickupScript : MonoBehaviour {
 			string message = "Picked up buff";
 			switch (BuffType) {
 				case BuffType.HpRegen:
+					message += ": Hp Regeneration";
 					break;
 				case BuffType.ZombieHpRegen:
-					break;
-				case BuffType.SpeedUp:
+					message += ": Zombie Hp Regen.";
 					break;
 				case BuffType.ZombieSpeedUp:
+					message += ": Zombie Speed Up";
 					break;
 				case BuffType.Invulnerability:
 					message += ": Invulnerability";

@@ -65,15 +65,15 @@ public class PlayerMovementScript : MonoBehaviour {
 		foreach (Buff expiredBuff in Buffs.Update()) {
 			switch (expiredBuff.Type) {
 				case BuffType.HpRegen:
+					HpRegenRate -= expiredBuff.BuffStrength;
+					UpdateRegen();
 					break;
 				case BuffType.ZombieHpRegen:
-					break;
-				case BuffType.SpeedUp:
 					break;
 				case BuffType.ZombieSpeedUp:
 					break;
 				case BuffType.Invulnerability:
-					
+
 					break;
 				case BuffType.NoWeaponCooldown:
 					break;
@@ -161,10 +161,10 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		switch (buff.Type) {
 			case BuffType.HpRegen:
+				HpRegenRate += buff.BuffStrength;
+				UpdateRegen();
 				break;
 			case BuffType.ZombieHpRegen:
-				break;
-			case BuffType.SpeedUp:
 				break;
 			case BuffType.ZombieSpeedUp:
 				break;
@@ -184,6 +184,10 @@ public class PlayerMovementScript : MonoBehaviour {
 				break;
 		}
 
+	}
+
+	private void UpdateRegen() {
+		hpRegenTimer.RestartWithDelta(1.0f / HpRegenRate);
 	}
 
 	void Flip() {

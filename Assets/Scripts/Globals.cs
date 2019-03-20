@@ -16,6 +16,7 @@ namespace Assets.Scripts {
 		public static GameObject Ground;
 		// The current dialogue window
 		public static DialoguePanelScript DialogueWindow;
+		public static NotificationScript NotificationWindow;
 		
 	}
 }

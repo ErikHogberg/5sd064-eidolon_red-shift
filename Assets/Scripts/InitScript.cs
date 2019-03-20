@@ -6,11 +6,13 @@ using UnityEngine;
 public class InitScript : MonoBehaviour {
 
 	public DialoguePanelScript DialogueWindow;
+	public NotificationScript NotificationWindow;
 	public Texture2D CursorTexture;
 	public Vector2 CursorOffset;
 
 	void Start() {
 		Globals.DialogueWindow = DialogueWindow;
+		Globals.NotificationWindow = NotificationWindow;
 	}
 
 	void Update() {

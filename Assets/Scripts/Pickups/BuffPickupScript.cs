@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Pickups;
+﻿using Assets.Scripts;
+using Assets.Scripts.Pickups;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,33 @@ public class BuffPickupScript : MonoBehaviour {
 				player = collision.GetComponentInParent<PlayerMovementScript>();
 			}
 			player.AddBuff(new Buff(BuffType, BuffStrength, Duration));
+
+			string message = "Picked up buff";
+			switch (BuffType) {
+				case BuffType.HpRegen:
+					break;
+				case BuffType.ZombieHpRegen:
+					break;
+				case BuffType.SpeedUp:
+					break;
+				case BuffType.ZombieSpeedUp:
+					break;
+				case BuffType.Invulnerability:
+					message += ": Invulnerability";
+					break;
+				case BuffType.NoWeaponCooldown:
+					break;
+				case BuffType.FullAutoWeapon:
+					message += ": Full Auto";
+					break;
+				case BuffType.DamageIncrease:
+					break;
+				case BuffType.AoEWeapon:
+					break;
+				default:
+					break;
+			}
+			Globals.NotificationWindow.Show(message);
 
 			Destroy(gameObject);
 		}

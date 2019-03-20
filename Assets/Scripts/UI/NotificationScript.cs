@@ -15,8 +15,16 @@ public class NotificationScript : MonoBehaviour {
 	private Color color;
 	public Color BlinkColor;
 
+	bool Init = false;
+
 	void Start() {
-		color = GetComponent<Image>().color;
+		if (!Init) {
+			color = GetComponent<Image>().color;
+			Init = true;
+		}
+
+		GetComponent<Image>().color = BlinkColor;
+
 		timer = new Timer(VisibleTime);
 		blinkTimer1 = new Timer(BlinkTime);
 		blinkTimer2 = new Timer(VisibleTime - BlinkTime * 2.0f);
@@ -30,11 +38,12 @@ public class NotificationScript : MonoBehaviour {
 			GetComponent<Image>().color = color;
 		}
 		if (blinkTimer2.Update()) {
-			GetComponent<Image>().color = Color.red;
+			GetComponent<Image>().color = BlinkColor;
 		}
 	}
 
 	public void Show(string text) {
+		Start();
 		GetComponentInChildren<Text>().text = text;
 		timer.Restart();
 		gameObject.SetActive(true);

@@ -197,5 +197,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 994049087, guid: 063a5f77b7123a448b0b12b445c1d87c, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1801634249264958, guid: d8173b5129678bd45aa8893851760955,
+        type: 3}
+    - target: {fileID: 994049087, guid: 063a5f77b7123a448b0b12b445c1d87c, type: 3}
+      propertyPath: StartBatteryCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063a5f77b7123a448b0b12b445c1d87c, type: 3}

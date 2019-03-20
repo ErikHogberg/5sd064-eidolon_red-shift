@@ -27,7 +27,7 @@ public class NotificationScript : MonoBehaviour {
 
 		timer = new Timer(VisibleTime);
 		blinkTimer1 = new Timer(BlinkTime);
-		blinkTimer2 = new Timer(VisibleTime - BlinkTime * 2.0f);
+		blinkTimer2 = new Timer(VisibleTime - BlinkTime);
 	}
 
 	void Update() {

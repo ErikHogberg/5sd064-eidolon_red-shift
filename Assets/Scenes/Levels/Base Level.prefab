@@ -3736,8 +3736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1.8301, y: -177}
-  m_SizeDelta: {x: 380.3, y: 81.20001}
+  m_AnchoredPosition: {x: -1.8301, y: -146.4}
+  m_SizeDelta: {x: 487.8, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &403778801271481284
 CanvasRenderer:
@@ -3760,7 +3760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 0.6627451}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3789,7 +3789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VisibleTime: 2
-  BlinkTime: 0.2
+  BlinkTime: 0.1
   BlinkColor: {r: 1, g: 0, b: 0, a: 0.5882353}
 --- !u!1 &5675328804886126316
 GameObject:

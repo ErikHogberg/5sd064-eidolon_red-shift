@@ -75,18 +75,17 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (HpRegen && Health < HpRegenCap) {
 			if (hpRegenTimer.Update()) {
-				Health += 1;
-				hpRegenTimer.RestartWithDelta();
+				//Health += 1;
+				int overflows = hpRegenTimer.RestartWithDelta();
+				for (int i = 0; i < overflows; i++) {
+					Health += 1;
+				}
 			}
 		}
 
 		DodgeCooldown.Update();
 		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning() && !DodgeTimer.IsRunning()) {
 			DodgeTimer.Restart(DodgeDurationTime);
-			//DodgeCooldown.Restart(DodgeCooldownTime);
-			//Color color = GetComponent<SpriteRenderer>().color;
-			//color.a = .5f;
-			//GetComponent<SpriteRenderer>().color = color;
 		}
 	}
 
@@ -101,9 +100,6 @@ public class PlayerMovementScript : MonoBehaviour {
 			//rb.velocity = direction * DodgeSpeed * .05f;
 			if (DodgeTimer.Update()) {
 				DodgeCooldown.Restart(DodgeCooldownTime);
-				//Color color = GetComponent<SpriteRenderer>().color;
-				//color.a = 1.0f;
-				//GetComponent<SpriteRenderer>().color = color;
 			}
 			//return; // NOTE: early return
 
@@ -111,8 +107,6 @@ public class PlayerMovementScript : MonoBehaviour {
 		} else {
 			rb.velocity = movement * Speed * Time.deltaTime;
 		}
-
-
 
 		if (mousePosition.x < transform.position.x && lookingRight) {
 			lookingRight = !lookingRight;

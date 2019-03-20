@@ -10,8 +10,12 @@ public class RespawnScript : MonoBehaviour {
 
 	public GameObject ZombieTypeToSpawn;
 
-	//private float m_Cooldown = 0f;
-	public float Cooldown = 0.1f;
+    //Mick's addition starts here
+    public ParticleSystem ResEffect;
+    //Mick's addition ends here
+
+    //private float m_Cooldown = 0f;
+    public float Cooldown = 0.1f;
 	public float Duration = 0.1f;
 
 	public Timer DurationTimer;
@@ -28,9 +32,12 @@ public class RespawnScript : MonoBehaviour {
 		CooldownTimer = new Timer(Cooldown);
 		CooldownTimer.Stop();
 
-	}
+        //Mick's addition starts here
+        ResEffect = transform.Find("quickres").gameObject.GetComponent<ParticleSystem>();
+        //Mick's addition ends here
+    }
 
-	void Update() {
+    void Update() {
 
 		/*
 		if (m_Cooldown > 0f)
@@ -67,6 +74,10 @@ public class RespawnScript : MonoBehaviour {
 			ZombieControlScript zombieControlScript = transform.parent.gameObject.GetComponent<ZombieControlScript>();
 
 			corpseScript.SpawnZombie(zombieControlScript);
-		}
-	}
+
+            //Mick's addition starts here
+            ResEffect.Play();
+            //Mick's addition ends here
+        }
+    }
 }

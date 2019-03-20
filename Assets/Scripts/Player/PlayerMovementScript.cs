@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Assets.Scripts;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Pickups;
 
 public class PlayerMovementScript : MonoBehaviour {
 	private Rigidbody2D rb;
@@ -30,6 +31,9 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	private Timer colorTimer;
 
+	public BuffSystem Buffs;
+
+
 	void Start() {
 
 		Globals.Player = this;
@@ -47,12 +51,26 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		colorTimer = new Timer(.1f);
 
+		Buffs = new BuffSystem();
+
 	}
 
 	private void Update() {
 
 		if (colorTimer.Update()) {
 			GetComponentInChildren<SpriteRenderer>().color = Color.white;
+		}
+
+		// Update buffs and disable expired buffs
+		foreach (Buff expiredBuff in Buffs.Update()) {
+			switch (expiredBuff.Type) {
+				case BuffType.HpRegen:
+					break;
+				case BuffType.Invulnerability:
+					break;
+				default:
+					break;
+			}
 		}
 
 		if (HpRegen && Health < HpRegenCap) {
@@ -63,9 +81,9 @@ public class PlayerMovementScript : MonoBehaviour {
 		}
 
 		DodgeCooldown.Update();
-		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning()) {
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning() && !DodgeTimer.IsRunning()) {
 			DodgeTimer.Restart(DodgeDurationTime);
-			DodgeCooldown.Restart(DodgeCooldownTime);
+			//DodgeCooldown.Restart(DodgeCooldownTime);
 			//Color color = GetComponent<SpriteRenderer>().color;
 			//color.a = .5f;
 			//GetComponent<SpriteRenderer>().color = color;
@@ -76,22 +94,25 @@ public class PlayerMovementScript : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
 
+		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
 		if (DodgeTimer.IsRunning()) {
 			Vector2 direction = rb.velocity.normalized;
-			rb.velocity = direction * DodgeSpeed * .05f;
+			//rb.velocity = direction * DodgeSpeed * .05f;
 			if (DodgeTimer.Update()) {
-				//DodgeCooldown.Restart(DodgeCooldownTime);
+				DodgeCooldown.Restart(DodgeCooldownTime);
 				//Color color = GetComponent<SpriteRenderer>().color;
 				//color.a = 1.0f;
 				//GetComponent<SpriteRenderer>().color = color;
 			}
-			return; // NOTE: early return
+			//return; // NOTE: early return
+
+			rb.velocity = movement * DodgeSpeed * Time.deltaTime;
+		} else {
+			rb.velocity = movement * Speed * Time.deltaTime;
 		}
 
 
-		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-		rb.velocity = movement * Speed * Time.deltaTime;
 
 		if (mousePosition.x < transform.position.x && lookingRight) {
 			lookingRight = !lookingRight;
@@ -121,6 +142,19 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (Health < 0 || Health == 0) {
 			//Destroy(gameObject);
 			gameObject.SetActive(false);
+		}
+	}
+
+	void AddBuff(Buff buff) {
+		Buffs.AddBuff(buff);
+
+		switch (buff.Type) {
+			case BuffType.HpRegen:
+				break;
+			case BuffType.Invulnerability:
+				break;
+			default:
+				break;
 		}
 	}
 

@@ -4,13 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatteryCooldownScript : MonoBehaviour {
+public class BatteryColorCooldownScript : MonoBehaviour {
 
-	//public Color ReadyColor;
-	//public Color ChargingColor;
+	public Color ReadyColor;
+	public Color ChargingColor;
 
-	private Sprite readySprite;
-	public Sprite ChargingSprite;
+	//private Sprite readySprite;
+	//public Sprite ChargingSprite;
 
 	public int CooldownIndex;
 
@@ -21,7 +21,7 @@ public class BatteryCooldownScript : MonoBehaviour {
 
 	void Start() {
 		spriteRenderer = GetComponent<SpriteRenderer>();
-		readySprite = spriteRenderer.sprite;
+		//readySprite = spriteRenderer.sprite;
 	}
 
 	void Update() {
@@ -30,11 +30,11 @@ public class BatteryCooldownScript : MonoBehaviour {
 		}
 		
 		if (cooldown.IsRunning()) {
-			//spriteRenderer.color = ChargingColor;
-			spriteRenderer.sprite = ChargingSprite;
+			spriteRenderer.color = ChargingColor;
+			//spriteRenderer.sprite = ChargingSprite;
 		} else {
-			//spriteRenderer.color = ReadyColor;
-			spriteRenderer.sprite = readySprite;
+			spriteRenderer.color = ReadyColor;
+			//spriteRenderer.sprite = readySprite;
 		}
 
 	}

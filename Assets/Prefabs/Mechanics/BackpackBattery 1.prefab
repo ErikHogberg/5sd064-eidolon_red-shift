@@ -4768,7 +4768,7 @@ GameObject:
   - component: {fileID: 8744200278172667073}
   - component: {fileID: 5799224490005409152}
   m_Layer: 0
-  m_Name: BackpackBattery
+  m_Name: BackpackBattery 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4781,14 +4781,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6986880514275413379}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9187935, w: -0.39473864}
-  m_LocalPosition: {x: -1.4500022, y: -0.7400001, z: 1}
-  m_LocalScale: {x: 1.621, y: 1.621, z: 1.621}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008097825, w: -0.9999672}
+  m_LocalPosition: {x: -1.36, y: -0.69, z: 1}
+  m_LocalScale: {x: 0.7995562, y: 0.7995562, z: 0.7995562}
   m_Children:
   - {fileID: 7145457275866772816}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -226.499}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -359.072}
 --- !u!212 &8744200278172667073
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4826,7 +4826,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9897d6c0fd108a74f86b2f6dcec9ac29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73fbcf944c04ea640b2d0fac838dcf79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4849,5 +4849,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0259bb6eaa53ba945bf732e831abffa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChargingSprite: {fileID: 0}
+  ChargingSprite: {fileID: 21300000, guid: e6fb249c9c8faef4bb68abb9da219fc3, type: 3}
   CooldownIndex: 0

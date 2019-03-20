@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class ParticleSystemSelfDestructScript : MonoBehaviour
 {
-	private ParticleSystem ps;
+	//private ParticleSystem ps;
 
 	public void Start() {
-		ps = GetComponent<ParticleSystem>();
+		//ps = GetComponent<ParticleSystem>();
 		//ps.simulationSpace = ParticleSystemSimulationSpace.Custom;//main.simulationSpace = Globals.Ground.transform;
 		//ps.main.customSimulationSpace.parent = Globals.Ground.transform;
 	}

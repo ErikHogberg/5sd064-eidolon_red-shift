@@ -13,11 +13,17 @@ public class LockAxisScript : MonoBehaviour {
 
 	void Start() {
 		initPos = transform.position;
-		groundInitPos = Globals.Ground.transform.position;
+		//groundInitPos = Globals.Ground.transform.position;
 	}
 
-	void LateUpdate() {
+	void Update() {
 		Vector3 pos = transform.position;
+		if (groundInitPos == null) {
+			groundInitPos = Globals.Ground.transform.position;
+		}
+		if (groundInitPos == null) {
+			return;
+		}
 
 		if (!LockX) {
 			//pos.x = initPos.x;

@@ -156,7 +156,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		}
 	}
 
-	void AddBuff(Buff buff) {
+	public void AddBuff(Buff buff) {
 		Buffs.AddBuff(buff);
 
 		switch (buff.Type) {

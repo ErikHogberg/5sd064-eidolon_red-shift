@@ -7,8 +7,14 @@ using System.Text;
 namespace Assets.Scripts.Pickups {
 	public enum BuffType {
 		HpRegen,
+		ZombieHpRegen,
+		SpeedUp,
+		ZombieSpeedUp,
 		Invulnerability,
-
+		NoWeaponCooldown,
+		FullAutoWeapon,
+		DamageIncrease,
+		AoEWeapon,
 	}
 
 	public struct Buff {

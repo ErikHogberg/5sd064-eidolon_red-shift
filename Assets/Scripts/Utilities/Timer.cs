@@ -58,7 +58,7 @@ namespace Assets.Scripts.Utilities {
 		}
 
 		public int RestartWithDelta(float time) {
-			int overflowTimes = -1;
+			int overflowTimes = 0;
 			while (this.time < 0) {
 				this.time += time;
 				overflowTimes++;

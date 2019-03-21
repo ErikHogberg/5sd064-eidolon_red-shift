@@ -201,5 +201,10 @@ PrefabInstance:
       propertyPath: TargetLevel
       value: Palace level mar 13
       objectReference: {fileID: 0}
+    - target: {fileID: 530522627, guid: 948c607c98549f34da6149e578fe80f1, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1801634249264958, guid: 3386ae49c7652d540a9286c0bdd9dedf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 948c607c98549f34da6149e578fe80f1, type: 3}

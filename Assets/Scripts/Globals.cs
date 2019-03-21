@@ -17,6 +17,7 @@ namespace Assets.Scripts {
 		// The current dialogue window
 		public static DialoguePanelScript DialogueWindow;
 		public static NotificationScript NotificationWindow;
-		
+		public static FadeScript FadePanel;
+
 	}
 }

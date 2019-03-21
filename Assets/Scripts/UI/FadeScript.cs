@@ -21,12 +21,20 @@ public class FadeScript : MonoBehaviour {
 	void Start() {
 		blackImage = GetComponent<Image>();
 		timer = new Timer(Time);
+
+		Color color = blackImage.color;
+		if (FadeOut) {
+			color.a = 0.0f;
+		} else {
+			color.a = 1.0f;
+		}
+		blackImage.color = color;
 	}
 
 	void Update() {
 		if (timer.Update()) {
 			if (FadeOut) {
-				SceneManager.LoadScene(NextLevel, LoadSceneMode.Additive);
+				SceneManager.LoadScene(NextLevel, LoadSceneMode.Single);
 			} else {
 				gameObject.SetActive(false);
 			}
@@ -37,6 +45,7 @@ public class FadeScript : MonoBehaviour {
 	public void StartLevelTransition(string Level) {
 		FadeOut = true;
 		NextLevel = Level;
+		timer.Restart(Time);
 		gameObject.SetActive(true);
 	}
 
@@ -52,7 +61,7 @@ public class FadeScript : MonoBehaviour {
 			alpha = 1.0f - alpha;
 		}
 
-		alphaTemp = alpha;		
+		alphaTemp = alpha;
 
 		Color color = blackImage.color;
 		color.a = alpha;

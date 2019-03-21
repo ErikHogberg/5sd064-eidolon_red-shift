@@ -8,6 +8,7 @@ public class GroundMoveScript : MonoBehaviour {
 
 	public float speed = 5;
 
+	//public float minX;
 	public float maxX = 5;
 	public float maxY = 2;
 	public float minY = -2;
@@ -17,42 +18,35 @@ public class GroundMoveScript : MonoBehaviour {
 
 	public Vector3 buffer;
 
-	public bool HaltScroll = false;
-	private bool scrollBack = false;
-
+	// Use this for initialization
 	void Start() {
+		//offset = transform.position - player.transform.position;
+		//buffer = new Vector3(3, 3, 3);
 		Assets.Scripts.Globals.Ground = gameObject;
 	}
 
+	//*
+	// Update is called once per frame
 	void LateUpdate() {
 
+		if (player.transform.position.x > maxX) {
+			//transform.localPosition += new Vector3(-Time.deltaTime * speed, 0, 0);
+			transform.localPosition = new Vector3(-player.transform.localPosition.x + maxX, transform.localPosition.y, transform.localPosition.z);
+		}
+
 		if (player.transform.position.y > maxY) {
-			transform.localPosition = new Vector3(transform.localPosition.x, -player.transform.localPosition.y + maxY, transform.localPosition.z);
+			//transform.localPosition += new Vector3(0, -Time.deltaTime * speed, 0);
+			transform.localPosition = new Vector3(transform.localPosition.x, -player.transform.localPosition.y + maxY,  transform.localPosition.z);
 		} else if (player.transform.position.y < minY) {
-			transform.localPosition = new Vector3(transform.localPosition.x, -player.transform.localPosition.y + minY, transform.localPosition.z);
+			//transform.localPosition += new Vector3(0, Time.deltaTime * speed, 0);
+			transform.localPosition = new Vector3(transform.localPosition.x, -player.transform.localPosition.y + minY,  transform.localPosition.z);
 		}
-
-		if (HaltScroll) {
-			scrollBack = true;
-			return;
-		}
-
-		if (scrollBack) {
-			if (player.transform.position.x > maxX) {
-				transform.localPosition += new Vector3(-Time.deltaTime * speed, 0, 0);
-			} else {
-				scrollBack = false;
-			}
-		} else {
-			if (player.transform.position.x > maxX) {
-				transform.localPosition = new Vector3(-player.transform.localPosition.x + maxX, transform.localPosition.y, transform.localPosition.z);
-			}
-		}
-
 
 	}
+	// */
 
 	/*
+	// Update is called once per frame
 	void LateUpdate() {
 
 		Vector3 currentOffset = transform.position - player.transform.position;

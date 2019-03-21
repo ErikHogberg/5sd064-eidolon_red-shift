@@ -6,8 +6,12 @@ using Assets.Scripts.Utilities;
 
 public class WeaponScript : MonoBehaviour {
 
-	// TODO: bullet scale
-	// IDEA: grow bullet the longer its in air
+    // TODO: bullet scale
+    // IDEA: grow bullet the longer its in air
+
+    //Mick's edit start
+    public AudioSource Bullet;
+    //Mick's edit end
 
 	public Transform firePoint;
 	public GameObject bulletPrefab;
@@ -102,8 +106,12 @@ public class WeaponScript : MonoBehaviour {
 				Shoot(spreadMultiplier * BulletSpread * flip);
 				firedShots++;
 				timer.Restart(Cooldown);
-			}
-		}
+
+                //Mick's edit start
+                Bullet.Play();
+                //Mick's edit end
+            }
+        }
 	}
 
 	public void AddCooldownTimer() {
@@ -116,6 +124,10 @@ public class WeaponScript : MonoBehaviour {
 
 	void Shoot() {
 		Shoot(0.0f);
+
+        //Mick's edit start
+        Bullet.Play();
+        //Mick's edit end
 	}
 
 	void Shoot(float offsetAngle) {

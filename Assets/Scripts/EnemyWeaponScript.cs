@@ -60,7 +60,11 @@ public class EnemyWeaponScript : MonoBehaviour
     {
         if(playerInRange != null && playerInRange.tag == "Player")
         {
-            playerInRange.GetComponent<PlayerMovementScript>().TakeDamage(Damage);
+			PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
+			if (movementScript == null) {
+				movementScript = playerInRange.GetComponentInParent<PlayerMovementScript>();
+			}
+			movementScript.TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;

@@ -8,6 +8,7 @@ TagManager:
   - Zombie
   - Parallax Layer
   - Corpse
+  - Boundary
   layers:
   - Default
   - TransparentFX
@@ -47,4 +48,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Crosshair
+    uniqueID: 3320905689
     locked: 0

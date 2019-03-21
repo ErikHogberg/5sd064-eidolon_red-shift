@@ -6,18 +6,22 @@ using UnityEngine;
 
 public class BatteryCooldownScript : MonoBehaviour {
 
-	public Color ReadyColor;
-	public Color ChargingColor;
+	//public Color ReadyColor;
+	//public Color ChargingColor;
+
+	private Sprite readySprite;
+	public Sprite ChargingSprite;
 
 	public int CooldownIndex;
 
 
 	private Timer cooldown;
 
-	private SpriteRenderer sprite;
+	private SpriteRenderer spriteRenderer;
 
 	void Start() {
-		sprite = GetComponent<SpriteRenderer>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		readySprite = spriteRenderer.sprite;
 	}
 
 	void Update() {
@@ -26,9 +30,11 @@ public class BatteryCooldownScript : MonoBehaviour {
 		}
 		
 		if (cooldown.IsRunning()) {
-			sprite.color = ChargingColor;
+			//spriteRenderer.color = ChargingColor;
+			spriteRenderer.sprite = ChargingSprite;
 		} else {
-			sprite.color = ReadyColor;
+			//spriteRenderer.color = ReadyColor;
+			spriteRenderer.sprite = readySprite;
 		}
 
 	}

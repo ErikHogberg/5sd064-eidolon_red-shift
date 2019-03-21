@@ -23,6 +23,7 @@ public class ResurrectionBatteryCooldownScript : MonoBehaviour {
 		}
 		if (cooldown == null) {
 			sprite.color = ReadyColor;
+			//sprite.color = new Color(0.0f,0.0f,0.0f,0.0f);
 			return;
 		}
 

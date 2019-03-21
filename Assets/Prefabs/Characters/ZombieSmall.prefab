@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5946e0178610a184ba165bbecbda882c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 15
+  Damage: 20
   ZombieScript: {fileID: 3317521913021960935}
 --- !u!1 &3317521913021960930
 GameObject:
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e36ade68b95fb4182a3e4841fad425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 80
+  Health: 25
   MaxFollowDistance: 5
   FollowSpeed: 200
   AggressiveSpeed: 140

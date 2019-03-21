@@ -11,6 +11,7 @@ public class FadeScript : MonoBehaviour {
 	public bool FadeOut;
 	public string NextLevel;
 
+	public AnimationCurve easing;
 
 	private Image blackImage;
 	private Timer timer;
@@ -29,6 +30,8 @@ public class FadeScript : MonoBehaviour {
 			color.a = 1.0f;
 		}
 		blackImage.color = color;
+
+		//easing = AnimationCurve.EaseInOut(0.85f, 0.15f, 0.15f, 0.85f);
 	}
 
 	void Update() {
@@ -54,7 +57,7 @@ public class FadeScript : MonoBehaviour {
 	}
 
 	private void CalcAlpha() {
-		float alpha = timer.TimeLeft() / Time;
+		float alpha = easing.Evaluate( timer.TimeLeft() / Time);
 
 		timerTime = timer.TimeLeft();
 		if (FadeOut) {

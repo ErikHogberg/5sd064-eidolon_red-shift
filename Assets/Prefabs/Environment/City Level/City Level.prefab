@@ -7665,7 +7665,7 @@ Transform:
   - {fileID: 915821653}
   - {fileID: 1097182854}
   m_Father: {fileID: 1989344931}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634843245
 GameObject:
@@ -8101,6 +8101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ZombieTypeToSpawn: {fileID: 3317521913021960930, guid: 03f3330669146ad4dbe4109d24bcee38,
     type: 3}
+  ResEffect: {fileID: 0}
   Cooldown: 0.7
   Duration: 0.1
 --- !u!58 &772947024
@@ -26665,6 +26666,7 @@ Transform:
   - {fileID: 1165746912}
   - {fileID: 1555180571}
   - {fileID: 1194263566}
+  - {fileID: 1551833432}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26681,6 +26683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueWindow: {fileID: 20345493}
+  NotificationWindow: {fileID: 0}
   CursorTexture: {fileID: 0}
   CursorOffset: {x: 0, y: 0}
 --- !u!114 &1507602110
@@ -27035,8 +27038,8 @@ Transform:
   m_LocalPosition: {x: 6.84, y: 5.32, z: 10}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children: []
-  m_Father: {fileID: 1989344931}
-  m_RootOrder: 4
+  m_Father: {fileID: 1507602111}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1551833434
 SpriteRenderer:
@@ -34017,7 +34020,6 @@ Transform:
   - {fileID: 316190377}
   - {fileID: 1182361670}
   - {fileID: 996006473}
-  - {fileID: 1551833432}
   - {fileID: 632636828}
   m_Father: {fileID: 1165746912}
   m_RootOrder: 0

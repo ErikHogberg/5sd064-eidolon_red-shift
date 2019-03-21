@@ -43,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: triggers
+    uniqueID: 3872959643
+    locked: 0
   - name: RespawnCollider
     uniqueID: 875468281
     locked: 0

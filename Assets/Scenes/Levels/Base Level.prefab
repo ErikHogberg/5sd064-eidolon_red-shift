@@ -568,8 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueWindow: {fileID: 4759994928760105503}
   NotificationWindow: {fileID: 2304350477700184694}
-  CursorTexture: {fileID: 0}
-  CursorOffset: {x: 0, y: 0}
+  FadePanel: {fileID: 5956902008099394805}
 --- !u!1 &1056037700605944168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4635,7 +4634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4666,6 +4665,8 @@ MonoBehaviour:
   Time: 2
   FadeOut: 0
   NextLevel: 
+  timerTime: 0
+  alphaTemp: 0
 --- !u!1 &6948516056512331856
 GameObject:
   m_ObjectHideFlags: 0

@@ -594,6 +594,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 953343416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &42626247
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1768644396}
+    m_Modifications:
+    - target: {fileID: 3390526496466761297, guid: 0caa7ba9ca8d3034bb0eb84915469c32,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelTransitionTrigger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876447757002152708, guid: 0caa7ba9ca8d3034bb0eb84915469c32,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876447757002152708, guid: 0caa7ba9ca8d3034bb0eb84915469c32,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876447757002152708, guid: 0caa7ba9ca8d3034bb0eb84915469c32,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878235788865713810, guid: 0caa7ba9ca8d3034bb0eb84915469c32,
+        type: 3}
+      propertyPath: TargetLevel
+      value: Village level mar 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0caa7ba9ca8d3034bb0eb84915469c32, type: 3}
 --- !u!1001 &49762708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19334,6 +19368,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e696b7bf925abf499881bb157b52cf9, type: 3}
+--- !u!4 &1768644396 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5612712902915474010, guid: ae57cf3e19a76d843a1798cf084aa853,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056037702267013937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1769829020
 PrefabInstance:
   m_ObjectHideFlags: 0

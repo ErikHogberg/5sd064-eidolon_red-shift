@@ -7,12 +7,14 @@ public class InitScript : MonoBehaviour {
 
 	public DialoguePanelScript DialogueWindow;
 	public NotificationScript NotificationWindow;
-	public Texture2D CursorTexture;
-	public Vector2 CursorOffset;
+	public FadeScript FadePanel;
+	//public Texture2D CursorTexture;
+	//public Vector2 CursorOffset;
 
 	void Start() {
 		Globals.DialogueWindow = DialogueWindow;
 		Globals.NotificationWindow = NotificationWindow;
+		Globals.FadePanel = FadePanel;
 	}
 
 	void Update() {

@@ -33,7 +33,9 @@ public class RespawnScript : MonoBehaviour {
 		CooldownTimer.Stop();
 
         //Mick's addition starts here
-        ResEffect = transform.Find("quickres").gameObject.GetComponent<ParticleSystem>();
+        ResEffect  = GetComponentInChildren<ParticleSystem>(); 
+        //GetComponentInParent<ParticleSystem>();
+        //transform.parent.Find("quickres").gameObject.GetComponent<ParticleSystem>();
         //Mick's addition ends here
     }
 

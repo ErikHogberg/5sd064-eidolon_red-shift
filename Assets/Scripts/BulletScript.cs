@@ -8,6 +8,8 @@ public class BulletScript : MonoBehaviour {
 	public int Damage = 20;
 	private Rigidbody2D rb;
 
+	bool destroyed = false;
+
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		rb.velocity = transform.right * Speed;
@@ -24,7 +26,10 @@ public class BulletScript : MonoBehaviour {
 	}
 
 	private void DestroyBullet() {
-
+		if (destroyed) {
+			return;
+		}
+		destroyed = true;
 		ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
 		particleSystem.Stop();
 

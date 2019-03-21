@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 6546175507128491429}
   - {fileID: 6135774015082127982}
+  - {fileID: 9072349767740070342}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -199,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824cbd1fafa991b4fb3a418533353387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WorldZ: 0
 --- !u!1 &6932710387990775541
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +267,6 @@ CircleCollider2D:
   m_Offset: {x: 2.7274868, y: -0.11386784}
   serializedVersion: 2
   m_Radius: 3.92144
-<<<<<<< HEAD
 --- !u!1001 &4213292563774824870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,5 +342,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4213292563774824870}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> parent of 9371d93... Merge branch 'Mick-Particles' into Mick-master-merge

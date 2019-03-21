@@ -8,7 +8,6 @@ namespace Assets.Scripts.Pickups {
 	public enum BuffType {
 		HpRegen,
 		ZombieHpRegen,
-		SpeedUp,
 		ZombieSpeedUp,
 		Invulnerability,
 		NoWeaponCooldown,

@@ -12,6 +12,7 @@ public class RespawnScript : MonoBehaviour {
 
     //Mick's addition starts here
     public ParticleSystem ResEffect;
+    public AudioSource Res;
     //Mick's addition ends here
 
     //private float m_Cooldown = 0f;
@@ -79,6 +80,7 @@ public class RespawnScript : MonoBehaviour {
 
             //Mick's addition starts here
             ResEffect.Play();
+            Res.Play();
             //Mick's addition ends here
         }
     }

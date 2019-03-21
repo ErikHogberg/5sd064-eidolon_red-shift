@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64f1ebfd873f5842bbf52f9d9d1306b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   Corpse: {fileID: 4236745857078329283, guid: db619c8b59329bb4694b79eb7ad2b47d, type: 3}
   Speed: 0.05
   EnemyType: 2
@@ -332,6 +333,11 @@ PrefabInstance:
     - target: {fileID: 1093477277308699443, guid: 3c5337f4b8607b74eb347ade88eec8e2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 879529387463188573, guid: 3c5337f4b8607b74eb347ade88eec8e2,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

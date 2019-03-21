@@ -163,7 +163,10 @@ Transform:
   - {fileID: 3332661101954258155}
   - {fileID: 6041056993136896204}
   - {fileID: 4892377058779557795}
+<<<<<<< HEAD
   - {fileID: 2944533305466406263}
+=======
+>>>>>>> parent of 9371d93... Merge branch 'Mick-Particles' into Mick-master-merge
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -322,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824cbd1fafa991b4fb3a418533353387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   WorldZ: 0
 --- !u!1001 &975337880306828077
 PrefabInstance:
@@ -398,3 +402,5 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 975337880306828077}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 9371d93... Merge branch 'Mick-Particles' into Mick-master-merge

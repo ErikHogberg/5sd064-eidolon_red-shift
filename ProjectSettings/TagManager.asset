@@ -8,6 +8,7 @@ TagManager:
   - Zombie
   - Parallax Layer
   - Corpse
+  - Boundary
   layers:
   - Default
   - TransparentFX

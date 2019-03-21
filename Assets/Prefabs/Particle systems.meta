@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Particle systems.meta
 guid: c20a981f01a560f47bdbf65efa834184
+=======
+guid: 91a3a225d41c29d44bf4ed8b3c485508
+>>>>>>> parent of 9371d93... Merge branch 'Mick-Particles' into Mick-master-merge:Assets/Resources/Graphics/Environment/City Level.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

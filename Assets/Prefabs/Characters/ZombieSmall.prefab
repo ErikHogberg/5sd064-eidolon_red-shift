@@ -163,7 +163,6 @@ Transform:
   - {fileID: 3332661101954258155}
   - {fileID: 6041056993136896204}
   - {fileID: 5483671133188681010}
-  - {fileID: 8320903371444114298}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -274,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e36ade68b95fb4182a3e4841fad425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 80
+  Health: 50
   MaxFollowDistance: 5
   FollowSpeed: 200
   AggressiveSpeed: 140
@@ -323,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldZ: 0
+<<<<<<< HEAD
 --- !u!1001 &8979262046459091225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,3 +398,5 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8979262046459091225}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 9371d93... Merge branch 'Mick-Particles' into Mick-master-merge

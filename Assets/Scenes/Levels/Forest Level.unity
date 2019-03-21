@@ -323,11 +323,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3317521913021960930, guid: 03f3330669146ad4dbe4109d24bcee38,
         type: 3}
-    - target: {fileID: 3540959496611128322, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: ResEffect
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1056037702328920962, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_IsActive
@@ -357,92 +352,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6085319430657021287, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.5996094
-      objectReference: {fileID: 0}
-    - target: {fileID: 6085319430657021287, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -31.800293
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521181688548022534, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 638.1699
-      objectReference: {fileID: 0}
-    - target: {fileID: 4521181688548022534, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 40.899902
-      objectReference: {fileID: 0}
-    - target: {fileID: 846532582422868643, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.5996094
-      objectReference: {fileID: 0}
-    - target: {fileID: 846532582422868643, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 181.10986
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327438981394018154, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 2.5996094
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327438981394018154, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -77.470215
-      objectReference: {fileID: 0}
-    - target: {fileID: 8247765756411520790, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -78.399414
-      objectReference: {fileID: 0}
-    - target: {fileID: 6606475703417175166, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.9003906
-      objectReference: {fileID: 0}
-    - target: {fileID: 4651839675618767801, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -74.67969
-      objectReference: {fileID: 0}
-    - target: {fileID: 9188823194887594650, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 104.59961
-      objectReference: {fileID: 0}
-    - target: {fileID: 8120622477308636654, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -85.799805
-      objectReference: {fileID: 0}
-    - target: {fileID: 5352609923001578005, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -603.89996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1820231513736538243, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -603.89996
-      objectReference: {fileID: 0}
-    - target: {fileID: 5660516248808962929, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: UVModule.sprites.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: e52cb22fb9a96784f9cef5d61673bb98,
-        type: 3}
-    - target: {fileID: 5660516248808962929, guid: ae57cf3e19a76d843a1798cf084aa853,
-        type: 3}
-      propertyPath: InitialModule.startRotation.scalar
-      value: 0.7853981
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}

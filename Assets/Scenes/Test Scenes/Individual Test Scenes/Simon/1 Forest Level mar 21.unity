@@ -17177,12 +17177,17 @@ PrefabInstance:
     - target: {fileID: 1095157646748832555, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: MinBulletInterval
-      value: 0.05
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 1095157646748832555, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: Cooldown
-      value: 0.7
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095157646748832555, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: FullAuto
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7856274308343829385, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}

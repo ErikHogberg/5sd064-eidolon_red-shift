@@ -723,5 +723,35 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4264722300882096363, guid: 948c607c98549f34da6149e578fe80f1,
+        type: 3}
+      propertyPath: Cooldown
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264722300882096363, guid: 948c607c98549f34da6149e578fe80f1,
+        type: 3}
+      propertyPath: MinBulletInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264722300882096363, guid: 948c607c98549f34da6149e578fe80f1,
+        type: 3}
+      propertyPath: BulletSpread
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264722300882096363, guid: 948c607c98549f34da6149e578fe80f1,
+        type: 3}
+      propertyPath: StartBatteryCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264722300882096363, guid: 948c607c98549f34da6149e578fe80f1,
+        type: 3}
+      propertyPath: FullAuto
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4079023871587135029, guid: 948c607c98549f34da6149e578fe80f1,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 948c607c98549f34da6149e578fe80f1, type: 3}

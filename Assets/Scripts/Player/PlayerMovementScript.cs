@@ -152,6 +152,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (Health < 0 || Health == 0) {
 			//Destroy(gameObject);
+			Globals.GameOver();
 			gameObject.SetActive(false);
 		}
 	}

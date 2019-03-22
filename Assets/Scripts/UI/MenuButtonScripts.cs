@@ -55,7 +55,8 @@ public class MenuButtonScripts : MonoBehaviour {
 		StartLevel(LevelToStart);
 	}
 	public void StartLevel(string level) {
-		SceneManager.LoadScene(level, LoadSceneMode.Single);
+		Globals.FadePanel.StartLevelTransition(level);
+		//SceneManager.LoadScene(level, LoadSceneMode.Single);
 	}
 
 	public void StartForestLevel() {
@@ -67,7 +68,8 @@ public class MenuButtonScripts : MonoBehaviour {
 	}
 
 	public void RestartScene() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+		Globals.FadePanel.StartLevelTransition(SceneManager.GetActiveScene().name);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 	}
 
 	public void TogglePause() {

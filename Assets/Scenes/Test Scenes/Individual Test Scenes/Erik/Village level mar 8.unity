@@ -1090,6 +1090,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &102831048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3268920636711606512, guid: ae57cf3e19a76d843a1798cf084aa853,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056037702267013937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &109957903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10811,6 +10817,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 324542279385585804, guid: 1a0e7db120d6d9a4cb9cfa42cbf249d9,
     type: 3}
   m_PrefabInstance: {fileID: 119844279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1028294857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2478256551721815717, guid: ae57cf3e19a76d843a1798cf084aa853,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056037702267013937}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1032869071 stripped
 Transform:
@@ -21710,6 +21722,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab3e2e5d21d7624b8c3845ccfd57046, type: 3}
+--- !u!1 &1985095257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1507893993919269122, guid: ae57cf3e19a76d843a1798cf084aa853,
+    type: 3}
+  m_PrefabInstance: {fileID: 1056037702267013937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1990143482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24315,6 +24333,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6237086882153715514, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Batteries.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237086882153715514, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Batteries.Array.data[0]
+      value: 
+      objectReference: {fileID: 1028294857}
+    - target: {fileID: 6237086882153715514, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Batteries.Array.data[1]
+      value: 
+      objectReference: {fileID: 1985095257}
+    - target: {fileID: 6237086882153715514, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Batteries.Array.data[2]
+      value: 
+      objectReference: {fileID: 102831048}
     - target: {fileID: 5956902008099394805, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_Enabled

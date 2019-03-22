@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts {
 	public static class Globals {
@@ -18,6 +19,11 @@ namespace Assets.Scripts {
 		public static DialoguePanelScript DialogueWindow;
 		public static NotificationScript NotificationWindow;
 		public static FadeScript FadePanel;
+		public static Image GameOverPanel;
+
+		public static void GameOver() {
+			GameOverPanel.gameObject.SetActive(true);
+		}
 
 	}
 }

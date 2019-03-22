@@ -57,9 +57,13 @@ public class FadeScript : MonoBehaviour {
 	}
 
 	private void CalcAlpha() {
-		float alpha = easing.Evaluate( timer.TimeLeft() / Time);
 
 		timerTime = timer.TimeLeft();
+		if (!timer.IsRunning()) {
+			timerTime = 0.0f;
+		}
+
+		float alpha = easing.Evaluate( timerTime / Time);
 		if (FadeOut) {
 			alpha = 1.0f - alpha;
 		}

@@ -25024,7 +25024,7 @@ PrefabInstance:
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: CooldownIndex
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8e65d23d937a249916eb4fc790ddf1, type: 3}
@@ -25130,7 +25130,7 @@ PrefabInstance:
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: CooldownIndex
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8e65d23d937a249916eb4fc790ddf1, type: 3}
@@ -25439,7 +25439,7 @@ PrefabInstance:
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: CooldownIndex
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8e65d23d937a249916eb4fc790ddf1, type: 3}

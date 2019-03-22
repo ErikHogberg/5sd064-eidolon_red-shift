@@ -2028,10 +2028,10 @@ RectTransform:
   m_Father: {fileID: 7349764545610546872}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.5996094, y: -77.46973}
-  m_SizeDelta: {x: -46.9, y: 35.02}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 2.5996094, y: 35}
+  m_SizeDelta: {x: -46.9, y: 35.02002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1157150030918679414
 CanvasRenderer:
@@ -3283,7 +3283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6085319430657021287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4017,7 +4017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4521181688548022534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6027,16 +6027,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2.69
       objectReference: {fileID: 0}
-    - target: {fileID: 114906281548317774, guid: 09a323737fdc4214f91b1540bf345dd4,
-        type: 3}
-      propertyPath: HpRegen
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114906281548317774, guid: 09a323737fdc4214f91b1540bf345dd4,
-        type: 3}
-      propertyPath: HpRegenRate
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5289650434451561713, guid: 09a323737fdc4214f91b1540bf345dd4,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -6046,6 +6036,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 6.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906281548317774, guid: 09a323737fdc4214f91b1540bf345dd4,
+        type: 3}
+      propertyPath: HpRegen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114906281548317774, guid: 09a323737fdc4214f91b1540bf345dd4,
+        type: 3}
+      propertyPath: HpRegenRate
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114002460547528480, guid: 09a323737fdc4214f91b1540bf345dd4,
         type: 3}

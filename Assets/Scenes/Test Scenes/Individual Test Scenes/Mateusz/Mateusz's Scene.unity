@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4481127110671496, guid: 09a323737fdc4214f91b1540bf345dd4, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4481127110671496, guid: 09a323737fdc4214f91b1540bf345dd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -279,13 +279,88 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864123309}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3729340bce3f4245a00b4d1faaa7b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Archer: {fileID: 1072754609493932, guid: 2e41d97479d68ca43871b5916fd194e5, type: 3}
-  Peasant: {fileID: 1072754609493932, guid: dab3e2e5d21d7624b8c3845ccfd57046, type: 3}
-  Knight: {fileID: 1072754609493932, guid: e28834b09aae64b45b27c242f852acf8, type: 3}
-  EnemiesAlive: 0
+  Enemy1: {fileID: 0}
+  Enemy2: {fileID: 0}
+  Enemy3: {fileID: 0}
+  Enemy4: {fileID: 0}
+  Enemy5: {fileID: 0}
+  MaxEnemies: 5
   EnemiesToKill: 20
+  InfiniteSpawn: 0
+--- !u!1001 &1013941616
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 629565014, guid: 3444373937e6140e387539bc5a652e9e, type: 3}
+      propertyPath: m_Name
+      value: King
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.6974263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.33108252
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044077908767314518, guid: 3444373937e6140e387539bc5a652e9e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 629565019, guid: 3444373937e6140e387539bc5a652e9e, type: 3}
+      propertyPath: health
+      value: 1000
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3444373937e6140e387539bc5a652e9e, type: 3}

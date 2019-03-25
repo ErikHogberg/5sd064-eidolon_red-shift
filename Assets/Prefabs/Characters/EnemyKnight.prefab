@@ -254,7 +254,7 @@ MonoBehaviour:
   Damage: 50
   Cooldown: 1.5
   Arrow: {fileID: 7511837834923881284}
-  Sword: {fileID: 5138847786980160673}
+  Sword_Swing: {fileID: 5138847786980160673}
 --- !u!58 &6338407074571451055
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -337,6 +337,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233476859677447424, guid: b22a9907dd4118145a401aeade892729,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b22a9907dd4118145a401aeade892729, type: 3}

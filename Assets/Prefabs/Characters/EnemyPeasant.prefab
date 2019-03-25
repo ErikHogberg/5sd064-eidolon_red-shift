@@ -254,7 +254,7 @@ MonoBehaviour:
   Damage: 10
   Cooldown: 1.5
   Arrow: {fileID: 6875731717881135215}
-  Sword_Swing: {fileID: 8071633549683984266}
+  Sword_Swing: {fileID: 7032008158722660246}
 --- !u!58 &3816102458412845111
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -338,6 +338,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sounds
       objectReference: {fileID: 0}
+    - target: {fileID: 5233476859677447424, guid: b22a9907dd4118145a401aeade892729,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b22a9907dd4118145a401aeade892729, type: 3}
 --- !u!4 &8149181554850118558 stripped
@@ -352,9 +357,9 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 2970050630822724246}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &8071633549683984266 stripped
+--- !u!82 &7032008158722660246 stripped
 AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6427637922728969500, guid: b22a9907dd4118145a401aeade892729,
+  m_CorrespondingSourceObject: {fileID: 5233476859677447424, guid: b22a9907dd4118145a401aeade892729,
     type: 3}
   m_PrefabInstance: {fileID: 2970050630822724246}
   m_PrefabAsset: {fileID: 0}

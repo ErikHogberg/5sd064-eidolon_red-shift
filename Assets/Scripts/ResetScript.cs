@@ -16,6 +16,7 @@ public class ResetScript : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		/*
 		float exit = Input.GetAxis("Cancel");
 		if (exit != 0)
 		{
@@ -27,6 +28,7 @@ public class ResetScript : MonoBehaviour
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 		}
+		 */
 
 	}
 }

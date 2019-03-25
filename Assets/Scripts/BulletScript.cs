@@ -19,7 +19,14 @@ public class BulletScript : MonoBehaviour
     {
         if (collider.CompareTag("Enemy"))
         {
-            collider.GetComponent<EnemyScript>().TakeDamage(Damage);
+            if(collider.name == "King" || collider.name == "Queen")
+            {
+                collider.GetComponent<BossScript>().TakeDamage(Damage);
+            }
+            else
+            {
+                collider.GetComponent<EnemyScript>().TakeDamage(Damage);
+            }
             Destroy(gameObject);
         }
     }

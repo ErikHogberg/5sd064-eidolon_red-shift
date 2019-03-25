@@ -537,7 +537,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056037700783413626}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c104c1ec8b10d54b8e1f19a8d131a62, type: 3}
   m_Name: 
@@ -3001,14 +3001,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Foreground test
       objectReference: {fileID: 0}
-    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.503
-      objectReference: {fileID: 0}
-    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3875028
-      objectReference: {fileID: 0}
     - target: {fileID: 4213749051036536, guid: 777041eebee8db848975490fc10fb756, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3041,6 +3033,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3875028
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 777041eebee8db848975490fc10fb756, type: 3}
 --- !u!4 &1056433655836387544 stripped
@@ -3056,11 +3056,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7349764545610546872}
     m_Modifications:
-    - target: {fileID: 6686315386922834197, guid: d8da5bdf554df5545a653aaf46865aeb,
-        type: 3}
-      propertyPath: m_Name
-      value: Dialogue Panel
-      objectReference: {fileID: 0}
     - target: {fileID: 3167365269663737509, guid: d8da5bdf554df5545a653aaf46865aeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3165,6 +3160,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6686315386922834197, guid: d8da5bdf554df5545a653aaf46865aeb,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialogue Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8da5bdf554df5545a653aaf46865aeb, type: 3}
@@ -3558,7 +3558,7 @@ PrefabInstance:
     - target: {fileID: 6553709971842850232, guid: 3d7d47c04729af348bc970a75519ba29,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -146.4
+      value: -146.40002
       objectReference: {fileID: 0}
     - target: {fileID: 6553709971842850232, guid: 3d7d47c04729af348bc970a75519ba29,
         type: 3}
@@ -3627,11 +3627,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7349764545610546872}
     m_Modifications:
-    - target: {fileID: 1185313547843799568, guid: bd4602df9671b0943b82fbcef49b70fe,
-        type: 3}
-      propertyPath: m_Name
-      value: Instructions Panel
-      objectReference: {fileID: 0}
     - target: {fileID: 8960071593988120245, guid: bd4602df9671b0943b82fbcef49b70fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3736,6 +3731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185313547843799568, guid: bd4602df9671b0943b82fbcef49b70fe,
+        type: 3}
+      propertyPath: m_Name
+      value: Instructions Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4602df9671b0943b82fbcef49b70fe, type: 3}
@@ -3969,11 +3969,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7349764545610546872}
     m_Modifications:
-    - target: {fileID: 1720796155143674808, guid: 102056b771c262247abd52a5ab2b7db0,
-        type: 3}
-      propertyPath: m_Name
-      value: Game Over Panel
-      objectReference: {fileID: 0}
     - target: {fileID: 6532162940435135204, guid: 102056b771c262247abd52a5ab2b7db0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4079,6 +4074,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1720796155143674808, guid: 102056b771c262247abd52a5ab2b7db0,
+        type: 3}
+      propertyPath: m_Name
+      value: Game Over Panel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102056b771c262247abd52a5ab2b7db0, type: 3}
 --- !u!224 &206274660631744225 stripped
@@ -4161,11 +4161,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7349764545610546872}
     m_Modifications:
-    - target: {fileID: 5400596231440319143, guid: 98c43d198537ddb40b16d2db996816c9,
-        type: 3}
-      propertyPath: m_Name
-      value: Hp Bar Panel
-      objectReference: {fileID: 0}
     - target: {fileID: 980586472378923942, guid: 98c43d198537ddb40b16d2db996816c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4270,6 +4265,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400596231440319143, guid: 98c43d198537ddb40b16d2db996816c9,
+        type: 3}
+      propertyPath: m_Name
+      value: Hp Bar Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160908720733726425, guid: 98c43d198537ddb40b16d2db996816c9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -603.8999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834307314963790927, guid: 98c43d198537ddb40b16d2db996816c9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -603.8999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98c43d198537ddb40b16d2db996816c9, type: 3}

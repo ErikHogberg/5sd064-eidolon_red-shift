@@ -11,5 +11,14 @@ public class PlayerStartWithSmallZombiesScript : MonoBehaviour {
 		for (int i = 0; i < Globals.StartSmallZombies; i++) {
 			SmallZombies[i].SetActive(true);
 		}
+
+		Globals.InitSmallZombies = true;
+		if (Globals.InitLargeZombies) {
+			Globals.InitLargeZombies = false;
+			Globals.InitSmallZombies = false;
+			Globals.StartLargeZombies = 0;
+			Globals.StartSmallZombies = 0;
+		}
+
 	}
 }

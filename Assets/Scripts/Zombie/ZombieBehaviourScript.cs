@@ -220,6 +220,16 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		colorTimer.Restart();
 
 		if (Health < 0 || Health == 0) {
+			switch (type) {
+				case ZombieType.Small:
+					Globals.StartSmallZombies--;
+					break;
+				case ZombieType.Large:
+					Globals.StartLargeZombies--;
+					break;
+				default:
+					break;
+			}
 			Destroy(gameObject);
 		}
 	}

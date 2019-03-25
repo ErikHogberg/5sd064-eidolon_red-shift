@@ -16,6 +16,8 @@ namespace Assets.Scripts {
 			set {
 				if (value + startLargeZombies > 10) {
 					startSmallZombies = 10 - startLargeZombies;
+				} else {
+					startSmallZombies = value;
 				}
 			}
 		}
@@ -26,9 +28,14 @@ namespace Assets.Scripts {
 			set {
 				if (value + startSmallZombies > 10) {
 					startLargeZombies = 10 - startSmallZombies;
+				} else {
+					startLargeZombies = value;
 				}
 			}
 		}
+
+		public static bool InitSmallZombies = false;
+		public static bool InitLargeZombies = false;
 
 		// The current player
 		public static PlayerMovementScript Player;

@@ -14,7 +14,7 @@ public class EnemyWeaponScript : MonoBehaviour
     public float Cooldown = 0.1f;
     //Mick's edit start
     public AudioSource Arrow;
-    public AudioSource Sword;
+    public AudioSource Sword_Swing;
     //mick's edit end
 
 
@@ -71,9 +71,10 @@ public class EnemyWeaponScript : MonoBehaviour
         if(playerInRange != null && playerInRange.tag == "Player")
         {
             //Mick's edit start
-            if (Sword != null)
+            if (Sword_Swing != null)
             {
-            Sword.Play();
+                Debug.Log("played");
+            Sword_Swing.Play();
             }
             //Mick's edit end
             PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
@@ -87,9 +88,9 @@ public class EnemyWeaponScript : MonoBehaviour
         } else if (playerInRange != null && playerInRange.tag == "Zombie")
         {
             //Mick's edit start
-            if (Sword != null)
+            if (Sword_Swing != null)
             {
-                Sword.Play();
+                Sword_Swing.Play();
             }
             //Mick's edit end
             playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);

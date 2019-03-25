@@ -253,6 +253,7 @@ MonoBehaviour:
   Damage: 10
   Cooldown: 1
   Arrow: {fileID: 8313908988367706447}
+  Sword_Swing: {fileID: 6633593682332130986}
 --- !u!1001 &96989074644087413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,6 +417,12 @@ Transform:
 --- !u!82 &8313908988367706447 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8528758595975381753, guid: b22a9907dd4118145a401aeade892729,
+    type: 3}
+  m_PrefabInstance: {fileID: 377401784701393846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &6633593682332130986 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6427637922728969500, guid: b22a9907dd4118145a401aeade892729,
     type: 3}
   m_PrefabInstance: {fileID: 377401784701393846}
   m_PrefabAsset: {fileID: 0}

@@ -254,7 +254,7 @@ MonoBehaviour:
   Damage: 50
   Cooldown: 1.5
   Arrow: {fileID: 7511837834923881284}
-  Sword: {fileID: 5138847786980160673}
+  Sword_Swing: {fileID: 5138847786980160673}
 --- !u!58 &6338407074571451055
 CircleCollider2D:
   m_ObjectHideFlags: 0

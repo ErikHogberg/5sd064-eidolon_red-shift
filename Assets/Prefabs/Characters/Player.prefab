@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 5289650434451561713}
   - component: {fileID: 114906281548317774}
   - component: {fileID: 2737626011791277804}
+  - component: {fileID: 6143146384711019208}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -182,6 +183,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HordeState: 1
   ManualSpeed: 0.03
+--- !u!95 &6143146384711019208
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868829052781526}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d4f9a737269e4117a288d52536fa3cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &6779814088477865992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24821,6 +24841,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_Name
+      value: BackpackBattery 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24891,16 +24921,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2154258
       objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_Name
-      value: BackpackBattery 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: CooldownIndex
@@ -24927,6 +24947,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_Name
+      value: BackpackBattery 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24997,16 +25027,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2154258
       objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_Name
-      value: BackpackBattery 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: CooldownIndex
@@ -25014,15 +25034,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8e65d23d937a249916eb4fc790ddf1, type: 3}
---- !u!4 &2114793578882913399 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-    type: 3}
-  m_PrefabInstance: {fileID: 5491338523072341805}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3225498198283463342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 5491338523072341805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2114793578882913399 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
     type: 3}
   m_PrefabInstance: {fileID: 5491338523072341805}
   m_PrefabAsset: {fileID: 0}
@@ -25034,6 +25054,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 4481127110671496}
     m_Modifications:
     - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
+        type: 3}
+      propertyPath: m_Name
+      value: Sounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350084420716178138, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
       propertyPath: m_Name
       value: Sounds
@@ -25145,6 +25175,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_Name
+      value: BackpackBattery 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25214,16 +25254,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2154258
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_Name
-      value: BackpackBattery 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
@@ -25326,6 +25356,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_Name
+      value: BackpackBattery 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25396,16 +25436,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2154258
       objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_Name
-      value: BackpackBattery 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: CooldownIndex
@@ -25432,6 +25462,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
+        type: 3}
+      propertyPath: m_Name
+      value: DodgeBattery
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25486,11 +25521,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
-        type: 3}
-      propertyPath: m_Name
-      value: DodgeBattery
       objectReference: {fileID: 0}
     - target: {fileID: 8744200278172667073, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}
@@ -25616,15 +25646,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5799224490005409152, guid: e8dc43760c494a1409ad0248ddfe8d51, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8dc43760c494a1409ad0248ddfe8d51, type: 3}
---- !u!1 &1191738330724533693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
-    type: 3}
-  m_PrefabInstance: {fileID: 8106344629855684670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2383499012235033444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5867177410645128026, guid: e8dc43760c494a1409ad0248ddfe8d51,
+    type: 3}
+  m_PrefabInstance: {fileID: 8106344629855684670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1191738330724533693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6986880514275413379, guid: e8dc43760c494a1409ad0248ddfe8d51,
     type: 3}
   m_PrefabInstance: {fileID: 8106344629855684670}
   m_PrefabAsset: {fileID: 0}
@@ -25635,6 +25665,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_Name
+      value: BackpackBattery 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25705,16 +25745,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2154258
       objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_Name
-      value: BackpackBattery 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: CooldownIndex
@@ -25741,6 +25771,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_Name
+      value: BackpackBattery 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25810,16 +25850,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2154258
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_Name
-      value: BackpackBattery 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 8e8e65d23d937a249916eb4fc790ddf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5799224490005409152, guid: 8e8e65d23d937a249916eb4fc790ddf1,
         type: 3}

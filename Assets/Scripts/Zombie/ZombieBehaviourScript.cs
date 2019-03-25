@@ -13,6 +13,11 @@ public enum ZombieState {
 	// knocked down?
 }
 
+public enum ZombieType {
+	Small,
+	Large,
+}
+
 
 public class ZombieBehaviourScript : MonoBehaviour {
 
@@ -24,6 +29,8 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	public float FollowSpeed = 5;
 	public float AggressiveSpeed = 1;
 	private float ManualSpeed;
+
+	public ZombieType type = ZombieType.Small;
 
 	// State of zombie, decides its behaviour. Uses accessor to trigger transition events between state changes
 	public ZombieState InitialState = ZombieState.Defensive;
@@ -80,6 +87,17 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 
 		colorTimer = new Timer(.1f);
+
+		switch (type) {
+			case ZombieType.Small:
+				Globals.StartSmallZombies++;
+				break;
+			case ZombieType.Large:
+				Globals.StartLargeZombies++;
+				break;
+			default:
+				break;
+		}
 
 	}
 

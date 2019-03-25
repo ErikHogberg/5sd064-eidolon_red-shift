@@ -25,7 +25,7 @@ public class BulletScript : MonoBehaviour {
         collider.GetComponent<EnemyScript>().TakeDamage(Damage);
     }
     DestroyBullet();
-		}
+		
 	}
 	void OnBecameInvisible() {
 		DestroyBullet();

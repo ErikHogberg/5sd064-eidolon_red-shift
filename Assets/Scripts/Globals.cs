@@ -10,7 +10,8 @@ namespace Assets.Scripts {
 		// Game-wide score
 		public static int Score = 0;
 		// How many zombies the players starts with on the next level
-		public static int StartZombies = 0;
+		public static int StartSmallZombies = 0;
+		public static int StartLargeZombies = 0;
 		// The current player
 		public static PlayerMovementScript Player;
 		// The current level
@@ -23,6 +24,7 @@ namespace Assets.Scripts {
 
 		public static void GameOver() {
 			GameOverPanel.gameObject.SetActive(true);
+			StartSmallZombies = 0;
 		}
 
 	}

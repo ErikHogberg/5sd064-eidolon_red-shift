@@ -9,6 +9,10 @@ public class WeaponScript : MonoBehaviour {
 	// TODO: bullet scale
 	// IDEA: grow bullet the longer its in air
 
+	//Mick's edit start
+	public AudioSource Bullet;
+	//Mick's edit end
+
 	public Transform firePoint;
 	public GameObject bulletPrefab;
 	//private float m_Cooldown = 0f;
@@ -16,6 +20,7 @@ public class WeaponScript : MonoBehaviour {
 	public float MinBulletInterval = 0.1f;
 	public bool FullAuto = false;
 	public float BulletSpread = 5.0f;
+	public bool EnableSpreadShot = true;
 
 	public int StartBatteryCount = 1;
 	public List<Timer> AttackTimers;
@@ -61,13 +66,15 @@ public class WeaponScript : MonoBehaviour {
 				TryShoot();
 			}
 		}
-		if (FullAuto) {
-			if (Input.GetMouseButton(2)) {
-				SpreadShot();
-			}
-		} else {
-			if (Input.GetMouseButtonDown(2)) {
-				SpreadShot();
+		if (EnableSpreadShot) {
+			if (FullAuto) {
+				if (Input.GetMouseButton(2)) {
+					SpreadShot();
+				}
+			} else {
+				if (Input.GetMouseButtonDown(2)) {
+					SpreadShot();
+				}
 			}
 		}
 	}
@@ -102,6 +109,10 @@ public class WeaponScript : MonoBehaviour {
 				Shoot(spreadMultiplier * BulletSpread * flip);
 				firedShots++;
 				timer.Restart(Cooldown);
+
+				//Mick's edit start
+				Bullet.Play();
+				//Mick's edit end
 			}
 		}
 	}
@@ -116,6 +127,10 @@ public class WeaponScript : MonoBehaviour {
 
 	void Shoot() {
 		Shoot(0.0f);
+
+		//Mick's edit start
+		Bullet.Play();
+		//Mick's edit end
 	}
 
 	void Shoot(float offsetAngle) {

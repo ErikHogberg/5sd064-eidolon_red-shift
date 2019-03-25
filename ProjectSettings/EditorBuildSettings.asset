@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/Forest Level mar
-      7.unity
-    guid: d502dab6e0c1f5a4199baa5c11233349
+    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/1 Forest Level mar
+      21.unity
+    guid: 4509bef98f236f84fbf262154d45de89
   - enabled: 1
     path: Assets/Scenes/Levels/Fast Forest Level 1.unity
     guid: 074862d5a0b392a40b2b6cd645a1ae39
@@ -19,14 +19,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Test Scenes/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/Village level mar
-      7.unity
-    guid: 8aa700796b61cb742b1d1cbbfbcd6db6
-  - enabled: 1
-    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/Palace level mar
-      5.unity
-    guid: a0e9b9882465d944f833097b35ca0109
-  - enabled: 1
     path: Assets/Scenes/Menus/Credits.unity
     guid: 854a3d9029de849bc99f15374028efe7
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/2 Village level mar
+      21.unity
+    guid: 79d3f26c1d87cf14e93ecb96dae4cc12
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/3 City level mar
+      21.unity
+    guid: f2950dfec2bd7a7439db186ee20da0dd
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/4 Palace level mar
+      21.unity
+    guid: b50f94166d20a1a4099bf504e2fa80a4
   m_configObjects: {}

@@ -55,7 +55,11 @@ public class MenuButtonScripts : MonoBehaviour {
 		StartLevel(LevelToStart);
 	}
 	public void StartLevel(string level) {
-		SceneManager.LoadScene(level, LoadSceneMode.Single);
+		if (Globals.FadePanel != null) {
+			Globals.FadePanel.StartLevelTransition(level);
+		} else {
+			SceneManager.LoadScene(level, LoadSceneMode.Single);
+		}
 	}
 
 	public void StartForestLevel() {
@@ -67,23 +71,27 @@ public class MenuButtonScripts : MonoBehaviour {
 	}
 
 	public void RestartScene() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+		if (Globals.FadePanel != null) {
+			Globals.FadePanel.StartLevelTransition(SceneManager.GetActiveScene().name);
+		} else {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+		}
 	}
 
 	public void TogglePause() {
 		//Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
-		
-		Globals.Ground.SetActive(!Globals.Ground.active);
+
+		Globals.Ground.SetActive(!Globals.Ground.activeSelf);
 	}
 
 	public void Pause() {
-		Globals.PausedScene = SceneManager.GetActiveScene().name;
+		//Globals.PausedScene = SceneManager.GetActiveScene().name;
 		SceneManager.LoadScene("Pause Scene", LoadSceneMode.Additive);
 	}
 
 	public void ResumePausedScene() {
-		
-		SceneManager.LoadScene(Globals.PausedScene, LoadSceneMode.Additive);
+
+		//SceneManager.LoadScene(Globals.PausedScene, LoadSceneMode.Additive);
 	}
 }
 

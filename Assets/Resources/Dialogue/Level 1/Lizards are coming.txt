@@ -1,0 +1,6 @@
+title: Narrator
+rgb: 0.8, 0.5, 0.5
+
+In the distance you hear angry hissing and the clanking of pitchforks and swords
+
+							The lizards are coming

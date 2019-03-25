@@ -4,6 +4,7 @@ using UnityEngine;
 
 using Assets.Scripts;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Pickups;
 
 public class PlayerMovementScript : MonoBehaviour {
 	private Rigidbody2D rb;
@@ -30,6 +31,9 @@ public class PlayerMovementScript : MonoBehaviour {
 
 	private Timer colorTimer;
 
+	public BuffSystem Buffs;
+
+
 	void Start() {
 
 		Globals.Player = this;
@@ -47,6 +51,8 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		colorTimer = new Timer(.1f);
 
+		Buffs = new BuffSystem();
+
 	}
 
 	private void Update() {
@@ -55,20 +61,48 @@ public class PlayerMovementScript : MonoBehaviour {
 			GetComponentInChildren<SpriteRenderer>().color = Color.white;
 		}
 
+		// Update buffs and disable expired buffs
+		foreach (Buff expiredBuff in Buffs.Update()) {
+			switch (expiredBuff.Type) {
+				case BuffType.HpRegen:
+					HpRegenRate -= expiredBuff.BuffStrength;
+					UpdateRegen();
+					break;
+				case BuffType.ZombieHpRegen:
+					break;
+				case BuffType.ZombieSpeedUp:
+					break;
+				case BuffType.Invulnerability:
+
+					break;
+				case BuffType.NoWeaponCooldown:
+					break;
+				case BuffType.FullAutoWeapon:
+					GetComponentInChildren<WeaponScript>().FullAuto = false;
+					break;
+				case BuffType.DamageIncrease:
+					break;
+				case BuffType.AoEWeapon:
+					break;
+				default:
+					break;
+			}
+
+		}
+
 		if (HpRegen && Health < HpRegenCap) {
 			if (hpRegenTimer.Update()) {
-				Health += 1;
-				hpRegenTimer.RestartWithDelta();
+				//Health += 1;
+				int overflows = hpRegenTimer.RestartWithDelta();
+				for (int i = 0; i < overflows; i++) {
+					Health += 1;
+				}
 			}
 		}
 
 		DodgeCooldown.Update();
-		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning()) {
+		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning() && !DodgeTimer.IsRunning()) {
 			DodgeTimer.Restart(DodgeDurationTime);
-			DodgeCooldown.Restart(DodgeCooldownTime);
-			//Color color = GetComponent<SpriteRenderer>().color;
-			//color.a = .5f;
-			//GetComponent<SpriteRenderer>().color = color;
 		}
 	}
 
@@ -76,22 +110,20 @@ public class PlayerMovementScript : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
 
+		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
 		if (DodgeTimer.IsRunning()) {
 			Vector2 direction = rb.velocity.normalized;
-			rb.velocity = direction * DodgeSpeed * .05f;
+			//rb.velocity = direction * DodgeSpeed * .05f;
 			if (DodgeTimer.Update()) {
-				//DodgeCooldown.Restart(DodgeCooldownTime);
-				//Color color = GetComponent<SpriteRenderer>().color;
-				//color.a = 1.0f;
-				//GetComponent<SpriteRenderer>().color = color;
+				DodgeCooldown.Restart(DodgeCooldownTime);
 			}
-			return; // NOTE: early return
+			//return; // NOTE: early return
+
+			rb.velocity = movement * DodgeSpeed * Time.deltaTime;
+		} else {
+			rb.velocity = movement * Speed * Time.deltaTime;
 		}
-
-
-		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-		rb.velocity = movement * Speed * Time.deltaTime;
 
 		if (mousePosition.x < transform.position.x && lookingRight) {
 			lookingRight = !lookingRight;
@@ -120,8 +152,43 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (Health < 0 || Health == 0) {
 			//Destroy(gameObject);
+			Globals.GameOver();
 			gameObject.SetActive(false);
 		}
+	}
+
+	public void AddBuff(Buff buff) {
+		Buffs.AddBuff(buff);
+
+		switch (buff.Type) {
+			case BuffType.HpRegen:
+				HpRegenRate += buff.BuffStrength;
+				UpdateRegen();
+				break;
+			case BuffType.ZombieHpRegen:
+				break;
+			case BuffType.ZombieSpeedUp:
+				break;
+			case BuffType.Invulnerability:
+				DodgeTimer.Restart(buff.Timer.TimeLeft());
+				break;
+			case BuffType.NoWeaponCooldown:
+				break;
+			case BuffType.FullAutoWeapon:
+				GetComponentInChildren<WeaponScript>().FullAuto = true;
+				break;
+			case BuffType.DamageIncrease:
+				break;
+			case BuffType.AoEWeapon:
+				break;
+			default:
+				break;
+		}
+
+	}
+
+	private void UpdateRegen() {
+		hpRegenTimer.RestartWithDelta(1.0f / HpRegenRate);
 	}
 
 	void Flip() {

@@ -11,7 +11,13 @@ public class EnemyWeaponScript : MonoBehaviour
     private Collider2D playerInRange;
     private float m_Cooldown = 0f;
     public int Damage = 10;
-    public float Cooldown = 1f;
+    public float Cooldown = 0.1f;
+    //Mick's edit start
+    public AudioSource Arrow;
+    public AudioSource Sword_Swing;
+    //mick's edit end
+
+
 
     private void Start()
     {
@@ -75,6 +81,10 @@ public class EnemyWeaponScript : MonoBehaviour
                 bullet.transform.parent = Assets.Scripts.Globals.Ground.transform;
             }
 			bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
+            //Mick's edit start
+            Arrow.Play();
+            //Mick's edit end
+
         }
     }
 
@@ -82,7 +92,13 @@ public class EnemyWeaponScript : MonoBehaviour
     {
         if(playerInRange != null && playerInRange.tag == "Player")
         {
-            GetComponentInParent<EnemyScript>().animator.SetTrigger("Attack");
+            //Mick's edit start
+            if (Sword_Swing != null)
+            {
+                Debug.Log("played");
+            Sword_Swing.Play();
+            }
+            //Mick's edit end
             PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
 			if (movementScript == null) {
 				movementScript = playerInRange.GetComponentInParent<PlayerMovementScript>();
@@ -93,7 +109,12 @@ public class EnemyWeaponScript : MonoBehaviour
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;
         } else if (playerInRange != null && playerInRange.tag == "Zombie")
         {
-            GetComponentInParent<EnemyScript>().animator.SetTrigger("Attack");
+            //Mick's edit start
+            if (Sword_Swing != null)
+            {
+                Sword_Swing.Play();
+            }
+            //Mick's edit end
             playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);

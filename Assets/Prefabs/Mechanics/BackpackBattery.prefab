@@ -4773,7 +4773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5867177410645128026
 Transform:
   m_ObjectHideFlags: 0
@@ -4849,6 +4849,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0259bb6eaa53ba945bf732e831abffa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReadyColor: {r: 1, g: 1, b: 1, a: 1}
-  ChargingColor: {r: 0.9622642, g: 0, b: 0, a: 1}
+  ChargingSprite: {fileID: 0}
   CooldownIndex: 0

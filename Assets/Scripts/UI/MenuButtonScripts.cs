@@ -55,8 +55,11 @@ public class MenuButtonScripts : MonoBehaviour {
 		StartLevel(LevelToStart);
 	}
 	public void StartLevel(string level) {
-		Globals.FadePanel.StartLevelTransition(level);
-		//SceneManager.LoadScene(level, LoadSceneMode.Single);
+		if (Globals.FadePanel != null) {
+			Globals.FadePanel.StartLevelTransition(level);
+		} else {
+			SceneManager.LoadScene(level, LoadSceneMode.Single);
+		}
 	}
 
 	public void StartForestLevel() {
@@ -68,13 +71,16 @@ public class MenuButtonScripts : MonoBehaviour {
 	}
 
 	public void RestartScene() {
-		Globals.FadePanel.StartLevelTransition(SceneManager.GetActiveScene().name);
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+		if (Globals.FadePanel != null) {
+			Globals.FadePanel.StartLevelTransition(SceneManager.GetActiveScene().name);
+		} else {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+		}
 	}
 
 	public void TogglePause() {
 		//Time.timeScale = Mathf.Approximately(Time.timeScale, 0.0f) ? 1.0f : 0.0f;
-		
+
 		Globals.Ground.SetActive(!Globals.Ground.activeSelf);
 	}
 
@@ -84,7 +90,7 @@ public class MenuButtonScripts : MonoBehaviour {
 	}
 
 	public void ResumePausedScene() {
-		
+
 		//SceneManager.LoadScene(Globals.PausedScene, LoadSceneMode.Additive);
 	}
 }

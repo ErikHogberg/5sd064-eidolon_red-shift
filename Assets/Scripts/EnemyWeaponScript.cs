@@ -12,6 +12,11 @@ public class EnemyWeaponScript : MonoBehaviour
     private float m_Cooldown = 0f;
     public int Damage = 10;
     public float Cooldown = 0.1f;
+    //Mick's edit start
+    public AudioSource Arrow;
+    //mick's edit end
+
+
 
     private void Start()
     {
@@ -53,6 +58,10 @@ public class EnemyWeaponScript : MonoBehaviour
             var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 			bullet.transform.parent = Assets.Scripts.Globals.Ground.transform;//transform.parent; // same parent as enemy that shot it
 			bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
+            //Mick's edit start
+            Arrow.Play();
+            //Mick's edit end'
+
         }
     }
 

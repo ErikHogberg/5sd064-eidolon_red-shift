@@ -148,6 +148,9 @@ public class ZombieBehaviourScript : MonoBehaviour {
 			default:
 				break;
 		}
+
+		attacking = false;
+
 	}
 
 	/*
@@ -190,6 +193,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		}
 	}
 
+	/*
 	public void AttackAreaTriggerExit(Collider2D collision) {
 		switch (State) {
 			case ZombieState.Aggressive:
@@ -207,6 +211,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 				break;
 		}
 	}
+	 */
 
 	public void TakeDamage(int damage) {
 		Health = Health - damage;

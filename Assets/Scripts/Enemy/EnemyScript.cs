@@ -142,12 +142,16 @@ public class EnemyScript : MonoBehaviour {
         if (movementCooldown > 0)
         {
             movementCooldown -= Time.deltaTime;
-            animator.SetBool("isMoving", false);
+			if (animator != null) {
+				animator.SetBool("isMoving", false);
+			}
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Speed);
-            animator.SetBool("isMoving", true);
+			if (animator != null) {
+				animator.SetBool("isMoving", true);
+			}
 			if (!colorTimer.IsRunning()) {
 				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 			}

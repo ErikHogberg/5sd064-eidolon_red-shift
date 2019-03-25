@@ -16,16 +16,15 @@ public class BulletScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-    if(collider.name == "King" || collider.name == "Queen")
-    {
-        collider.GetComponent<BossScript>().TakeDamage(Damage);
-    }
-    else
-    {
-        collider.GetComponent<EnemyScript>().TakeDamage(Damage);
-    }
-    DestroyBullet();
-		
+
+		if (collider.name == "King" || collider.name == "Queen") {
+			collider.GetComponent<BossScript>().TakeDamage(Damage);
+			DestroyBullet();
+		} else if (collider.tag == "Enemy") {
+			collider.GetComponent<EnemyScript>().TakeDamage(Damage);
+			DestroyBullet();
+		}
+
 	}
 	void OnBecameInvisible() {
 		DestroyBullet();

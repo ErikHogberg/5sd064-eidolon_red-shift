@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6301744905491442755}
-  - component: {fileID: 8346971557985955931}
+  - component: {fileID: 8342200086608000167}
   m_Layer: 0
   m_Name: Small Zombies
   m_TagString: Untagged
@@ -238,7 +238,7 @@ Transform:
   m_Father: {fileID: 528024472837035384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8346971557985955931
+--- !u!114 &8342200086608000167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,10 +247,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1418101765189765142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35c48430dfc55944bec16eb3006b7c4, type: 3}
+  m_Script: {fileID: 11500000, guid: f95f18799bfd80447b268db070478376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmallZombies:
+  StartZombieOverride: 0
+  type: 0
+  Zombies:
   - {fileID: 3785567132457847839}
   - {fileID: 964115430980506929}
   - {fileID: 6765855107991630860}
@@ -5417,7 +5419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4060573257648717379}
-  - component: {fileID: 5454569062478528378}
+  - component: {fileID: 4344699016582771573}
   m_Layer: 0
   m_Name: Large Zombies
   m_TagString: Untagged
@@ -5449,7 +5451,7 @@ Transform:
   m_Father: {fileID: 528024472837035384}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5454569062478528378
+--- !u!114 &4344699016582771573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5458,10 +5460,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5053302791495490085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d42f051356702743a73892c61f9908d, type: 3}
+  m_Script: {fileID: 11500000, guid: f95f18799bfd80447b268db070478376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LargeZombies:
+  StartZombieOverride: 0
+  type: 1
+  Zombies:
   - {fileID: 5668027760921603059}
   - {fileID: 7089162531389849374}
   - {fileID: 3070589160307353477}
@@ -26200,15 +26204,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481127110671496}
     m_Modifications:
-    - target: {fileID: 6350084420716178138, guid: b22a9907dd4118145a401aeade892729,
+    - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
+      propertyPath: m_Name
+      value: Sounds
       objectReference: {fileID: 0}
-    - target: {fileID: 6350084420716178138, guid: b22a9907dd4118145a401aeade892729,
+    - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.2
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6350084419467655432, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
@@ -26270,20 +26274,20 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
-        type: 3}
-      propertyPath: m_Name
-      value: Sounds
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5233476859677447424, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350084420716178138, guid: b22a9907dd4118145a401aeade892729,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6350084420716178138, guid: b22a9907dd4118145a401aeade892729,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b22a9907dd4118145a401aeade892729, type: 3}
@@ -26782,6 +26786,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4248449882557778349}
     m_Modifications:
+    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
+        type: 3}
+      propertyPath: m_Name
+      value: DodgeBattery
+      objectReference: {fileID: 0}
     - target: {fileID: 5867177410645128026, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26836,11 +26845,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6986880514275413379, guid: 591f57ac2c48fde438274321224e924c,
-        type: 3}
-      propertyPath: m_Name
-      value: DodgeBattery
       objectReference: {fileID: 0}
     - target: {fileID: 8744200278172667073, guid: 591f57ac2c48fde438274321224e924c,
         type: 3}

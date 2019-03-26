@@ -14679,7 +14679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345044856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1661446229}
@@ -25221,6 +25221,11 @@ PrefabInstance:
       propertyPath: TargetLevel
       value: 3 City level mar 21
       objectReference: {fileID: 0}
+    - target: {fileID: 1056037701863154122, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1056137260840196227, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25229,7 +25234,7 @@ PrefabInstance:
     - target: {fileID: 1056137260840196227, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8652895082034857554, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
@@ -25240,6 +25245,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425762532458959165, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425762532458959165, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6806302934244921116, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
@@ -25285,6 +25300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 6.915217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412927074526262168, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6845757222211982030, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}

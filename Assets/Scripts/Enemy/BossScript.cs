@@ -13,10 +13,13 @@ public class BossScript : MonoBehaviour
     private float randomY;
     private float randomX;
 
+	public GameObject Border;
+	/*
     public Transform UpperGroundBorder;
     public Transform LowerGroundBorder;
     public Transform LeftBorder;
     public Transform RightBorder;
+	 */
 
     private bool lookingRight = false;
 
@@ -34,10 +37,14 @@ public class BossScript : MonoBehaviour
 
     void RandomPosition()
     {
-        randomY = Random.Range(LowerGroundBorder.position.y, UpperGroundBorder.position.x);
-        randomX = Random.Range(LeftBorder.position.x, RightBorder.position.x);
-    }
-    void Update()
+		Rect border = Border.GetComponent<Rect>();
+
+		//randomY = Random.Range(LowerGroundBorder.position.y, UpperGroundBorder.position.x);
+		randomY = border.y + Random.Range(0, border.height);
+		//randomX = Random.Range(LeftBorder.position.x, RightBorder.position.x);
+		randomX = border.x + Random.Range(0, border.width);
+	}
+	void Update()
     {
 
         if (colorTimer.Update(Time.deltaTime))

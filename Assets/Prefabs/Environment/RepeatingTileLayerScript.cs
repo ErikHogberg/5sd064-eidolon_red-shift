@@ -45,7 +45,13 @@ public class RepeatingTileLayerScript : MonoBehaviour {
 		}
 
 		int i = 0;
-		while (tileWidth * i < limit) {
+		bool flipFix = flipOnRepeat;
+		while (tileWidth * i < limit || flipFix) {
+
+			if (!(tileWidth * i < limit)) {
+				flipFix = false;
+			}
+
 			i++;
 
 			SpriteRenderer newTile = Instantiate(tile);

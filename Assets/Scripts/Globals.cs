@@ -34,9 +34,6 @@ namespace Assets.Scripts {
 			}
 		}
 
-		public static bool InitSmallZombies = false;
-		public static bool InitLargeZombies = false;
-
 		// The current player
 		public static PlayerMovementScript Player;
 		// The current level

@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour {
     public float Speed = 0.05f;
     public Type EnemyType;
     public float movementCooldown = 1f;
-    public Animator animator;
+    private Animator animator;
 
     public float scaleMin = 0.2f;
     public float scaleMax = 0.3f;
@@ -47,6 +47,7 @@ public class EnemyScript : MonoBehaviour {
         yTarget = Random.Range(yMin, yMax);
         randomScale = Random.Range(scaleMin, scaleMax);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+        animator = GetComponent<Animator>();
     }
 
 	void Update () {

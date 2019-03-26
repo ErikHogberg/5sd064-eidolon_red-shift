@@ -278,6 +278,7 @@ MonoBehaviour:
   MaxFollowDistance: -5
   FollowSpeed: 200
   AggressiveSpeed: 140
+  type: 1
   InitialState: 1
 --- !u!1 &7832321928335104570
 GameObject:

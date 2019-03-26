@@ -518,27 +518,27 @@ PrefabInstance:
     - target: {fileID: 1060125849445733772, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.678
+      value: 15.524
       objectReference: {fileID: 0}
     - target: {fileID: 1060125849445733772, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.342
+      value: -1.697
       objectReference: {fileID: 0}
     - target: {fileID: 1060125849445733772, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4078865
+      value: 0.62679386
       objectReference: {fileID: 0}
     - target: {fileID: 1060125849445733772, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.20018472
+      value: 0.30762124
       objectReference: {fileID: 0}
     - target: {fileID: 1060125849445733772, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.386304
+      value: 0.59362835
       objectReference: {fileID: 0}
     - target: {fileID: 1056520251549852870, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
@@ -615,6 +615,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1056037701749549001, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1094830282007533968, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: ParallaxSpeed
@@ -662,11 +667,44 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4820413922814701940, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341082580732537133, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651576504351447113, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.47
+      objectReference: {fileID: 0}
     - target: {fileID: 3241468861711513189, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_SortingLayerID
       value: 1032834277
       objectReference: {fileID: 0}
+    - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Enemy3
+      value: 
+      objectReference: {fileID: 1072754609493932, guid: e28834b09aae64b45b27c242f852acf8,
+        type: 3}
+    - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Enemy4
+      value: 
+      objectReference: {fileID: 1072754609493932, guid: e28834b09aae64b45b27c242f852acf8,
+        type: 3}
+    - target: {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: Enemy5
+      value: 
+      objectReference: {fileID: 1072754609493932, guid: 2e41d97479d68ca43871b5916fd194e5,
+        type: 3}
     - target: {fileID: 5352609923001578005, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -677,7 +715,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -603.8999
       objectReference: {fileID: 0}
+    - target: {fileID: 8652895082034857554, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.54
+      objectReference: {fileID: 0}
     - target: {fileID: 1054401506774077921, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371736873800354297, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_IsActive
       value: 0

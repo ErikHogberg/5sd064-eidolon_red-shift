@@ -132,7 +132,7 @@ public class EnemyScript : MonoBehaviour {
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, destination, Speed);
+            transform.position = Vector3.MoveTowards(transform.position, destination, Speed * Time.deltaTime * (1.0f / 60.0f));
             GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         }
     }
@@ -148,7 +148,7 @@ public class EnemyScript : MonoBehaviour {
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Speed);
+            transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Speed*Time.deltaTime*(1.0f/60.0f));
 			if (animator != null) {
 				animator.SetBool("isMoving", true);
 			}

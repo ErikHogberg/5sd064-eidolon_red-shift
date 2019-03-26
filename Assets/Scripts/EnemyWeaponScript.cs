@@ -96,17 +96,18 @@ public class EnemyWeaponScript : MonoBehaviour
             if (Sword_Swing != null)
             {
                 Debug.Log("played");
-            Sword_Swing.Play();
+                Sword_Swing.Play();
             }
             //Mick's edit end
             PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
 			if (movementScript == null) {
 				movementScript = playerInRange.GetComponentInParent<PlayerMovementScript>();
 			}
-			movementScript.TakeDamage(Damage);
+			movementScript.TakeDamage(Damage);   
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+            GetComponentInParent<Animator>().SetTrigger("Attack");
         } else if (playerInRange != null && playerInRange.tag == "Zombie")
         {
             //Mick's edit start
@@ -119,6 +120,7 @@ public class EnemyWeaponScript : MonoBehaviour
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+            GetComponentInParent<Animator>().SetTrigger("Attack");
         }
     }
 

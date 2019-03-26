@@ -45,7 +45,10 @@ namespace Assets.Scripts {
 		public static Image GameOverPanel;
 
 		public static void GameOver() {
-			GameOverPanel.gameObject.SetActive(true);
+            if (GameOverPanel != null)
+            {
+                GameOverPanel.gameObject.SetActive(true);
+            }
 			StartSmallZombies = 0;
 			StartLargeZombies = 0;
 		}

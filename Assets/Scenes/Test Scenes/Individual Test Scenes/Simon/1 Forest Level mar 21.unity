@@ -2616,26 +2616,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e696b7bf925abf499881bb157b52cf9, type: 3}
---- !u!1 &316190375 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1054245838473570269, guid: ae57cf3e19a76d843a1798cf084aa853,
-    type: 3}
-  m_PrefabInstance: {fileID: 1056037702267013937}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &316190376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316190375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953f08a3a946b9944ac03e8215f91e4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HordeState: 1
-  ManualSpeed: 0.1
 --- !u!1001 &319213865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8132,7 +8112,7 @@ Transform:
   m_LocalScale: {x: 0.45279, y: 0.45279, z: 0.45279}
   m_Children: []
   m_Father: {fileID: 1056037702267013938}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1026764775 stripped
 Transform:
@@ -17368,6 +17348,21 @@ PrefabInstance:
     - target: {fileID: 8652895082034857554, guid: ae57cf3e19a76d843a1798cf084aa853,
         type: 3}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652895082034857554, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652895082034857554, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652895082034857554, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2059046262820601535, guid: ae57cf3e19a76d843a1798cf084aa853,

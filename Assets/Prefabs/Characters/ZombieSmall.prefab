@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 3317521913021960933}
   - component: {fileID: 3317521913021960934}
   - component: {fileID: 3317521913021960935}
+  - component: {fileID: 5262121231017052003}
   m_Layer: 0
   m_Name: ZombieSmall
   m_TagString: Zombie
@@ -204,7 +205,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9d9dd808370dea44bb65e06a563161a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d12f75f1e38374ae58f51b39b9a3571b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -232,7 +233,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.61, y: 4.1}
+    oldSize: {x: 2.52, y: 4.48}
     newSize: {x: 8.26, y: 9.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -278,7 +279,27 @@ MonoBehaviour:
   MaxFollowDistance: 5
   FollowSpeed: 200
   AggressiveSpeed: 140
+  type: 0
   InitialState: 1
+--- !u!95 &5262121231017052003
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317521913021960930}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45695ed0cf04f4b34afae12c4e2ee100, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7654518716667829762
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,11 +351,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3317521913021960929}
     m_Modifications:
-    - target: {fileID: 279505828623486160, guid: be375e2e95897b64996d869a24072118,
-        type: 3}
-      propertyPath: m_Name
-      value: Spawn Particles Small Lizard
-      objectReference: {fileID: 0}
     - target: {fileID: 1145452273297623651, guid: be375e2e95897b64996d869a24072118,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -389,6 +405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 279505828623486160, guid: be375e2e95897b64996d869a24072118,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawn Particles Small Lizard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be375e2e95897b64996d869a24072118, type: 3}

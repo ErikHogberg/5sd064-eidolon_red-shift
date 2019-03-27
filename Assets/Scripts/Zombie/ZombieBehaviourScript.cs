@@ -24,6 +24,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	public int Health = 100;
 
 	private ZombieControlScript Player;
+    private Animator animator;
 
 	public float MaxFollowDistance = 3.0f;
 	public float FollowSpeed = 5;
@@ -84,6 +85,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 
 		state = InitialState;
 		rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
 		colorTimer = new Timer(.1f);
 
@@ -101,8 +103,16 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+        if(rb.velocity.y != 0 || rb.velocity.x != 0)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
 
-		if (colorTimer.Update(Time.deltaTime)) {
+        if (colorTimer.Update(Time.deltaTime)) {
 			GetComponent<SpriteRenderer>().color = Color.white;
 		}
 

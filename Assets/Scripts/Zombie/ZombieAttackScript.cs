@@ -47,7 +47,8 @@ public class ZombieAttackScript : MonoBehaviour {
 
 				attackTimer.Restart();
 				transform.parent.GetComponent<SpriteRenderer>().color = Color.green;
-				colorTimer.Restart();
+                GetComponentInParent<Animator>().SetTrigger("Attack");
+                colorTimer.Restart();
 			} 
 		}
 

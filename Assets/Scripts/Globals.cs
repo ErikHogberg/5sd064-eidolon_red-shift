@@ -36,8 +36,12 @@ namespace Assets.Scripts {
 
 		// The current player
 		public static PlayerMovementScript Player;
+		
 		// The current level
 		public static GameObject Ground;
+		public static BoxCollider2D UpperBoundary;
+		public static BoxCollider2D LowerBoundary;
+		
 		// The current dialogue window
 		public static DialoguePanelScript DialogueWindow;
 		public static NotificationScript NotificationWindow;

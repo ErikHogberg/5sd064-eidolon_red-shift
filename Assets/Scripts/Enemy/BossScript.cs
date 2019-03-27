@@ -96,7 +96,7 @@ public class BossScript : MonoBehaviour
             {
                 Flip();
             }
-            Destroy(gameObject);
+            //Destroy(gameObject);
             Assets.Scripts.Globals.Score += ScoreWorth;
         }
 
@@ -134,6 +134,23 @@ public class BossScript : MonoBehaviour
 
     private void MeleeMove()
     {
+		if (movementCooldown > 0) {
+			movementCooldown -= Time.deltaTime;
+			//if (animator != null) {
+			//	animator.SetBool("isMoving", false);
+			//}
+		} else {
+			transform.position = Vector3.MoveTowards(
+				transform.position,
+				GameObject.FindWithTag("Player").transform.position, Speed * Time.deltaTime * 60.0f
+			);
 
-    }
+			//if (animator != null) {
+			//	animator.SetBool("isMoving", true);
+			//}
+			if (!colorTimer.IsRunning()) {
+				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+			}
+		}
+	}
 }

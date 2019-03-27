@@ -79,8 +79,14 @@ public class RespawnScript : MonoBehaviour {
 			corpseScript.SpawnZombie(zombieControlScript);
 
             //Mick's addition starts here
-            ResEffect.Play();
+            if (ResEffect != null)
+            {
+            ResEffect.Play()
+            }
+            if (Res != null)
+            {
             Res.Play();
+            }
             //Mick's addition ends here
         }
     }

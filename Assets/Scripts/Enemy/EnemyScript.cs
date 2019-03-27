@@ -37,6 +37,8 @@ public class EnemyScript : MonoBehaviour {
 
 	private Timer colorTimer;
 
+    public AudioSource Dying;
+
 	private void Start()
 	{
 		colorTimer = new Timer(.1f);
@@ -98,6 +100,8 @@ public class EnemyScript : MonoBehaviour {
             gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
             destroyed = true;
             animator.SetTrigger("Dead");
+            Dying.Play();
+            //<-------------------------------------------------------------------
             Invoke("Dead", 1);
 		}
 	}

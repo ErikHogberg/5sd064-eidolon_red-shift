@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyRespawn : MonoBehaviour
 {
+	// TODO: use list instead, like in Scripts/Player/PlayerStartWithSmallZombieScript.cs
     public GameObject Enemy1, Enemy2, Enemy3, Enemy4, Enemy5;
     public int MaxEnemies = 5;
     public int EnemiesToKill = 20;
@@ -22,8 +23,9 @@ public class EnemyRespawn : MonoBehaviour
 
     private void Update()
     {
+		// IDEA: choose enemy to spawn as a repeating sequence of the order of zombies added as arguments //Erik
         respawnPosition = new Vector3(stageDimensions.x + Random.Range(4f, 10f), Random.Range(-2f, 2f), 0);
-        if (EnemiesAlive < MaxEnemies && EnemiesToKill > 1)
+        if (EnemiesAlive < MaxEnemies && (EnemiesToKill > 1 || InfiniteSpawn))
         {
             switch (Random.Range(0, 4))
             {

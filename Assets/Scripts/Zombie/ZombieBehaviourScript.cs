@@ -13,6 +13,11 @@ public enum ZombieState {
 	// knocked down?
 }
 
+public enum ZombieType {
+	Small,
+	Large,
+}
+
 
 public class ZombieBehaviourScript : MonoBehaviour {
 
@@ -25,8 +30,11 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	public float AggressiveSpeed = 1;
 	private float ManualSpeed;
 
+	public ZombieType type = ZombieType.Small;
+
 	// State of zombie, decides its behaviour. Uses accessor to trigger transition events between state changes
 	public ZombieState InitialState = ZombieState.Defensive;
+
 	private ZombieState state;
 	public ZombieState State {
 		get { return state; }
@@ -72,18 +80,26 @@ public class ZombieBehaviourScript : MonoBehaviour {
 	private Timer colorTimer;
 
 
-	// Start is called before the first frame update
 	void Start() {
-		//Player = Globals.Player.GetComponent<ZombieControlScript>();
-		//ManualSpeed = Player.ManualSpeed;
+
 		state = InitialState;
 		rb = GetComponent<Rigidbody2D>();
 
 		colorTimer = new Timer(.1f);
 
+		switch (type) {
+			case ZombieType.Small:
+				Globals.StartSmallZombies++;
+				break;
+			case ZombieType.Large:
+				Globals.StartLargeZombies++;
+				break;
+			default:
+				break;
+		}
+
 	}
 
-	// Update is called once per frame
 	void FixedUpdate() {
 
 		if (colorTimer.Update(Time.deltaTime)) {
@@ -130,6 +146,9 @@ public class ZombieBehaviourScript : MonoBehaviour {
 			default:
 				break;
 		}
+
+		attacking = false;
+
 	}
 
 	/*
@@ -156,7 +175,6 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		switch (State) {
 			case ZombieState.Aggressive:
 				if (collision.tag == "Enemy") {
-					// IDEA: choose an enemy, keep attacking until enemy is dead, out of range, or zombie changes state, then it may choose another target
 					attacking = true;
 					rb.velocity = Vector2.zero;
 				}
@@ -172,6 +190,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		}
 	}
 
+	/*
 	public void AttackAreaTriggerExit(Collider2D collision) {
 		switch (State) {
 			case ZombieState.Aggressive:
@@ -189,6 +208,7 @@ public class ZombieBehaviourScript : MonoBehaviour {
 				break;
 		}
 	}
+	 */
 
 	public void TakeDamage(int damage) {
 		Health = Health - damage;
@@ -197,6 +217,16 @@ public class ZombieBehaviourScript : MonoBehaviour {
 		colorTimer.Restart();
 
 		if (Health < 0 || Health == 0) {
+			switch (type) {
+				case ZombieType.Small:
+					Globals.StartSmallZombies--;
+					break;
+				case ZombieType.Large:
+					Globals.StartLargeZombies--;
+					break;
+				default:
+					break;
+			}
 			Destroy(gameObject);
 		}
 	}
@@ -228,7 +258,6 @@ public class ZombieBehaviourScript : MonoBehaviour {
 
 	private void FindEnemy() {
 		rb.velocity = new Vector2(AggressiveSpeed * 0.01667f, 0);
-		// TODO: target/lock on to nearby enemy when in range
 	}
 
 }

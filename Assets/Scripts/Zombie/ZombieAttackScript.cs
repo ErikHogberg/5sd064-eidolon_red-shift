@@ -54,6 +54,7 @@ public class ZombieAttackScript : MonoBehaviour {
 		if (colorTimer.Update(Time.deltaTime)) {
 			transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
 		}
+		attacking = false;
 	}
 
 	private void OnTriggerStay2D(Collider2D collision) {
@@ -61,12 +62,12 @@ public class ZombieAttackScript : MonoBehaviour {
 		ZombieScript.AttackAreaTriggerStay(collision);
 
 		if (collision.tag == "Enemy") {
-			// attacking set in stay instead of enter just in case zombie overlaps with 2 or more enemies
 			attacking = true;
 		}
 
 	}
 
+	/*
 	private void OnTriggerExit2D(Collider2D collision) {
 
 		ZombieScript.AttackAreaTriggerExit(collision);
@@ -76,4 +77,5 @@ public class ZombieAttackScript : MonoBehaviour {
 		}
 
 	}
+	 */
 }

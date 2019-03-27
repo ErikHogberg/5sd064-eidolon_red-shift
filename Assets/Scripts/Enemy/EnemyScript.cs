@@ -8,6 +8,8 @@ public enum Type
     Archer,
     Knight,
     Peasant,
+    King,
+    Queen,
 }
 
 public class EnemyScript : MonoBehaviour {
@@ -17,6 +19,7 @@ public class EnemyScript : MonoBehaviour {
     public float Speed = 0.05f;
     public Type EnemyType;
     public float movementCooldown = 1f;
+    private Animator animator;
 
     public float scaleMin = 0.2f;
     public float scaleMax = 0.3f;
@@ -37,7 +40,6 @@ public class EnemyScript : MonoBehaviour {
 	private void Start()
 	{
 		colorTimer = new Timer(.1f);
-
 		this.enabled = false;
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
@@ -45,6 +47,7 @@ public class EnemyScript : MonoBehaviour {
         yTarget = Random.Range(yMin, yMax);
         randomScale = Random.Range(scaleMin, scaleMax);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+        animator = GetComponent<Animator>();
     }
 
 	void Update () {
@@ -92,18 +95,25 @@ public class EnemyScript : MonoBehaviour {
 		colorTimer.Restart();
 
 		if (health <= 0) {
-			if (lookingRight) {
-				Flip();
-			}
-			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
-			corpse.transform.parent = transform.parent;
-			Destroy(gameObject);
-			destroyed = true;
-			Assets.Scripts.Globals.Score += ScoreWorth;
-			camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+            gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+            destroyed = true;
+            animator.SetTrigger("Dead");
+            Invoke("Dead", 1);
 		}
-
 	}
+
+    private void Dead()
+    {
+        if (lookingRight)
+        {
+            Flip();
+        }
+        var corpse = Instantiate(Corpse, transform.position, transform.rotation);
+        corpse.transform.parent = transform.parent;
+        Destroy(gameObject);
+        Assets.Scripts.Globals.Score += ScoreWorth;
+        camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+    }
 
 	private void Flip()
     {
@@ -122,6 +132,7 @@ public class EnemyScript : MonoBehaviour {
 
         if(movementCooldown > 0)
         {
+            animator.SetBool("isMoving", false);
             movementCooldown -= Time.deltaTime;
             if(movementCooldown < 0.5f)
             {
@@ -130,7 +141,8 @@ public class EnemyScript : MonoBehaviour {
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, destination, Speed);
+            animator.SetBool("isMoving", true);
+            transform.position = Vector3.MoveTowards(transform.position, destination, Speed * Time.deltaTime * 60.0f);
             GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         }
     }
@@ -140,10 +152,20 @@ public class EnemyScript : MonoBehaviour {
         if (movementCooldown > 0)
         {
             movementCooldown -= Time.deltaTime;
+			if (animator != null) {
+				animator.SetBool("isMoving", false);
+			}
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Speed);
+            transform.position = Vector3.MoveTowards(
+				transform.position, 
+				GameObject.FindWithTag("Player").transform.position, Speed * Time.deltaTime * 60.0f
+				);
+
+			if (animator != null) {
+				animator.SetBool("isMoving", true);
+			}
 			if (!colorTimer.IsRunning()) {
 				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 			}

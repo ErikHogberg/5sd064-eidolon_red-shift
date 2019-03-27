@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 61708353392630004}
   - component: {fileID: 114129026045484896}
   - component: {fileID: 1886894862679297255}
+  - component: {fileID: 589808792698699224}
   m_Layer: 0
   m_Name: EnemyArcher
   m_TagString: Enemy
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c3db78a7eb186d84da91d1218bf66878, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 744bc63ded3a34970bd46d46feae72c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.47, y: 4.66}
+    oldSize: {x: 2.82, y: 4.51}
     newSize: {x: 8.26, y: 9.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -150,7 +151,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.47, y: 4.66}
+    oldSize: {x: 2.82, y: 4.51}
     newSize: {x: 8.26, y: 9.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,6 +160,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.977615, y: 1.4102612}
   m_EdgeRadius: 0
+--- !u!95 &589808792698699224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072754609493932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 065b98aceb49c584180b39485c1650bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3032195503128324169
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +273,7 @@ MonoBehaviour:
   Damage: 10
   Cooldown: 1
   Arrow: {fileID: 8313908988367706447}
+  Sword_Swing: {fileID: 6633593682332130986}
 --- !u!1001 &96989074644087413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -260,6 +281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4201592353350066}
     m_Modifications:
+    - target: {fileID: 73726914300286752, guid: 3c5337f4b8607b74eb347ade88eec8e2,
+        type: 3}
+      propertyPath: m_Name
+      value: ParticleScalesArcher
+      objectReference: {fileID: 0}
     - target: {fileID: 1093477277308699443, guid: 3c5337f4b8607b74eb347ade88eec8e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -315,11 +341,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 73726914300286752, guid: 3c5337f4b8607b74eb347ade88eec8e2,
-        type: 3}
-      propertyPath: m_Name
-      value: ParticleScalesArcher
-      objectReference: {fileID: 0}
     - target: {fileID: 879529387463188573, guid: 3c5337f4b8607b74eb347ade88eec8e2,
         type: 3}
       propertyPath: playOnAwake
@@ -340,6 +361,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4201592353350066}
     m_Modifications:
+    - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
+        type: 3}
+      propertyPath: m_Name
+      value: Sounds
+      objectReference: {fileID: 0}
     - target: {fileID: 6350084419467655432, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -395,10 +421,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6350084419467655439, guid: b22a9907dd4118145a401aeade892729,
+    - target: {fileID: 5233476859677447424, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
-      propertyPath: m_Name
-      value: Sounds
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8528758595975381753, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
@@ -416,6 +442,12 @@ Transform:
 --- !u!82 &8313908988367706447 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8528758595975381753, guid: b22a9907dd4118145a401aeade892729,
+    type: 3}
+  m_PrefabInstance: {fileID: 377401784701393846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &6633593682332130986 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6427637922728969500, guid: b22a9907dd4118145a401aeade892729,
     type: 3}
   m_PrefabInstance: {fileID: 377401784701393846}
   m_PrefabAsset: {fileID: 0}

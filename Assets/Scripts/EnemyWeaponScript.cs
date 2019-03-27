@@ -14,6 +14,7 @@ public class EnemyWeaponScript : MonoBehaviour
     public float Cooldown = 0.1f;
     //Mick's edit start
     public AudioSource Arrow;
+    public AudioSource Sword_Swing;
     //mick's edit end
 
 
@@ -30,20 +31,39 @@ public class EnemyWeaponScript : MonoBehaviour
         }
         if (m_Cooldown == 0f || m_Cooldown < 0f)
         {
-            switch (GetComponentInParent<EnemyScript>().EnemyType)
+            if(GetComponentInParent<EnemyScript>() == null)
             {
-                case Type.Archer:
-                    Shoot();
-                    m_Cooldown = Cooldown;
-                    break;
-                case Type.Knight:
-                    Melee();
-                    break;
-                case Type.Peasant:
-                    Melee();
-                    break;
-                default:
-                    break;
+                switch(GetComponentInParent<BossScript>().BossType)
+                {
+                    case Type.King:
+                        Shoot();
+                        m_Cooldown = Cooldown;
+                        break;
+                    case Type.Queen:
+                        Melee();
+                        m_Cooldown = Cooldown;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                switch (GetComponentInParent<EnemyScript>().EnemyType)
+                {
+                    case Type.Archer:
+                        Shoot();
+                        m_Cooldown = Cooldown;
+                        break;
+                    case Type.Knight:
+                        Melee();
+                        break;
+                    case Type.Peasant:
+                        Melee();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
@@ -56,11 +76,14 @@ public class EnemyWeaponScript : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-			bullet.transform.parent = Assets.Scripts.Globals.Ground.transform;//transform.parent; // same parent as enemy that shot it
+            if(GameObject.Find("Ground") == true)
+            {
+                bullet.transform.parent = Assets.Scripts.Globals.Ground.transform;
+            }
 			bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
             //Mick's edit start
             Arrow.Play();
-            //Mick's edit end'
+            //Mick's edit end
 
         }
     }
@@ -69,20 +92,35 @@ public class EnemyWeaponScript : MonoBehaviour
     {
         if(playerInRange != null && playerInRange.tag == "Player")
         {
-			PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
+            //Mick's edit start
+            if (Sword_Swing != null)
+            {
+                Debug.Log("played");
+                Sword_Swing.Play();
+            }
+            //Mick's edit end
+            PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
 			if (movementScript == null) {
 				movementScript = playerInRange.GetComponentInParent<PlayerMovementScript>();
 			}
-			movementScript.TakeDamage(Damage);
+			movementScript.TakeDamage(Damage);   
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+            GetComponentInParent<Animator>().SetTrigger("Attack");
         } else if (playerInRange != null && playerInRange.tag == "Zombie")
         {
+            //Mick's edit start
+            if (Sword_Swing != null)
+            {
+                Sword_Swing.Play();
+            }
+            //Mick's edit end
             playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
             GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+            GetComponentInParent<Animator>().SetTrigger("Attack");
         }
     }
 

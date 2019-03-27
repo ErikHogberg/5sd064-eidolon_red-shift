@@ -292,4 +292,3 @@ MonoBehaviour:
   MaxEnemies: 5
   EnemiesToKill: 20
   InfiniteSpawn: 0
-  Sequential: 0

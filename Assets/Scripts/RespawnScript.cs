@@ -62,8 +62,7 @@ public class RespawnScript : MonoBehaviour {
 
 		//if (Input.GetKeyDown(KeyCode.Space) && (m_Cooldown == 0f || m_Cooldown < 0f)) {
 		if (Input.GetKeyDown(KeyCode.Space) && !CooldownTimer.IsRunning() &&!DurationTimer.IsRunning()) {
-            GetComponentInParent<PlayerMovementScript>().animator.SetTrigger("Resurrection");
-            spr.enabled = true;
+			spr.enabled = true;
 			//m_Cooldown = Cooldown;
 			DurationTimer.Restart(Duration);
 		}

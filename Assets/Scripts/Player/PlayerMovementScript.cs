@@ -11,7 +11,6 @@ public class PlayerMovementScript : MonoBehaviour {
 	private Vector3 mousePosition;
 
 	public SpriteRenderer PlayerSprite;
-    public GameObject DeadPlayer;
 
 	public float Speed = 400;
 	public float DodgeSpeed = 300;
@@ -76,6 +75,7 @@ public class PlayerMovementScript : MonoBehaviour {
 				case BuffType.ZombieSpeedUp:
 					break;
 				case BuffType.Invulnerability:
+
 					break;
 				case BuffType.NoWeaponCooldown:
 					break;
@@ -144,8 +144,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 
 		if (DodgeTimer.IsRunning()) {
-            animator.SetBool("isDodging", true);
-            Vector2 direction = rb.velocity.normalized;
+			Vector2 direction = rb.velocity.normalized;
 			//rb.velocity = direction * DodgeSpeed * .05f;
 			if (DodgeTimer.Update()) {
 				DodgeCooldown.Restart(DodgeCooldownTime);
@@ -154,8 +153,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
 			rb.velocity = movement * DodgeSpeed * Time.deltaTime;
 		} else {
-            animator.SetBool("isDodging", false);
-            rb.velocity = movement * Speed * Time.deltaTime;
+			rb.velocity = movement * Speed * Time.deltaTime;
 		}
 
 		if (mousePosition.x < transform.position.x && lookingRight) {
@@ -193,20 +191,13 @@ public class PlayerMovementScript : MonoBehaviour {
 		Health = Health - damage;
 
 		if (Health < 0 || Health == 0) {
-            //Destroy(gameObject);
-            animator.SetTrigger("Dead");
-            Invoke("Dying", 1);
+			//Destroy(gameObject);
+			Globals.GameOver();
+			gameObject.SetActive(false);
 		}
 	}
 
-    void Dying()
-    {
-        Globals.GameOver();
-        gameObject.SetActive(false);
-        Instantiate(DeadPlayer, transform.position, transform.rotation);
-    }
-
-    public void AddBuff(Buff buff) {
+	public void AddBuff(Buff buff) {
 		Buffs.AddBuff(buff);
 
 		switch (buff.Type) {

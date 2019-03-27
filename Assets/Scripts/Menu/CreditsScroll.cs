@@ -17,10 +17,6 @@ public class CreditsScroll : MonoBehaviour {
             speed *= SpaceSpeed;
         }
 
-        Vector3 pos = transform.position;
-        pos.y += speed * Time.deltaTime;
-        transform.position = pos;
-
 		Vector3 pos = transform.position;
 		pos.y += ScrollSpeed * Time.deltaTime;
 		transform.position = pos;

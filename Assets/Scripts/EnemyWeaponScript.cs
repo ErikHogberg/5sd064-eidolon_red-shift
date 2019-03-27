@@ -89,7 +89,10 @@ public class EnemyWeaponScript : MonoBehaviour
         }
         bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
         //Mick's edit start
-        Arrow.Play();
+        if (Arrow != null)
+        {
+            Arrow.Play();
+        }
         //Mick's edit end
         GetComponentInParent<Animator>().ResetTrigger("Attack");
     }

@@ -12,6 +12,7 @@ public class FadeScript : MonoBehaviour {
 	public string NextLevel;
 
 	public AnimationCurve easing;
+	public bool ChangeLevel = false;
 
 	private Image blackImage;
 	private Timer timer;
@@ -36,7 +37,7 @@ public class FadeScript : MonoBehaviour {
 
 	void Update() {
 		if (timer.Update()) {
-			if (FadeOut) {
+			if (FadeOut && ChangeLevel) {
 				SceneManager.LoadScene(NextLevel, LoadSceneMode.Single);
 			} else {
 				gameObject.SetActive(false);
@@ -45,9 +46,14 @@ public class FadeScript : MonoBehaviour {
 		CalcAlpha();
 	}
 
+	public bool IsDone() {
+		return !timer.IsRunning();
+	}
+
 	public void StartLevelTransition(string Level) {
 		FadeOut = true;
 		NextLevel = Level;
+		ChangeLevel = true;
 		timer.Restart(Time);
 		gameObject.SetActive(true);
 	}
@@ -55,6 +61,18 @@ public class FadeScript : MonoBehaviour {
 	public void StartLevelTransition() {
 		StartLevelTransition(NextLevel);
 	}
+
+	public void StartLerpOut() {
+		ChangeLevel = false;
+		FadeOut = true;
+		timer.Restart(Time);
+	}
+
+	public void StartLerpIn() {
+		FadeOut = false;
+		timer.Restart(Time);
+	}
+
 
 	private void CalcAlpha() {
 

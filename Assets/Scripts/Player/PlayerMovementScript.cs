@@ -23,6 +23,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public int HpRegenCap = 100;
 	public float HpRegenRate = 2.0f; // amount restored per second
 	private Timer hpRegenTimer;
+    public Animator animator;
 
 	private bool lookingRight = true;
 
@@ -53,6 +54,7 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		Buffs = new BuffSystem();
 
+        animator = GetComponentInChildren<Animator>();
 	}
 
 	private void Update() {
@@ -132,7 +134,16 @@ public class PlayerMovementScript : MonoBehaviour {
 			lookingRight = !lookingRight;
 			Flip();
 		}
-	}
+
+        if(moveVertical != 0f || moveHorizontal != 0f)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
 
 	void LateUpdate() {
 		mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

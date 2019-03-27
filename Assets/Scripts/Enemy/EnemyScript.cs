@@ -105,6 +105,7 @@ public class EnemyScript : MonoBehaviour {
     private void Dead()
     {
         var corpse = Instantiate(Corpse, transform.position, transform.rotation);
+		corpse.GetComponent<CorpseScript>().LookingRight = lookingRight;
         corpse.transform.parent = transform.parent;
         Destroy(gameObject);
         Assets.Scripts.Globals.Score += ScoreWorth;

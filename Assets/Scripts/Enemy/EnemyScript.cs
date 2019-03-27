@@ -31,6 +31,7 @@ public class EnemyScript : MonoBehaviour {
     private GameObject camera;
 
     private bool lookingRight = false;
+	private bool dying = false;
 	private bool destroyed = false;
 
     public int ScoreWorth = 10;
@@ -56,13 +57,13 @@ public class EnemyScript : MonoBehaviour {
 
 	void Update () {
 
-		GameObject player = GameObject.FindWithTag("Player");
-		if (player == null) {
-			return;
-		}
-
 		if (colorTimer.Update(Time.deltaTime)) {
 			GetComponent<SpriteRenderer>().color = Color.white;
+		}
+
+		GameObject player = GameObject.FindWithTag("Player");
+		if (player == null || destroyed) {
+			return;
 		}
 
 		switch (EnemyType)

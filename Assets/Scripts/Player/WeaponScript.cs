@@ -122,7 +122,7 @@ public class WeaponScript : MonoBehaviour {
 		AttackTimers.Add(attackTimer);
 		attackTimer.Stop();
 
-		transform.parent.GetComponentInChildren<BatteryBackpackScript>().SetActiveBatteries(AttackTimers.Count - 1);
+		transform.parent.GetComponentInChildren<BatteryBackpackScript>().SetActiveBatteries(AttackTimers.Count);
 	}
 
 	void Shoot() {

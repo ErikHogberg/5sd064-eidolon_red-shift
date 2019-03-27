@@ -90,6 +90,35 @@ public class PlayerMovementScript : MonoBehaviour {
 					break;
 			}
 
+			string message = "";
+			switch (expiredBuff.Type) {
+				case BuffType.HpRegen:
+					message += "Hp Regeneration";
+					break;
+				case BuffType.ZombieHpRegen:
+					message += "Zombie Hp Regen.";
+					break;
+				case BuffType.ZombieSpeedUp:
+					message += "Zombie Speed Up";
+					break;
+				case BuffType.Invulnerability:
+					message += "Invulnerability";
+					break;
+				case BuffType.NoWeaponCooldown:
+					break;
+				case BuffType.FullAutoWeapon:
+					message += "Full Auto";
+					break;
+				case BuffType.DamageIncrease:
+					break;
+				case BuffType.AoEWeapon:
+					break;
+				default:
+					break;
+			}
+			message += " buff expired";
+			Globals.NotificationWindow.Show(message);
+
 		}
 
 		if (HpRegen && Health < HpRegenCap) {

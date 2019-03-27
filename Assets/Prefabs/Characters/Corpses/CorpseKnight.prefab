@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824cbd1fafa991b4fb3a418533353387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WorldZ: 0
 --- !u!1 &4236745857078329283
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dc20981e37ca26c46b617a57cf4e05cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d60955ddb744ac43a28cf8f770fa34e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -142,7 +143,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.08, y: 3.24}
+    oldSize: {x: 6.85, y: 6.78}
     newSize: {x: 27.06, y: 14.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -164,3 +165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zombie: {fileID: 3317521913021960930, guid: 6a51efaf7347e104daace39eb6557f90, type: 3}
+  LookingRight: 0

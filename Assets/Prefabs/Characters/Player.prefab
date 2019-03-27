@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSprite: {fileID: 2706174520780987572}
+  DeadPlayer: {fileID: 5525086683333532727, guid: 23dd81b4f78f24ccbb9d658baee9fb8a,
+    type: 3}
   Speed: 165
   DodgeSpeed: 200
   DodgeCooldownTime: 0.6

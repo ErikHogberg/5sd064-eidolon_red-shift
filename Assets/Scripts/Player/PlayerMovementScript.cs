@@ -23,7 +23,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public int HpRegenCap = 100;
 	public float HpRegenRate = 2.0f; // amount restored per second
 	private Timer hpRegenTimer;
-    private Animator animator;
+    public Animator animator;
 
 	private bool lookingRight = true;
 

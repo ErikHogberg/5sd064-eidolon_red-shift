@@ -168,6 +168,7 @@ MonoBehaviour:
   HpRegen: 0
   HpRegenCap: 100
   HpRegenRate: 2
+  animator: {fileID: 0}
 --- !u!114 &2737626011791277804
 MonoBehaviour:
   m_ObjectHideFlags: 0

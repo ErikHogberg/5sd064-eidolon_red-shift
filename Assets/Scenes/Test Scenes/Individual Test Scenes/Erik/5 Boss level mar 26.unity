@@ -577,6 +577,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9034993217152503980, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: StartZombieOverride
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669505764538931070, guid: ae57cf3e19a76d843a1798cf084aa853,
+        type: 3}
+      propertyPath: StartZombieOverride
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2315753155888107392, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ae57cf3e19a76d843a1798cf084aa853, type: 3}
@@ -654,7 +664,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2253951577864075899, guid: cfb4de749daa9c542a7b116f56d0ba5b,
         type: 3}
+      propertyPath: ObjectsToEnable.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2253951577864075899, guid: cfb4de749daa9c542a7b116f56d0ba5b,
+        type: 3}
       propertyPath: ObjectToEnable
+      value: 
+      objectReference: {fileID: 831815927}
+    - target: {fileID: 2253951577864075899, guid: cfb4de749daa9c542a7b116f56d0ba5b,
+        type: 3}
+      propertyPath: ObjectsToEnable.Array.data[0]
       value: 
       objectReference: {fileID: 831815927}
     m_RemovedComponents: []

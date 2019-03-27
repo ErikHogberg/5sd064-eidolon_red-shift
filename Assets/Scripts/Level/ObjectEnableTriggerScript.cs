@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ObjectEnableTriggerScript : MonoBehaviour {
 
-	public GameObject ObjectToEnable;
+	public List<GameObject> ObjectsToEnable;
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.tag == "Player") {
-			ObjectToEnable.SetActive(true);
+
+			foreach (GameObject ObjectToEnable in ObjectsToEnable) {
+				ObjectToEnable.SetActive(true);
+			}
+
 			Destroy(gameObject);
 		}
 	}

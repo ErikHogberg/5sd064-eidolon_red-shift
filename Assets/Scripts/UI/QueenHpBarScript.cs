@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class QueenHpBarScript : MonoBehaviour {
 
+	public BossScript Queen;
+	public BossScript King;
+	private bool kingIsDead = false;
+
 	public GameObject HpBar;
 	public GameObject InvulnText;
 
@@ -14,7 +18,15 @@ public class QueenHpBarScript : MonoBehaviour {
 
 	void Update() {
 
-		float HpPercentage = Globals.Player.GetHpPercentage();
+		float HpPercentage = Queen.GetHpPercentage();
+
+		if (!kingIsDead) {
+			if (King.GetHpPercentage() < 0.0f) {
+				InvulnText.SetActive(false);
+				kingIsDead = true;
+			}
+		}
+
 		float OverflowPercentage = 0.0f;
 
 		if (HpPercentage > 1.0) {

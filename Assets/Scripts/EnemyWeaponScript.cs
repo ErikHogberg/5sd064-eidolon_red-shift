@@ -29,7 +29,7 @@ public class EnemyWeaponScript : MonoBehaviour
         {
             m_Cooldown -= Time.deltaTime;
         }
-        if (m_Cooldown == 0f || m_Cooldown < 0f)
+        if (m_Cooldown <= 0f)
         {
             if(GetComponentInParent<EnemyScript>() == null)
             {
@@ -75,19 +75,24 @@ public class EnemyWeaponScript : MonoBehaviour
             Vector2 direction = player.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            if(GameObject.Find("Ground") == true)
-            {
-                bullet.transform.parent = Assets.Scripts.Globals.Ground.transform;
-            }
-			bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
-            //Mick's edit start
-            Arrow.Play();
-            //Mick's edit end
-
+            GetComponentInParent<Animator>().SetTrigger("Attack");
+            Invoke("ArrowShoot", 0.5f);
         }
     }
 
+    void ArrowShoot()
+    {
+        var bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        if (GameObject.Find("Ground") == true)
+        {
+            bullet.transform.parent = Assets.Scripts.Globals.Ground.transform;
+        }
+        bullet.GetComponent<EnemyBulletScript>().Speed = BulletSpeed;
+        //Mick's edit start
+        Arrow.Play();
+        //Mick's edit end
+        GetComponentInParent<Animator>().ResetTrigger("Attack");
+    }
     void Melee()
     {
         if(playerInRange != null && playerInRange.tag == "Player")
@@ -95,7 +100,6 @@ public class EnemyWeaponScript : MonoBehaviour
             //Mick's edit start
             if (Sword_Swing != null)
             {
-                Debug.Log("played");
                 Sword_Swing.Play();
             }
             //Mick's edit end

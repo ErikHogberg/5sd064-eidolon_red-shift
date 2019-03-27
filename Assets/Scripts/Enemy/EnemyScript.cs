@@ -104,10 +104,6 @@ public class EnemyScript : MonoBehaviour {
 
     private void Dead()
     {
-        if (lookingRight)
-        {
-            Flip();
-        }
         var corpse = Instantiate(Corpse, transform.position, transform.rotation);
         corpse.transform.parent = transform.parent;
         Destroy(gameObject);
@@ -122,6 +118,10 @@ public class EnemyScript : MonoBehaviour {
 
     private void RangeMove()
     { 
+        if(destroyed)
+        {
+            return;
+        }
         Vector3 destination = new Vector3(transform.position.x, yTarget, transform.position.z);
         if(transform.position == destination)
         {
@@ -149,6 +149,10 @@ public class EnemyScript : MonoBehaviour {
 
     private void MeleeMove()
     {
+        if(destroyed)
+        {
+            return;
+        }
         if (movementCooldown > 0)
         {
             movementCooldown -= Time.deltaTime;

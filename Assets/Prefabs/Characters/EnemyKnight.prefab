@@ -131,6 +131,7 @@ MonoBehaviour:
   Speed: 0.02
   EnemyType: 1
   movementCooldown: 1
+  Respawn: {fileID: 0}
   scaleMin: 0.2
   scaleMax: 0.3
   randomScale: 0
@@ -292,9 +293,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.7274868, y: -0.11386784}
+  m_Offset: {x: 0.9167224, y: 0.10251275}
   serializedVersion: 2
-  m_Radius: 3.92144
+  m_Radius: 1.9854031
 --- !u!1001 &2189686715400466877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -362,12 +363,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5233476859677447424, guid: b22a9907dd4118145a401aeade892729,
+    - target: {fileID: 167186364742879657, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 167186364742879657, guid: b22a9907dd4118145a401aeade892729,
+    - target: {fileID: 5233476859677447424, guid: b22a9907dd4118145a401aeade892729,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -486,6 +487,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4201592353350066}
     m_Modifications:
+    - target: {fileID: 5197580279138832023, guid: 6df4f040ab738c047ba16eee3f30de59,
+        type: 3}
+      propertyPath: m_Name
+      value: ParticleScalesKnight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936221498845720832, guid: 6df4f040ab738c047ba16eee3f30de59,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5161100195159177312, guid: 6df4f040ab738c047ba16eee3f30de59,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,16 +550,6 @@ PrefabInstance:
     - target: {fileID: 5161100195159177312, guid: 6df4f040ab738c047ba16eee3f30de59,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5197580279138832023, guid: 6df4f040ab738c047ba16eee3f30de59,
-        type: 3}
-      propertyPath: m_Name
-      value: ParticleScalesKnight
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936221498845720832, guid: 6df4f040ab738c047ba16eee3f30de59,
-        type: 3}
-      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

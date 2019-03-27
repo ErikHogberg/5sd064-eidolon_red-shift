@@ -19,6 +19,10 @@ public class InitScript : MonoBehaviour {
 		Globals.NotificationWindow = NotificationWindow;
 		Globals.FadePanel = FadePanel;
 		Globals.GameOverPanel = GameOverPanel;
+
+		// Stop menu music
+		Destroy(Globals.PeristentMusic);
+
 	}
 
 	void Update() {

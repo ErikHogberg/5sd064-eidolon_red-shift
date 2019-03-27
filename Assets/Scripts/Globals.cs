@@ -44,6 +44,8 @@ namespace Assets.Scripts {
 		public static FadeScript FadePanel;
 		public static Image GameOverPanel;
 
+		public static GameObject PeristentMusic;
+
 		public static void GameOver() {
             if (GameOverPanel != null)
             {

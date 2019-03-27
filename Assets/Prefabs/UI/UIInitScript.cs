@@ -7,8 +7,15 @@ public class UIInitScript : MonoBehaviour {
 
 	public FadeScript FadePanel;
 
+	public bool KeepMenuMusic = false;
+
 	void Start() {
 		Globals.FadePanel = FadePanel;
+
+		if (!KeepMenuMusic) {
+			// Stop menu music
+			Destroy(Globals.PeristentMusic);
+		}
 	}
 
 }

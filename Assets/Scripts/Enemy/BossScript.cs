@@ -42,7 +42,7 @@ public class BossScript : MonoBehaviour {
 	private void Start() {
 		colorTimer = new Timer(.1f);
 		movementCooldown = 0f;
-		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+		GetComponentInChildren<EnemyWeaponScript>().enabled = false;
 		RandomPosition();
 		Border.transform.SetParent(transform.parent);
 		startHealth = Health;

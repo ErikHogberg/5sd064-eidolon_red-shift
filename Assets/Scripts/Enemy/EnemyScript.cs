@@ -33,10 +33,10 @@ public class EnemyScript : MonoBehaviour {
     private float yTarget;
 	private bool yTargetInit = false;
 	private GameObject camera;
-
     private bool lookingRight = false;
 	//private bool dying = false;
 	private bool destroyed = false;
+    private float LastUpperBorderPosition;
 
     public int ScoreWorth = 10;
 
@@ -67,11 +67,23 @@ public class EnemyScript : MonoBehaviour {
 		randomScale = Random.Range(scaleMin, scaleMax);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
         animator = GetComponent<Animator>();
+        LastUpperBorderPosition = Globals.UpperBoundary.transform.position.y;
     }
 
 	void Update () {
 
-		if (colorTimer.Update(Time.deltaTime)) {
+        if (LastUpperBorderPosition < Globals.UpperBoundary.transform.position.y)
+        {
+            yTarget = yTarget + (Globals.UpperBoundary.transform.position.y - LastUpperBorderPosition);
+            LastUpperBorderPosition = Globals.UpperBoundary.transform.position.y;
+        }
+        else if (LastUpperBorderPosition > Globals.UpperBoundary.transform.position.y)
+        {
+            yTarget = yTarget - (LastUpperBorderPosition - Globals.UpperBoundary.transform.position.y);
+            LastUpperBorderPosition = Globals.UpperBoundary.transform.position.y;
+        }
+
+        if (colorTimer.Update(Time.deltaTime)) {
 			GetComponent<SpriteRenderer>().color = Color.white;
 		}
 
@@ -172,7 +184,7 @@ public class EnemyScript : MonoBehaviour {
 			yTargetInit = true;
 		}
 		Vector3 destination = new Vector3(transform.position.x, yTarget, transform.position.z);
-        if(transform.position == destination)
+        if (transform.position == destination)
         {
 			//yTarget = Random.Range(yMin, yMax);
 			yTarget = CalcRandomY();

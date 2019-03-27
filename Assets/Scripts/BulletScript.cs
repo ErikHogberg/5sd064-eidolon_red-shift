@@ -18,8 +18,11 @@ public class BulletScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider) {
 
 		if (collider.name == "King" || collider.name == "Queen") {
-			collider.GetComponent<BossScript>().TakeDamage(Damage);
-			DestroyBullet();
+			var bossScript = collider.GetComponent<BossScript>();
+			if (!bossScript.dead) {
+				bossScript.TakeDamage(Damage);
+				DestroyBullet();
+			}
 		} else if (collider.tag == "Enemy") {
 			collider.GetComponent<EnemyScript>().TakeDamage(Damage);
 			DestroyBullet();

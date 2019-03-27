@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5882219916249061362}
   - component: {fileID: 1612647317868807150}
   - component: {fileID: 3248787464779549693}
-  - component: {fileID: 1641751464133160700}
+  - component: {fileID: 318704599128947201}
   m_Layer: 5
   m_Name: King Hp Bar Panel
   m_TagString: Untagged
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &1641751464133160700
+--- !u!114 &318704599128947201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,9 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1641751464133160691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55199ad124b60d40ae241e53c0c74c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 23825ec4512b45147819402fd62c7ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  King: {fileID: 0}
   HpBar: {fileID: 7632806421989770613}
 --- !u!1 &6093651812270626015
 GameObject:

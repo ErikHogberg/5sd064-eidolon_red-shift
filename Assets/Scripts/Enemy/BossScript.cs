@@ -5,10 +5,17 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
-    public int health = 100;
-    public float Speed = 0.05f;
-    public Type BossType;
-    public float movementCooldown = 1f;
+    public int Health = 100;
+	private int startHealth;
+	public bool Invulnerable = false;
+	public bool dead = false;
+
+	public float Speed = 0.05f;
+
+	public Type BossType;
+	public BossScript King;
+
+	public float movementCooldown = 1f;
 
     private float randomY;
     private float randomX;
@@ -23,9 +30,13 @@ public class BossScript : MonoBehaviour
 
     private bool lookingRight = false;
 
-    public int ScoreWorth = 10;
+    public int ScoreWorth = 1000;
 
     private Timer colorTimer;
+
+	public ParticleSystem FireFront;
+	public ParticleSystem FireBack;
+	public ParticleSystem Smoke;
 
     private void Start()
     {
@@ -34,7 +45,12 @@ public class BossScript : MonoBehaviour
         gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         RandomPosition();
 		Border.transform.SetParent(transform.parent);
-    }
+		startHealth = Health;
+
+		if (BossType == Type.Queen) {
+			Invulnerable = true;
+		}
+	}
 
     void RandomPosition()
     {
@@ -47,6 +63,11 @@ public class BossScript : MonoBehaviour
 	}
 	void Update()
     {
+
+		if (dead) {
+			return;
+		}
+
 		GameObject player = GameObject.FindWithTag("Player");
 		if (player == null) {
 			return;
@@ -64,6 +85,9 @@ public class BossScript : MonoBehaviour
                 RangeMove();
                 break;
             case Type.Queen:
+				if (King.dead) {
+					Invulnerable = false;
+				}
                 MeleeMove();
                 break;
             default:
@@ -85,18 +109,29 @@ public class BossScript : MonoBehaviour
     public void TakeDamage(int damage)
     {
 
-        health -= damage;
+		if (Invulnerable) {
+			GetComponent<SpriteRenderer>().color = Color.cyan;
+			colorTimer.Restart();
+			return;
+		}
+
+        Health -= damage;
 
         GetComponent<SpriteRenderer>().color = Color.red;
         colorTimer.Restart();
 
-        if (health <= 0)
+        if (Health <= 0)
         {
-            if (lookingRight)
-            {
-                Flip();
-            }
-            //Destroy(gameObject);
+			//if (lookingRight)
+			//{
+			//    Flip();
+			//}
+			//Destroy(gameObject);
+			GetComponent<SpriteRenderer>().color = Color.gray;
+			FireBack.gameObject.SetActive(true);
+			FireFront.gameObject.SetActive(true);
+			Smoke.gameObject.SetActive(true);
+			dead = true;
             Assets.Scripts.Globals.Score += ScoreWorth;
         }
 
@@ -153,4 +188,9 @@ public class BossScript : MonoBehaviour
 			}
 		}
 	}
+
+	public float GetHpPercentage() {
+		return (float)Health / startHealth;
+	}
+
 }

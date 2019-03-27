@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class KingHpBarScript : MonoBehaviour {
 
+	public BossScript King;
+
 	public GameObject HpBar;
 
 	void Start() {
@@ -13,7 +15,7 @@ public class KingHpBarScript : MonoBehaviour {
 
 	void Update() {
 
-		float HpPercentage = Globals.Player.GetHpPercentage();
+		float HpPercentage = King.GetHpPercentage();
 		float OverflowPercentage = 0.0f;
 
 		if (HpPercentage > 1.0) {

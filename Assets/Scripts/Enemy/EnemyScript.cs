@@ -22,6 +22,8 @@ public class EnemyScript : MonoBehaviour {
     public float movementCooldown = 1f;
     private Animator animator;
 
+	public EnemyRespawn Respawn;
+
     public float scaleMin = 0.2f;
     public float scaleMax = 0.3f;
     public float randomScale;
@@ -56,6 +58,11 @@ public class EnemyScript : MonoBehaviour {
         camera = GameObject.Find("Main Camera");
 		//yTarget = Random.Range(yMin, yMax);
 		//yTarget = CalcRandomY();
+
+		if (Respawn == null) {
+			Respawn = camera.GetComponent<EnemyRespawn>();
+		}
+
 
 		randomScale = Random.Range(scaleMin, scaleMax);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
@@ -238,7 +245,7 @@ public class EnemyScript : MonoBehaviour {
         if (gameObject.activeInHierarchy == true && gameObject.transform.position.x < camera.transform.position.x)
         {
             Destroy(gameObject);
-            camera.GetComponent<EnemyRespawn>().EnemyKilled(true);
+            Respawn.EnemyKilled(true);
         }
 
         this.enabled = false;

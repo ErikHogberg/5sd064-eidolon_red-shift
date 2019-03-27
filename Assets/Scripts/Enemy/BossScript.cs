@@ -34,6 +34,10 @@ public class BossScript : MonoBehaviour
 
     private Timer colorTimer;
 
+	public ParticleSystem FireFront;
+	public ParticleSystem FireBack;
+	public ParticleSystem Smoke;
+
     private void Start()
     {
         colorTimer = new Timer(.1f);
@@ -124,6 +128,9 @@ public class BossScript : MonoBehaviour
 			//}
 			//Destroy(gameObject);
 			GetComponent<SpriteRenderer>().color = Color.gray;
+			FireBack.gameObject.SetActive(true);
+			FireFront.gameObject.SetActive(true);
+			Smoke.gameObject.SetActive(true);
 			dead = true;
             Assets.Scripts.Globals.Score += ScoreWorth;
         }

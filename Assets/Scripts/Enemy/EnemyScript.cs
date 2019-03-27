@@ -42,6 +42,9 @@ public class EnemyScript : MonoBehaviour {
 
     //Mick
     public AudioSource Dying;
+    public ParticleSystem Damaged_FX;
+    public ParticleSystem Magic_Damage;
+    //public AudioSource Damage_Sound;
     //Mick
 
 	private void Start()
@@ -108,12 +111,29 @@ public class EnemyScript : MonoBehaviour {
 		GetComponent<SpriteRenderer>().color = Color.red;
 		colorTimer.Restart();
 
+        //Mick
+        if (Damaged_FX != null)
+        {
+            Damaged_FX.Play();
+        }
+        if (Magic_Damage != null)
+        {
+            Magic_Damage.Play();
+        }
+        //if (Damage_Sound != null)
+        //{
+        //Damage_Sound.Play();
+        //}
+        //Mick
 		if (health <= 0) {
             gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
             destroyed = true;
             animator.SetTrigger("Dead");
             //Mick
-            //Dying.Play();
+            if (Dying != null)
+            {
+            Dying.Play();
+            }
             //Mick
             Invoke("Dead", 1);
 		}

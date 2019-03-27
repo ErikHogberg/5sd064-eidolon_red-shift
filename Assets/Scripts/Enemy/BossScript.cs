@@ -33,11 +33,12 @@ public class BossScript : MonoBehaviour
         movementCooldown = 0f;
         gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         RandomPosition();
+		Border.transform.parent = transform.parent;
     }
 
     void RandomPosition()
     {
-		Rect border = Border.GetComponent<Rect>();
+		Rect border = Border.GetComponent<RectTransform>().rect;
 
 		//randomY = Random.Range(LowerGroundBorder.position.y, UpperGroundBorder.position.x);
 		randomY = border.y + Random.Range(0, border.height);

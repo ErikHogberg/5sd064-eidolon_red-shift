@@ -35,7 +35,7 @@ public class EnemyScript : MonoBehaviour {
 	private GameObject camera;
 
     private bool lookingRight = false;
-	private bool dying = false;
+	//private bool dying = false;
 	private bool destroyed = false;
 
     public int ScoreWorth = 10;
@@ -152,8 +152,8 @@ public class EnemyScript : MonoBehaviour {
 		corpse.GetComponent<CorpseScript>().LookingRight = lookingRight;
         corpse.transform.parent = transform.parent;
         Destroy(gameObject);
-        Assets.Scripts.Globals.Score += ScoreWorth;
-        camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+        Globals.Score += ScoreWorth;
+		Respawn.EnemyKilled(false);
     }
 
 	private void Flip()

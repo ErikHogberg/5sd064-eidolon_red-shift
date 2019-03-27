@@ -81,7 +81,7 @@ public class RespawnScript : MonoBehaviour {
             //Mick's addition starts here
             if (ResEffect != null)
             {
-            ResEffect.Play()
+                ResEffect.Play();
             }
             if (Res != null)
             {

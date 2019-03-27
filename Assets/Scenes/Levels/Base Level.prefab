@@ -130,7 +130,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1032834277
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &7922970592523431294
@@ -1727,6 +1727,7 @@ MonoBehaviour:
   MaxEnemies: 5
   EnemiesToKill: 20
   InfiniteSpawn: 0
+  Sequential: 0
 --- !u!1 &1056037701980563389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +2831,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Foreground test
       objectReference: {fileID: 0}
+    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.503
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3875028
+      objectReference: {fileID: 0}
     - target: {fileID: 4213749051036536, guid: 777041eebee8db848975490fc10fb756, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2861,14 +2870,6 @@ PrefabInstance:
     - target: {fileID: 4213749051036536, guid: 777041eebee8db848975490fc10fb756, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.503
-      objectReference: {fileID: 0}
-    - target: {fileID: 4027664706543462, guid: 777041eebee8db848975490fc10fb756, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3875028
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 777041eebee8db848975490fc10fb756, type: 3}

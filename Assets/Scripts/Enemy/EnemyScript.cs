@@ -52,6 +52,11 @@ public class EnemyScript : MonoBehaviour {
 
 	void Update () {
 
+		GameObject player = GameObject.FindWithTag("Player");
+		if (player == null) {
+			return;
+		}
+
 		if (colorTimer.Update(Time.deltaTime)) {
 			GetComponent<SpriteRenderer>().color = Color.white;
 		}
@@ -71,12 +76,12 @@ public class EnemyScript : MonoBehaviour {
                 break;
         }
 
-        if (GameObject.FindWithTag("Player").transform.position.x < transform.position.x && lookingRight)
+        if (player.transform.position.x < transform.position.x && lookingRight)
         {
             lookingRight = !lookingRight;
             Flip();
         }
-        else if (GameObject.FindWithTag("Player").transform.position.x > transform.position.x && !lookingRight)
+        else if (player.transform.position.x > transform.position.x && !lookingRight)
         {
             lookingRight = !lookingRight;
             Flip();

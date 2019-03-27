@@ -33,7 +33,7 @@ public class BossScript : MonoBehaviour
         movementCooldown = 0f;
         gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         RandomPosition();
-		Border.transform.parent = transform.parent;
+		Border.transform.SetParent(transform.parent);
     }
 
     void RandomPosition()
@@ -47,8 +47,13 @@ public class BossScript : MonoBehaviour
 	}
 	void Update()
     {
+		GameObject player = GameObject.FindWithTag("Player");
+		if (player == null) {
+			return;
+		}
 
-        if (colorTimer.Update(Time.deltaTime))
+
+		if (colorTimer.Update(Time.deltaTime))
         {
             GetComponent<SpriteRenderer>().color = Color.white;
         }
@@ -65,12 +70,12 @@ public class BossScript : MonoBehaviour
                 break;
         }
 
-        if (GameObject.FindWithTag("Player").transform.position.x < transform.position.x && lookingRight)
+        if (player.transform.position.x < transform.position.x && lookingRight)
         {
             lookingRight = !lookingRight;
             Flip();
         }
-        else if (GameObject.FindWithTag("Player").transform.position.x > transform.position.x && !lookingRight)
+        else if (player.transform.position.x > transform.position.x && !lookingRight)
         {
             lookingRight = !lookingRight;
             Flip();

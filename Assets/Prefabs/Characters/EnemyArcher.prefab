@@ -134,6 +134,7 @@ MonoBehaviour:
   scaleMax: 0.3
   randomScale: 0
   ScoreWorth: 10
+  Dying: {fileID: 5191644144044886146}
 --- !u!61 &1886894862679297255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -448,6 +449,12 @@ AudioSource:
 --- !u!82 &6633593682332130986 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6427637922728969500, guid: b22a9907dd4118145a401aeade892729,
+    type: 3}
+  m_PrefabInstance: {fileID: 377401784701393846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5191644144044886146 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5562121718768718644, guid: b22a9907dd4118145a401aeade892729,
     type: 3}
   m_PrefabInstance: {fileID: 377401784701393846}
   m_PrefabAsset: {fileID: 0}

@@ -16,10 +16,8 @@ public class KingHpBarScript : MonoBehaviour {
 	void Update() {
 
 		float HpPercentage = King.GetHpPercentage();
-		float OverflowPercentage = 0.0f;
 
 		if (HpPercentage > 1.0) {
-			OverflowPercentage = HpPercentage - 1.0f;
 			HpPercentage = 1.0f;
 		} else if (HpPercentage < 0.0f) {
 			HpPercentage = 0.0f;

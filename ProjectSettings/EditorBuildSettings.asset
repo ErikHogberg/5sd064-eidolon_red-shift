@@ -24,15 +24,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Credits.unity
     guid: 854a3d9029de849bc99f15374028efe7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/2 Village level mar
       21.unity
     guid: 79d3f26c1d87cf14e93ecb96dae4cc12
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/3 City level mar
       21.unity
     guid: f2950dfec2bd7a7439db186ee20da0dd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scenes/Individual Test Scenes/Simon/4 Palace level mar
       21.unity
     guid: b50f94166d20a1a4099bf504e2fa80a4
@@ -54,4 +54,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/Final Cutscenes/Cutscene 1.unity
     guid: 4e85dade878a346ab9dff21848529523
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Final Cutscenes/Cutscene 2.unity
+    guid: a0f5d76aeb3b448728a20cc31e183be7
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Final Cutscenes/Cutscene 3.unity
+    guid: 75f5e1fdcf4f04f18b17a98a2c2e1629
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/Final Cutscenes/Cutscene 4.unity
+    guid: bfbace93ad71b4a62a054a67006ff7f0
   m_configObjects: {}

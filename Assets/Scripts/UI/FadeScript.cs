@@ -36,6 +36,7 @@ public class FadeScript : MonoBehaviour {
 	}
 
 	void Update() {
+
 		if (timer.Update()) {
 			if (FadeOut && ChangeLevel) {
 				SceneManager.LoadScene(NextLevel, LoadSceneMode.Single);
@@ -44,6 +45,13 @@ public class FadeScript : MonoBehaviour {
 			}
 		}
 		CalcAlpha();
+
+		if (Input.GetKeyDown(KeyCode.L)) {
+			StartLerpIn();
+		}
+		if (Input.GetKeyDown(KeyCode.K)) {
+			StartLerpOut();
+		}
 	}
 
 	public bool IsDone() {

@@ -1653,7 +1653,7 @@ PrefabInstance:
     - target: {fileID: 644418244502189506, guid: e6ae7996a3e20af468ad08c2451fe477,
         type: 3}
       propertyPath: NextScene
-      value: Forest Level
+      value: 1 Forest Level
       objectReference: {fileID: 0}
     - target: {fileID: 644418245050490795, guid: e6ae7996a3e20af468ad08c2451fe477,
         type: 3}

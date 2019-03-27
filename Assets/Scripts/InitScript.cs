@@ -11,6 +11,9 @@ public class InitScript : MonoBehaviour {
 	public FadeScript FadePanel;
 	public Image GameOverPanel;
 
+	public BoxCollider2D UpperBoundary;
+	public BoxCollider2D LowerBoundary;
+
 	//public Texture2D CursorTexture;
 	//public Vector2 CursorOffset;
 
@@ -19,6 +22,9 @@ public class InitScript : MonoBehaviour {
 		Globals.NotificationWindow = NotificationWindow;
 		Globals.FadePanel = FadePanel;
 		Globals.GameOverPanel = GameOverPanel;
+
+		Globals.UpperBoundary = UpperBoundary;
+		Globals.LowerBoundary = LowerBoundary;
 
 		// Stop menu music
 		Destroy(Globals.PeristentMusic);

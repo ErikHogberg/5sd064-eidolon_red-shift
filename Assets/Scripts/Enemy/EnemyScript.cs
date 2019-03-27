@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Utilities;
+﻿using Assets.Scripts;
+using Assets.Scripts.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,10 +26,11 @@ public class EnemyScript : MonoBehaviour {
     public float scaleMax = 0.3f;
     public float randomScale;
 
-    private float yMax = 2f;
-    private float yMin = -2f;
+    //private float yMax = 2f;
+    //private float yMin = -2f;
     private float yTarget;
-    private GameObject camera;
+	private bool yTargetInit = false;
+	private GameObject camera;
 
     private bool lookingRight = false;
 	private bool dying = false;
@@ -49,8 +51,10 @@ public class EnemyScript : MonoBehaviour {
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         camera = GameObject.Find("Main Camera");
-        yTarget = Random.Range(yMin, yMax);
-        randomScale = Random.Range(scaleMin, scaleMax);
+		//yTarget = Random.Range(yMin, yMax);
+		//yTarget = CalcRandomY();
+
+		randomScale = Random.Range(scaleMin, scaleMax);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
         animator = GetComponent<Animator>();
     }
@@ -136,11 +140,17 @@ public class EnemyScript : MonoBehaviour {
         {
             return;
         }
-        Vector3 destination = new Vector3(transform.position.x, yTarget, transform.position.z);
+		if (!yTargetInit) {
+			yTarget = CalcRandomY();
+			yTargetInit = true;
+		}
+		Vector3 destination = new Vector3(transform.position.x, yTarget, transform.position.z);
         if(transform.position == destination)
         {
-            yTarget = Random.Range(yMin, yMax);
-            destination = new Vector3(transform.position.x, yTarget, transform.position.z);
+			//yTarget = Random.Range(yMin, yMax);
+			yTarget = CalcRandomY();
+
+			destination = new Vector3(transform.position.x, yTarget, transform.position.z);
             movementCooldown = 1f;
         }
 
@@ -160,6 +170,13 @@ public class EnemyScript : MonoBehaviour {
             GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         }
     }
+
+	private float CalcRandomY() {
+		return Random.Range(
+				Globals.LowerBoundary.transform.position.y,// + Globals.LowerBoundary.size.y * 0.5f,
+				Globals.UpperBoundary.transform.position.y// - Globals.UpperBoundary.size.y * 0.5f
+			);
+	}
 
     private void MeleeMove()
     {

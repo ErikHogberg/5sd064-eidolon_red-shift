@@ -95,18 +95,25 @@ public class EnemyScript : MonoBehaviour {
 		colorTimer.Restart();
 
 		if (health <= 0) {
-			if (lookingRight) {
-				Flip();
-			}
-			var corpse = Instantiate(Corpse, transform.position, transform.rotation);
-			corpse.transform.parent = transform.parent;
-			Destroy(gameObject);
-			destroyed = true;
-			Assets.Scripts.Globals.Score += ScoreWorth;
-			camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+            gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+            destroyed = true;
+            animator.SetTrigger("Dead");
+            Invoke("Dead", 1);
 		}
-
 	}
+
+    private void Dead()
+    {
+        if (lookingRight)
+        {
+            Flip();
+        }
+        var corpse = Instantiate(Corpse, transform.position, transform.rotation);
+        corpse.transform.parent = transform.parent;
+        Destroy(gameObject);
+        Assets.Scripts.Globals.Score += ScoreWorth;
+        camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+    }
 
 	private void Flip()
     {
@@ -125,6 +132,7 @@ public class EnemyScript : MonoBehaviour {
 
         if(movementCooldown > 0)
         {
+            animator.SetBool("isMoving", false);
             movementCooldown -= Time.deltaTime;
             if(movementCooldown < 0.5f)
             {
@@ -133,6 +141,7 @@ public class EnemyScript : MonoBehaviour {
         }
         else
         {
+            animator.SetBool("isMoving", true);
             transform.position = Vector3.MoveTowards(transform.position, destination, Speed * Time.deltaTime * 60.0f);
             GetComponentInChildren<EnemyWeaponScript>().enabled = false;
         }

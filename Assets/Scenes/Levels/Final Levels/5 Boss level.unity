@@ -934,6 +934,7 @@ MonoBehaviour:
   EnemiesToKill: 20
   InfiniteSpawn: 1
   Sequential: 1
+  SpawnInside: 0
 --- !u!1 &855529334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.53, y: 0.04}
+  m_AnchoredPosition: {x: 42.12, y: 0.04}
   m_SizeDelta: {x: 2.873, y: 4.575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1232753963

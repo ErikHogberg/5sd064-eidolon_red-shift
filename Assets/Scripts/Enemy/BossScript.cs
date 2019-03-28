@@ -25,10 +25,10 @@ public class BossScript : MonoBehaviour {
 
 	public GameObject Border;
 	/*
-    public Transform UpperGroundBorder;
-    public Transform LowerGroundBorder;
-    public Transform LeftBorder;
-    public Transform RightBorder;
+	public Transform UpperGroundBorder;
+	public Transform LowerGroundBorder;
+	public Transform LeftBorder;
+	public Transform RightBorder;
 	 */
 
 	private bool lookingRight = false;
@@ -56,13 +56,14 @@ public class BossScript : MonoBehaviour {
 	}
 
 	void RandomPosition() {
-		Rect border = Border.GetComponent<RectTransform>().rect;
+		RectTransform border = Border.GetComponent<RectTransform>();
 
 		//randomY = Random.Range(LowerGroundBorder.position.y, UpperGroundBorder.position.x);
-		randomY = border.y + Random.Range(0, border.height);
+		randomY = border.anchoredPosition.y + Random.Range(-border.rect.height*0.5f, border.rect.height * 0.5f);
 		//randomX = Random.Range(LeftBorder.position.x, RightBorder.position.x);
-		randomX = border.x + Random.Range(0, border.width);
+		randomX = border.anchoredPosition.x + Random.Range(-border.rect.width * 0.5f, border.rect.width * 0.5f);
 	}
+
 	void Update() {
 
 		if (dead) {
@@ -73,7 +74,6 @@ public class BossScript : MonoBehaviour {
 		if (player == null) {
 			return;
 		}
-
 
 		if (colorTimer.Update(Time.deltaTime)) {
 			GetComponent<SpriteRenderer>().color = Color.white;
@@ -145,10 +145,10 @@ public class BossScript : MonoBehaviour {
 	}
 
 	private void RangeMove() {
-		Vector3 destination = new Vector3(randomX, randomY, transform.position.z);
-		if (transform.position == destination) {
+		Vector3 destination = new Vector3(randomX, randomY, transform.localPosition.z);
+		if (transform.localPosition == destination) {
 			RandomPosition();
-			destination = new Vector3(randomX, randomY, transform.position.z);
+			destination = new Vector3(randomX, randomY, transform.localPosition.z);
 			movementCooldown = 1f;
 		}
 
@@ -156,10 +156,10 @@ public class BossScript : MonoBehaviour {
 			movementCooldown -= Time.deltaTime;
 			if (movementCooldown < 0.5f) {
 				//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(true);
-				Weapon.gameObject.SetActive(false);
+				Weapon.gameObject.SetActive(true);
 			}
 		} else {
-			transform.position = Vector3.MoveTowards(transform.position, destination, Speed);
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, Speed);
 			//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
 			Weapon.gameObject.SetActive(false);
 		}
@@ -172,9 +172,9 @@ public class BossScript : MonoBehaviour {
 			//	animator.SetBool("isMoving", false);
 			//}
 		} else {
-			transform.position = Vector3.MoveTowards(
-				transform.position,
-				GameObject.FindWithTag("Player").transform.position, Speed * Time.deltaTime * 60.0f
+			transform.localPosition = Vector3.MoveTowards(
+				transform.localPosition,
+				GameObject.FindWithTag("Player").transform.localPosition, Speed * Time.deltaTime * 60.0f
 			);
 
 			//if (animator != null) {
@@ -187,7 +187,7 @@ public class BossScript : MonoBehaviour {
 	}
 
 	public float GetHpPercentage() {
-		return (float)Health / startHealth;
+		return (float) Health / startHealth;
 	}
 
 }

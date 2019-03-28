@@ -16,6 +16,7 @@ public class EnemyRespawn : MonoBehaviour {
 
 	public bool Sequential = false;
 	private int sequenceIndex = 0;
+	public bool SpawnInside = false;
 
 	private void Start() {
 		stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
@@ -28,6 +29,11 @@ public class EnemyRespawn : MonoBehaviour {
 			stageDimensions.x,// + Random.Range(4f, 10f), 
 			Random.Range(-2f, 2f), 0
 			);
+
+		if (!SpawnInside) {
+			respawnPosition.x += 3;
+		}
+
 		if (EnemiesAlive < MaxEnemies && (EnemiesToKill > 1 || InfiniteSpawn)) {
 
 			int enemyChoice = Random.Range(0, 4);
@@ -89,7 +95,12 @@ public class EnemyRespawn : MonoBehaviour {
 
 	private void SpawnEnemy(GameObject enemy) {
 		var newEnemy = Instantiate(enemy, respawnPosition, transform.rotation, enemies);
-		newEnemy.GetComponent<EnemyScript>().Respawn = this; 
+		newEnemy.GetComponent<EnemyScript>().Respawn = this;
+		if (newEnemy.GetComponent<EnemyScript>().EnemyType == Type.Archer && SpawnInside) {
+			var position = respawnPosition;
+			position.x -= 3;
+			newEnemy.GetComponent<EnemyScript>().MoveTo(position);
+		}
 		EnemiesAlive = EnemiesAlive + 1;
 	}
 

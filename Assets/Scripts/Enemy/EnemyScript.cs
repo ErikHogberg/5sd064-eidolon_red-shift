@@ -42,6 +42,9 @@ public class EnemyScript : MonoBehaviour {
 
 	private Timer colorTimer;
 
+	private bool moveToPos = false;
+	private Vector3 moveTarget;
+
     //Mick
     public AudioSource Dying;
     public ParticleSystem Damaged_FX;
@@ -180,6 +183,14 @@ public class EnemyScript : MonoBehaviour {
         {
             return;
         }
+
+		if (moveToPos) {
+			Vector3.MoveTowards(
+				transform.position,
+				moveTarget, Speed * Time.deltaTime * 60.0f
+				);
+		}
+
 		if (!yTargetInit) {
 			yTarget = CalcRandomY();
 			yTargetInit = true;
@@ -246,6 +257,12 @@ public class EnemyScript : MonoBehaviour {
 			}
         }
     }
+
+	public void MoveTo(Vector3 position) {
+		moveToPos = true;
+		moveTarget = position;
+		
+	}
 
     private void OnBecameVisible()
 	{

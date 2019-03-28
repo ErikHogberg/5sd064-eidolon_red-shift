@@ -19,7 +19,7 @@ public class PlayerStartWithZombiesScript : MonoBehaviour {
 				break;
 			case ZombieType.Large:
 				zombieCount = Globals.StartLargeZombies;
-				Globals.StartSmallZombies = 0;
+				Globals.StartLargeZombies = 0;
 				break;
 		}
 		if (StartZombieOverride > Globals.StartSmallZombies) {
@@ -28,7 +28,7 @@ public class PlayerStartWithZombiesScript : MonoBehaviour {
 
 		for (int i = 0; i < zombieCount; i++) {
 			Zombies[i].SetActive(true);
-			Zombies[i].transform.parent = transform.parent.parent.parent;
+			Zombies[i].transform.SetParent(transform.parent.parent.parent);
 		}
 		
 	}

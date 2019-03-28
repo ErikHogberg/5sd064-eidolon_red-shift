@@ -2426,7 +2426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScrollSpeed: 50
-  SpaceSpeed: 2
+  SpaceSpeed: 5
+  ShiftSpeed: 10
 --- !u!95 &1478954685
 Animator:
   serializedVersion: 3

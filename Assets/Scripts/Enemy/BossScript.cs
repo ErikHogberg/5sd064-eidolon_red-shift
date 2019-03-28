@@ -12,6 +12,8 @@ public class BossScript : MonoBehaviour {
 	public float Speed = 0.05f;
 
 	public Type BossType;
+	public EnemyWeaponScript Weapon;
+
 	public BossScript King;
 	public EnemyRespawn Respawn;
 	public ScrollStopperScript Stopper;
@@ -42,7 +44,8 @@ public class BossScript : MonoBehaviour {
 	private void Start() {
 		colorTimer = new Timer(.1f);
 		movementCooldown = 0f;
-		GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+		//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
+		Weapon.gameObject.SetActive(false);
 		RandomPosition();
 		Border.transform.SetParent(transform.parent);
 		startHealth = Health;
@@ -152,11 +155,13 @@ public class BossScript : MonoBehaviour {
 		if (movementCooldown > 0) {
 			movementCooldown -= Time.deltaTime;
 			if (movementCooldown < 0.5f) {
-				GetComponentInChildren<EnemyWeaponScript>().enabled = true;
+				//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(true);
+				Weapon.gameObject.SetActive(false);
 			}
 		} else {
 			transform.position = Vector3.MoveTowards(transform.position, destination, Speed);
-			GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+			//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
+			Weapon.gameObject.SetActive(false);
 		}
 	}
 

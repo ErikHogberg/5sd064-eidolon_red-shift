@@ -96,8 +96,11 @@ public class EnemyWeaponScript : MonoBehaviour
         {
             Arrow.Play();
         }
-        //Mick's edit end
-        GetComponentInParent<Animator>().ResetTrigger("Attack");
+		//Mick's edit end
+		var animator = GetComponentInParent<Animator>();
+		if (animator != null) {
+			animator.ResetTrigger("Attack");
+		}
     }
     void Melee()
     {

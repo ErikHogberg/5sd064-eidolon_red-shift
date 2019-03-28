@@ -249,6 +249,7 @@ MonoBehaviour:
   King: {fileID: 0}
   HpBar: {fileID: 7632806421989770613}
   InvulnText: {fileID: 1635268198116622946}
+  InvulnColor: {r: 0.28773582, g: 0.7537752, b: 1, a: 1}
 --- !u!1 &6093651812270626015
 GameObject:
   m_ObjectHideFlags: 0

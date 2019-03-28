@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6606797777563194789
 Transform:
   m_ObjectHideFlags: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   dead: 0
   Speed: 0.05
   BossType: 4
+  Weapon: {fileID: 1128220732573334844}
   King: {fileID: 0}
   Respawn: {fileID: 0}
   Stopper: {fileID: 0}
@@ -317,13 +318,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5777641365340446846}
   - component: {fileID: 1128220732573334844}
+  - component: {fileID: 6211782819626843052}
   m_Layer: 0
   m_Name: EnemyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5777641365340446846
 Transform:
   m_ObjectHideFlags: 0
@@ -358,6 +360,22 @@ MonoBehaviour:
   Cooldown: 0.08
   Arrow: {fileID: 0}
   Sword_Swing: {fileID: 0}
+--- !u!58 &6211782819626843052
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4584933127195618057}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.8324239, y: 0.3988672}
+  serializedVersion: 2
+  m_Radius: 2.4596603
 --- !u!1001 &3183517957125007292
 PrefabInstance:
   m_ObjectHideFlags: 0

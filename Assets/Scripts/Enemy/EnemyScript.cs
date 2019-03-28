@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour {
     //private float yMin = -2f;
     private float yTarget;
 	private bool yTargetInit = false;
-	private GameObject camera;
+	//private GameObject camera;
     private bool lookingRight = false;
 	//private bool dying = false;
 	private bool destroyed = false;
@@ -55,12 +55,13 @@ public class EnemyScript : MonoBehaviour {
 		this.enabled = false;
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
-        camera = GameObject.Find("Main Camera");
+        //camera = GameObject.Find("Main Camera");
 		//yTarget = Random.Range(yMin, yMax);
 		//yTarget = CalcRandomY();
 
 		if (Respawn == null) {
-			Respawn = camera.GetComponent<EnemyRespawn>();
+			//Respawn = camera.GetComponent<EnemyRespawn>();
+			Respawn = GameObject.Find("Main Camera").GetComponent<EnemyRespawn>();
 		}
 
 
@@ -254,7 +255,7 @@ public class EnemyScript : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-        if (gameObject.activeInHierarchy == true && gameObject.transform.position.x < camera.transform.position.x)
+        if (gameObject.activeInHierarchy == true && gameObject.transform.position.x < GameObject.Find("Main Camera").transform.position.x)
         {
             Destroy(gameObject);
             Respawn.EnemyKilled(true);

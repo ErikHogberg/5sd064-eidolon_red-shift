@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 629565015}
   - component: {fileID: 629565016}
   - component: {fileID: 629565019}
+  - component: {fileID: 3747544225126017783}
   m_Layer: 0
   m_Name: King
   m_TagString: Enemy
@@ -167,6 +168,25 @@ MonoBehaviour:
   FireFront: {fileID: 6175412968519684355}
   FireBack: {fileID: 629448790107787143}
   Smoke: {fileID: 5910180254407583376}
+--- !u!95 &3747544225126017783
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629565014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bff606025cc634957a1cba9d660b984f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &865364957
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,16 +410,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4044077908767314518}
     m_Modifications:
-    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
-        type: 3}
-      propertyPath: m_Name
-      value: King_Fire_front
-      objectReference: {fileID: 0}
-    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1661061573840441794, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,6 +463,16 @@ PrefabInstance:
     - target: {fileID: 1661061573840441794, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
+        type: 3}
+      propertyPath: m_Name
+      value: King_Fire_front
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

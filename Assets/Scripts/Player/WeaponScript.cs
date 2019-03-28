@@ -97,6 +97,8 @@ public class WeaponScript : MonoBehaviour {
 			return;
 		}
 
+		GetComponentInParent<PlayerMovementScript>().animator.SetTrigger("Attack");
+
 		int firedShots = 0;
 		foreach (var timer in AttackTimers) {
 			if (!timer.IsRunning()) {
@@ -111,7 +113,9 @@ public class WeaponScript : MonoBehaviour {
 				timer.Restart(Cooldown);
 
 				//Mick's edit start
-				Bullet.Play();
+				if (Bullet.isActiveAndEnabled) {
+					Bullet.Play();
+				}
 				//Mick's edit end
 			}
 		}
@@ -127,14 +131,16 @@ public class WeaponScript : MonoBehaviour {
 
 	void Shoot() {
 		Shoot(0.0f);
-        GetComponentInParent<PlayerMovementScript>().animator.SetTrigger("Attack");
-        //Mick's edit start
-        Bullet.Play();
-        //Mick's edit end
+		GetComponentInParent<PlayerMovementScript>().animator.SetTrigger("Attack");
+		//Mick's edit start
+		if (Bullet.isActiveAndEnabled) {
+			Bullet.Play();
+		}
+		//Mick's edit end
 	}
 
 	void Shoot(float offsetAngle) {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+		Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 		float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + offsetAngle;
 		firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 

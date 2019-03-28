@@ -2,29 +2,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QueenHpBarScript : MonoBehaviour {
 
 	public BossScript Queen;
 	public BossScript King;
-	private bool kingIsDead = false;
+	//private bool kingIsDead = false;
 
 	public GameObject HpBar;
 	public GameObject InvulnText;
+	public Color InvulnColor;
+	private Color OriginalColor;
 
 	void Start() {
-
+		var sprite = HpBar.GetComponentInChildren<Image>();
+		OriginalColor = sprite.color;
+		sprite.color = InvulnColor;
 	}
 
 	void Update() {
 
 		float HpPercentage = Queen.GetHpPercentage();
 
-		if (!kingIsDead) {
-			if (King.GetHpPercentage() < 0.0f) {
-				InvulnText.SetActive(false);
-				kingIsDead = true;
-			}
+		if (King.dead) {
+			InvulnText.SetActive(false);
+			HpBar.GetComponentInChildren<Image>().color = OriginalColor;
 		}
 
 		if (HpPercentage > 1.0) {

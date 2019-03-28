@@ -12,6 +12,8 @@ public class BossScript : MonoBehaviour {
 	public float Speed = 0.05f;
 
 	public Type BossType;
+	public EnemyWeaponScript Weapon;
+
 	public BossScript King;
 	public EnemyRespawn Respawn;
 	public ScrollStopperScript Stopper;
@@ -24,10 +26,10 @@ public class BossScript : MonoBehaviour {
 
 	public GameObject Border;
 	/*
-    public Transform UpperGroundBorder;
-    public Transform LowerGroundBorder;
-    public Transform LeftBorder;
-    public Transform RightBorder;
+	public Transform UpperGroundBorder;
+	public Transform LowerGroundBorder;
+	public Transform LeftBorder;
+	public Transform RightBorder;
 	 */
 
 	private bool lookingRight = false;
@@ -43,26 +45,30 @@ public class BossScript : MonoBehaviour {
 	private void Start() {
 		colorTimer = new Timer(.1f);
 		movementCooldown = 0f;
-		GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+		//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
+		Weapon.gameObject.SetActive(false);
 		RandomPosition();
 		Border.transform.SetParent(transform.parent);
 		startHealth = Health;
 
 		if (BossType == Type.Queen) {
 			Invulnerable = true;
+			Weapon.gameObject.SetActive(true);
+
 		}
 
         animator = GetComponent<Animator>();
     }
 
 	void RandomPosition() {
-		Rect border = Border.GetComponent<RectTransform>().rect;
+		RectTransform border = Border.GetComponent<RectTransform>();
 
 		//randomY = Random.Range(LowerGroundBorder.position.y, UpperGroundBorder.position.x);
-		randomY = border.y + Random.Range(0, border.height);
+		randomY = border.anchoredPosition.y + Random.Range(-border.rect.height*0.5f, border.rect.height * 0.5f);
 		//randomX = Random.Range(LeftBorder.position.x, RightBorder.position.x);
-		randomX = border.x + Random.Range(0, border.width);
+		randomX = border.anchoredPosition.x + Random.Range(-border.rect.width * 0.5f, border.rect.width * 0.5f);
 	}
+
 	void Update() {
 
 		if (dead) {
@@ -73,7 +79,6 @@ public class BossScript : MonoBehaviour {
 		if (player == null) {
 			return;
 		}
-
 
 		if (colorTimer.Update(Time.deltaTime)) {
 			GetComponent<SpriteRenderer>().color = Color.white;
@@ -145,21 +150,23 @@ public class BossScript : MonoBehaviour {
 	}
 
 	private void RangeMove() {
-		Vector3 destination = new Vector3(randomX, randomY, transform.position.z);
-		if (transform.position == destination) {
+		Vector3 destination = new Vector3(randomX, randomY, transform.localPosition.z);
+		if (transform.localPosition == destination) {
 			RandomPosition();
-			destination = new Vector3(randomX, randomY, transform.position.z);
+			destination = new Vector3(randomX, randomY, transform.localPosition.z);
 			movementCooldown = 1f;
 		}
 
 		if (movementCooldown > 0) {
 			movementCooldown -= Time.deltaTime;
 			if (movementCooldown < 0.5f) {
-				GetComponentInChildren<EnemyWeaponScript>().enabled = true;
+				//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(true);
+				Weapon.gameObject.SetActive(true);
 			}
 		} else {
-			transform.position = Vector3.MoveTowards(transform.position, destination, Speed);
-			GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, Speed);
+			//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
+			Weapon.gameObject.SetActive(false);
 		}
 	}
 
@@ -170,22 +177,22 @@ public class BossScript : MonoBehaviour {
 			animator.SetBool("isMoving", false);
 			}
 		} else {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                GameObject.FindWithTag("Player").transform.position, Speed * Time.deltaTime * 60.0f
-            );
-            if (animator != null)
-            {
-                animator.SetBool("isMoving", true);
-            }
-            if (!colorTimer.IsRunning()) {
+			transform.localPosition = Vector3.MoveTowards(
+				transform.localPosition,
+				GameObject.FindWithTag("Player").transform.localPosition, Speed * Time.deltaTime * 60.0f
+			);
+
+			//if (animator != null) {
+			//	animator.SetBool("isMoving", true);
+			//}
+			if (!colorTimer.IsRunning()) {
 				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 			}
 		}
 	}
 
 	public float GetHpPercentage() {
-		return (float)Health / startHealth;
+		return (float) Health / startHealth;
 	}
 
 }

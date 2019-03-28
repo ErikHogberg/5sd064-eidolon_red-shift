@@ -356,7 +356,7 @@ MonoBehaviour:
   firePoint: {fileID: 6546175507128491429}
   bulletPrefab: {fileID: 7923627733041113199, guid: 291d18277011845f58930c06205a8cdd,
     type: 3}
-  Damage: 50
+  Damage: 35
   Cooldown: 1.5
   Arrow: {fileID: 7511837834923881284}
   Sword_Swing: {fileID: 5138847786980160673}

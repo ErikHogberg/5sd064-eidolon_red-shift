@@ -36,6 +36,10 @@ public class PlayerMovementScript : MonoBehaviour {
 	public BuffSystem Buffs;
     public bool destroyed = false;
 
+    //mick
+    public ParticleSystem Player_Damage;
+    //mick
+
 	void Start() {
 
 		Globals.Player = this;
@@ -199,6 +203,13 @@ public class PlayerMovementScript : MonoBehaviour {
 		colorTimer.Restart();
 
 		Health = Health - damage;
+
+        //mick
+        if (Player_Damage != null)
+        {
+        Player_Damage.Play();
+        }
+        //mick
 
 		if (Health < 0 || Health == 0) {
             //Destroy(gameObject);

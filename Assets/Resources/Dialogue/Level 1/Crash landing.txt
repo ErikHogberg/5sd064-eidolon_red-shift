@@ -2,7 +2,7 @@ title: Necromancer
 rgb: 0.8, 0.0, 0.0
 *grunts*
 
-	[PRESS SPACE TO ADVEANCE]
+	[PRESS SPACE TO ADVANCE]
 -
 title: Narrator
 

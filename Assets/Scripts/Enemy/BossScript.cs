@@ -17,8 +17,9 @@ public class BossScript : MonoBehaviour {
 	public BossScript King;
 	public EnemyRespawn Respawn;
 	public ScrollStopperScript Stopper;
+    private Animator animator;
 
-	public float movementCooldown = 1f;
+    public float movementCooldown = 1f;
 
 	private float randomY;
 	private float randomX;
@@ -55,7 +56,9 @@ public class BossScript : MonoBehaviour {
 			Weapon.gameObject.SetActive(true);
 
 		}
-	}
+
+        animator = GetComponent<Animator>();
+    }
 
 	void RandomPosition() {
 		RectTransform border = Border.GetComponent<RectTransform>();
@@ -137,6 +140,7 @@ public class BossScript : MonoBehaviour {
 			}
 
 			dead = true;
+            animator.SetTrigger("Dead");
 			Assets.Scripts.Globals.Score += ScoreWorth;
 		}
 
@@ -155,12 +159,14 @@ public class BossScript : MonoBehaviour {
 		}
 
 		if (movementCooldown > 0) {
+            animator.SetBool("isMoving", false);
 			movementCooldown -= Time.deltaTime;
 			if (movementCooldown < 0.5f) {
 				//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(true);
 				Weapon.gameObject.SetActive(true);
 			}
 		} else {
+            animator.SetBool("isMoving", true);
 			transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, Speed);
 			//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
 			Weapon.gameObject.SetActive(false);
@@ -170,22 +176,23 @@ public class BossScript : MonoBehaviour {
 	private void MeleeMove() {
 		if (movementCooldown > 0) {
 			movementCooldown -= Time.deltaTime;
-			//if (animator != null) {
-			//	animator.SetBool("isMoving", false);
-			//}
-		} else {
+            if(animator)
+            {
+                animator.SetBool("isMoving", false);
+            }
+        } else {
 			transform.localPosition = Vector3.MoveTowards(
 				transform.localPosition,
 				GameObject.FindWithTag("Player").transform.localPosition, Speed * Time.deltaTime * 60.0f
 			);
-
-			//if (animator != null) {
-			//	animator.SetBool("isMoving", true);
-			//}
 			if (!colorTimer.IsRunning()) {
 				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 			}
-		}
+            if(animator)
+            {
+                animator.SetBool("isMoving", true);
+            }
+        }
 	}
 
 	public float GetHpPercentage() {

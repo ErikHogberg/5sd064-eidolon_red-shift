@@ -137,7 +137,11 @@ public class EnemyWeaponScript : MonoBehaviour
             playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
-            GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+			var parent = GetComponentInParent<EnemyScript>();
+			if (parent == null) {
+				return;
+			}
+			parent.movementCooldown = 1f;
             GetComponentInParent<Animator>().SetTrigger("Attack");
         }
     }

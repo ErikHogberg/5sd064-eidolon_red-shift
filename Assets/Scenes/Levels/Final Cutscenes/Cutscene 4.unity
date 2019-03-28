@@ -602,6 +602,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cutscene
       objectReference: {fileID: 0}
+    - target: {fileID: 644418244849587992, guid: e6ae7996a3e20af468ad08c2451fe477,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 644418244434775293, guid: e6ae7996a3e20af468ad08c2451fe477,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -655,11 +660,6 @@ PrefabInstance:
     - target: {fileID: 644418244434775293, guid: e6ae7996a3e20af468ad08c2451fe477,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 644418244849587992, guid: e6ae7996a3e20af468ad08c2451fe477,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 644418244502189506, guid: e6ae7996a3e20af468ad08c2451fe477,

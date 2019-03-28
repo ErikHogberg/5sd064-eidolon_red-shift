@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonAction: 0
-  LevelToStart: 1 Forest Level
+  LevelToStart: Cutscene 1
 --- !u!1 &589677143
 GameObject:
   m_ObjectHideFlags: 0

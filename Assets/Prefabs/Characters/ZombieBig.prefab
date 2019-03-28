@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 30
   ZombieScript: {fileID: 3317521913021960935}
+  AttackColor: {r: 0.6933962, g: 0.75363755, b: 1, a: 1}
 --- !u!1 &3317521913021960930
 GameObject:
   m_ObjectHideFlags: 0

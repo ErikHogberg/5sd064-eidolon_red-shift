@@ -14,6 +14,7 @@ public class ZombieAttackScript : MonoBehaviour {
 
 	private Timer attackTimer;
 	private Timer colorTimer;
+	public Color AttackColor = Color.green;
 
 	private BoxCollider2D attackCollider;
 
@@ -46,7 +47,7 @@ public class ZombieAttackScript : MonoBehaviour {
 				}
 
 				attackTimer.Restart();
-				transform.parent.GetComponent<SpriteRenderer>().color = Color.green;
+				transform.parent.GetComponent<SpriteRenderer>().color = AttackColor;
                 GetComponentInParent<Animator>().SetTrigger("Attack");
                 colorTimer.Restart();
 			} 

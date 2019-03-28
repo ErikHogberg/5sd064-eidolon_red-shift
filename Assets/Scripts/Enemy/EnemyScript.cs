@@ -151,7 +151,8 @@ public class EnemyScript : MonoBehaviour {
 		if (health <= 0) {
             gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
             destroyed = true;
-            animator.SetTrigger("Dead");
+			GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
+			animator.SetTrigger("Dead");
             //Mick
             if (Dying != null)
             {

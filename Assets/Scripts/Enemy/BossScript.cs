@@ -139,8 +139,11 @@ public class BossScript : MonoBehaviour {
 				}
 			}
 
+			Weapon.gameObject.SetActive(false);
+
 			dead = true;
             animator.SetTrigger("Dead");
+
 			Assets.Scripts.Globals.Score += ScoreWorth;
 		}
 

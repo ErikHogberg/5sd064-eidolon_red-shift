@@ -15,8 +15,9 @@ public class BossScript : MonoBehaviour {
 	public BossScript King;
 	public EnemyRespawn Respawn;
 	public ScrollStopperScript Stopper;
+    private Animator animator;
 
-	public float movementCooldown = 1f;
+    public float movementCooldown = 1f;
 
 	private float randomY;
 	private float randomX;
@@ -50,7 +51,9 @@ public class BossScript : MonoBehaviour {
 		if (BossType == Type.Queen) {
 			Invulnerable = true;
 		}
-	}
+
+        animator = GetComponent<Animator>();
+    }
 
 	void RandomPosition() {
 		Rect border = Border.GetComponent<RectTransform>().rect;
@@ -163,19 +166,19 @@ public class BossScript : MonoBehaviour {
 	private void MeleeMove() {
 		if (movementCooldown > 0) {
 			movementCooldown -= Time.deltaTime;
-			//if (animator != null) {
-			//	animator.SetBool("isMoving", false);
-			//}
+			if (animator != null) {
+			animator.SetBool("isMoving", false);
+			}
 		} else {
-			transform.position = Vector3.MoveTowards(
-				transform.position,
-				GameObject.FindWithTag("Player").transform.position, Speed * Time.deltaTime * 60.0f
-			);
-
-			//if (animator != null) {
-			//	animator.SetBool("isMoving", true);
-			//}
-			if (!colorTimer.IsRunning()) {
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                GameObject.FindWithTag("Player").transform.position, Speed * Time.deltaTime * 60.0f
+            );
+            if (animator != null)
+            {
+                animator.SetBool("isMoving", true);
+            }
+            if (!colorTimer.IsRunning()) {
 				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 			}
 		}

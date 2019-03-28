@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 4166104743430737940}
   - component: {fileID: 4166104743430737947}
   - component: {fileID: 4166104743430737944}
+  - component: {fileID: 120726619548216755}
   m_Layer: 0
   m_Name: Queen
   m_TagString: Enemy
@@ -307,6 +308,25 @@ MonoBehaviour:
   FireFront: {fileID: 5595719367062310485}
   FireBack: {fileID: 7990042006315756625}
   Smoke: {fileID: 7524027705408919594}
+--- !u!95 &120726619548216755
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166104743430737941}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1021537db44ce4001821bb8d9c387d62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4584933127195618057
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,16 +385,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 130473953869210645}
     m_Modifications:
-    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
-        type: 3}
-      propertyPath: m_Name
-      value: King_Fire_front
-      objectReference: {fileID: 0}
-    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1661061573840441794, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -430,6 +440,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
+        type: 3}
+      propertyPath: m_Name
+      value: King_Fire_front
+      objectReference: {fileID: 0}
+    - target: {fileID: 6915097067830436294, guid: 340a6c8c0ba7cc542acfe16a888dfd50,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 340a6c8c0ba7cc542acfe16a888dfd50, type: 3}
 --- !u!4 &4261361841538397822 stripped
@@ -451,16 +471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 130473953869210645}
     m_Modifications:
-    - target: {fileID: 9028053948667478835, guid: aac66d8fb8739ad4ebaf8bea70825000,
-        type: 3}
-      propertyPath: m_Name
-      value: King_Smoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 9028053948667478835, guid: aac66d8fb8739ad4ebaf8bea70825000,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8132785510838979910, guid: aac66d8fb8739ad4ebaf8bea70825000,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -514,6 +524,16 @@ PrefabInstance:
     - target: {fileID: 8132785510838979910, guid: aac66d8fb8739ad4ebaf8bea70825000,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028053948667478835, guid: aac66d8fb8739ad4ebaf8bea70825000,
+        type: 3}
+      propertyPath: m_Name
+      value: King_Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028053948667478835, guid: aac66d8fb8739ad4ebaf8bea70825000,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

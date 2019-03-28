@@ -46,12 +46,12 @@ public class FadeScript : MonoBehaviour {
 		}
 		CalcAlpha();
 
-		if (Input.GetKeyDown(KeyCode.L)) {
-			StartLerpIn();
-		}
-		if (Input.GetKeyDown(KeyCode.K)) {
-			StartLerpOut();
-		}
+		//if (Input.GetKeyDown(KeyCode.L)) {
+		//	StartLerpIn();
+		//}
+		//if (Input.GetKeyDown(KeyCode.K)) {
+		//	StartLerpOut();
+		//}
 	}
 
 	public bool IsDone() {
@@ -89,7 +89,7 @@ public class FadeScript : MonoBehaviour {
 			timerTime = 0.0f;
 		}
 
-		float alpha = easing.Evaluate( timerTime / Time);
+		float alpha = easing.Evaluate(timerTime / Time);
 		if (FadeOut) {
 			alpha = 1.0f - alpha;
 		}

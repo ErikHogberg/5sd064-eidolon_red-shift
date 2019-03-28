@@ -32,7 +32,9 @@ public class InitScript : MonoBehaviour {
 	}
 
 	void Update() {
-
+		if (Input.GetKeyDown(KeyCode.P)) {
+			Globals.GameOver();
+		}
 	}
 
 	private void OnMouseEnter() {

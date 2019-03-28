@@ -120,12 +120,12 @@ public class EnemyWeaponScript : MonoBehaviour
 			movementScript.TakeDamage(Damage);
 			m_Cooldown = Cooldown;
 			GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
-			var parent = GetComponentInParent<EnemyScript>();
+            GetComponentInParent<Animator>().SetTrigger("Attack");
+            var parent = GetComponentInParent<EnemyScript>();
 			if (parent == null) {
 				return;
 			}
 			parent.movementCooldown = 1f;
-            GetComponentInParent<Animator>().SetTrigger("Attack");
         } else if (playerInRange != null && playerInRange.tag == "Zombie")
         {
             //Mick's edit start
@@ -137,12 +137,12 @@ public class EnemyWeaponScript : MonoBehaviour
             playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
-			var parent = GetComponentInParent<EnemyScript>();
+            GetComponentInParent<Animator>().SetTrigger("Attack");
+            var parent = GetComponentInParent<EnemyScript>();
 			if (parent == null) {
 				return;
 			}
 			parent.movementCooldown = 1f;
-            GetComponentInParent<Animator>().SetTrigger("Attack");
         }
     }
 

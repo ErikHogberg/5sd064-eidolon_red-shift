@@ -89,7 +89,7 @@ public class BossScript : MonoBehaviour {
 				RangeMove();
 				break;
 			case Type.Queen:
-				if (King.dead) {
+				if (King.dead || King == null) {
 					Invulnerable = false;
 				}
 				MeleeMove();
@@ -173,22 +173,23 @@ public class BossScript : MonoBehaviour {
 	private void MeleeMove() {
 		if (movementCooldown > 0) {
 			movementCooldown -= Time.deltaTime;
-			if (animator != null) {
-			animator.SetBool("isMoving", false);
-			}
-		} else {
+            if(animator)
+            {
+                animator.SetBool("isMoving", false);
+            }
+        } else {
 			transform.localPosition = Vector3.MoveTowards(
 				transform.localPosition,
 				GameObject.FindWithTag("Player").transform.localPosition, Speed * Time.deltaTime * 60.0f
 			);
-
-			//if (animator != null) {
-			//	animator.SetBool("isMoving", true);
-			//}
 			if (!colorTimer.IsRunning()) {
 				GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
 			}
-		}
+            if(animator)
+            {
+                animator.SetBool("isMoving", true);
+            }
+        }
 	}
 
 	public float GetHpPercentage() {

@@ -46,6 +46,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Final Levels/4 Palace level.unity
     guid: 14fd2ac2ed3b3c54b991deeaee46b985
   - enabled: 1
+    path: Assets/Scenes/Levels/Final Levels/5 Boss level.unity
+    guid: 98c1116b7b84c74409711e3ed0dbaf5f
+  - enabled: 1
     path: Assets/Scenes/Menus/Hehehe.unity
     guid: fc0055c0dd30b442187cc6ffd930d61f
   - enabled: 1

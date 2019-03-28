@@ -22,6 +22,8 @@ public class EnemyScript : MonoBehaviour {
     public float movementCooldown = 1f;
     private Animator animator;
 
+	public EnemyRespawn Respawn;
+
     public float scaleMin = 0.2f;
     public float scaleMax = 0.3f;
     public float randomScale;
@@ -30,15 +32,18 @@ public class EnemyScript : MonoBehaviour {
     //private float yMin = -2f;
     private float yTarget;
 	private bool yTargetInit = false;
-	private GameObject camera;
-
+	//private GameObject camera;
     private bool lookingRight = false;
-	private bool dying = false;
+	//private bool dying = false;
 	private bool destroyed = false;
+    private float LastUpperBorderPosition;
 
     public int ScoreWorth = 10;
 
 	private Timer colorTimer;
+
+	private bool moveToPos = false;
+	private Vector3 moveTarget;
 
     //Mick
     public AudioSource Dying;
@@ -53,18 +58,36 @@ public class EnemyScript : MonoBehaviour {
 		this.enabled = false;
         movementCooldown = 0f;
 		gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
-        camera = GameObject.Find("Main Camera");
+        //camera = GameObject.Find("Main Camera");
 		//yTarget = Random.Range(yMin, yMax);
 		//yTarget = CalcRandomY();
+
+		if (Respawn == null) {
+			//Respawn = camera.GetComponent<EnemyRespawn>();
+			Respawn = GameObject.Find("Main Camera").GetComponent<EnemyRespawn>();
+		}
+
 
 		randomScale = Random.Range(scaleMin, scaleMax);
         transform.localScale = new Vector3(randomScale, randomScale, randomScale);
         animator = GetComponent<Animator>();
+        LastUpperBorderPosition = Globals.UpperBoundary.transform.position.y;
     }
 
 	void Update () {
 
-		if (colorTimer.Update(Time.deltaTime)) {
+        if (LastUpperBorderPosition < Globals.UpperBoundary.transform.position.y)
+        {
+            yTarget = yTarget + (Globals.UpperBoundary.transform.position.y - LastUpperBorderPosition);
+            LastUpperBorderPosition = Globals.UpperBoundary.transform.position.y;
+        }
+        else if (LastUpperBorderPosition > Globals.UpperBoundary.transform.position.y)
+        {
+            yTarget = yTarget - (LastUpperBorderPosition - Globals.UpperBoundary.transform.position.y);
+            LastUpperBorderPosition = Globals.UpperBoundary.transform.position.y;
+        }
+
+        if (colorTimer.Update(Time.deltaTime)) {
 			GetComponent<SpriteRenderer>().color = Color.white;
 		}
 
@@ -145,8 +168,8 @@ public class EnemyScript : MonoBehaviour {
 		corpse.GetComponent<CorpseScript>().LookingRight = lookingRight;
         corpse.transform.parent = transform.parent;
         Destroy(gameObject);
-        Assets.Scripts.Globals.Score += ScoreWorth;
-        camera.GetComponent<EnemyRespawn>().EnemyKilled(false);
+        Globals.Score += ScoreWorth;
+		Respawn.EnemyKilled(false);
     }
 
 	private void Flip()
@@ -160,12 +183,20 @@ public class EnemyScript : MonoBehaviour {
         {
             return;
         }
+
+		if (moveToPos) {
+			Vector3.MoveTowards(
+				transform.position,
+				moveTarget, Speed * Time.deltaTime * 60.0f
+				);
+		}
+
 		if (!yTargetInit) {
 			yTarget = CalcRandomY();
 			yTargetInit = true;
 		}
 		Vector3 destination = new Vector3(transform.position.x, yTarget, transform.position.z);
-        if(transform.position == destination)
+        if (transform.position == destination)
         {
 			//yTarget = Random.Range(yMin, yMax);
 			yTarget = CalcRandomY();
@@ -227,6 +258,12 @@ public class EnemyScript : MonoBehaviour {
         }
     }
 
+	public void MoveTo(Vector3 position) {
+		moveToPos = true;
+		moveTarget = position;
+		
+	}
+
     private void OnBecameVisible()
 	{
         this.enabled = true;
@@ -235,10 +272,10 @@ public class EnemyScript : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-        if (gameObject.activeInHierarchy == true && gameObject.transform.position.x < camera.transform.position.x)
+        if (gameObject.activeInHierarchy == true && gameObject.transform.position.x < GameObject.Find("Main Camera").transform.position.x)
         {
             Destroy(gameObject);
-            camera.GetComponent<EnemyRespawn>().EnemyKilled(true);
+            Respawn.EnemyKilled(true);
         }
 
         this.enabled = false;

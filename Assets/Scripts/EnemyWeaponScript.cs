@@ -75,7 +75,10 @@ public class EnemyWeaponScript : MonoBehaviour
             Vector2 direction = player.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             firePoint.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            GetComponentInParent<Animator>().SetTrigger("Attack");
+			var animator = GetComponentInParent<Animator>();
+			if (animator != null) {
+				GetComponentInParent<Animator>().SetTrigger("Attack");
+			}
             Invoke("ArrowShoot", 0.5f);
         }
     }
@@ -93,8 +96,11 @@ public class EnemyWeaponScript : MonoBehaviour
         {
             Arrow.Play();
         }
-        //Mick's edit end
-        GetComponentInParent<Animator>().ResetTrigger("Attack");
+		//Mick's edit end
+		var animator = GetComponentInParent<Animator>();
+		if (animator != null) {
+			animator.ResetTrigger("Attack");
+		}
     }
     void Melee()
     {

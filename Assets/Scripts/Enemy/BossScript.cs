@@ -3,146 +3,180 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossScript : MonoBehaviour
-{
-    public int health = 100;
-    public float Speed = 0.05f;
-    public Type BossType;
-    public float movementCooldown = 1f;
+public class BossScript : MonoBehaviour {
+	public int Health = 100;
+	private int startHealth;
+	public bool Invulnerable = false;
+	public bool dead = false;
 
-    private float randomY;
-    private float randomX;
+	public float Speed = 0.05f;
+
+	public Type BossType;
+	public EnemyWeaponScript Weapon;
+
+	public BossScript King;
+	public EnemyRespawn Respawn;
+	public ScrollStopperScript Stopper;
+
+	public float movementCooldown = 1f;
+
+	private float randomY;
+	private float randomX;
 
 	public GameObject Border;
 	/*
-    public Transform UpperGroundBorder;
-    public Transform LowerGroundBorder;
-    public Transform LeftBorder;
-    public Transform RightBorder;
+	public Transform UpperGroundBorder;
+	public Transform LowerGroundBorder;
+	public Transform LeftBorder;
+	public Transform RightBorder;
 	 */
 
-    private bool lookingRight = false;
+	private bool lookingRight = false;
 
-    public int ScoreWorth = 10;
+	public int ScoreWorth = 1000;
 
-    private Timer colorTimer;
+	private Timer colorTimer;
 
-    private void Start()
-    {
-        colorTimer = new Timer(.1f);
-        movementCooldown = 0f;
-        gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
-        RandomPosition();
+	public ParticleSystem FireFront;
+	public ParticleSystem FireBack;
+	public ParticleSystem Smoke;
+
+	private void Start() {
+		colorTimer = new Timer(.1f);
+		movementCooldown = 0f;
+		//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
+		Weapon.gameObject.SetActive(false);
+		RandomPosition();
 		Border.transform.SetParent(transform.parent);
-    }
+		startHealth = Health;
 
-    void RandomPosition()
-    {
-		Rect border = Border.GetComponent<RectTransform>().rect;
+		if (BossType == Type.Queen) {
+			Invulnerable = true;
+			Weapon.gameObject.SetActive(true);
+
+		}
+	}
+
+	void RandomPosition() {
+		RectTransform border = Border.GetComponent<RectTransform>();
 
 		//randomY = Random.Range(LowerGroundBorder.position.y, UpperGroundBorder.position.x);
-		randomY = border.y + Random.Range(0, border.height);
+		randomY = border.anchoredPosition.y + Random.Range(-border.rect.height*0.5f, border.rect.height * 0.5f);
 		//randomX = Random.Range(LeftBorder.position.x, RightBorder.position.x);
-		randomX = border.x + Random.Range(0, border.width);
+		randomX = border.anchoredPosition.x + Random.Range(-border.rect.width * 0.5f, border.rect.width * 0.5f);
 	}
-	void Update()
-    {
+
+	void Update() {
+
+		if (dead) {
+			return;
+		}
+
 		GameObject player = GameObject.FindWithTag("Player");
 		if (player == null) {
 			return;
 		}
 
+		if (colorTimer.Update(Time.deltaTime)) {
+			GetComponent<SpriteRenderer>().color = Color.white;
+		}
 
-		if (colorTimer.Update(Time.deltaTime))
-        {
-            GetComponent<SpriteRenderer>().color = Color.white;
-        }
+		switch (BossType) {
+			case Type.King:
+				RangeMove();
+				break;
+			case Type.Queen:
+				if (King.dead) {
+					Invulnerable = false;
+				}
+				MeleeMove();
+				break;
+			default:
+				break;
+		}
 
-        switch (BossType)
-        {
-            case Type.King:
-                RangeMove();
-                break;
-            case Type.Queen:
-                MeleeMove();
-                break;
-            default:
-                break;
-        }
+		if (player.transform.position.x < transform.position.x && lookingRight) {
+			lookingRight = !lookingRight;
+			Flip();
+		} else if (player.transform.position.x > transform.position.x && !lookingRight) {
+			lookingRight = !lookingRight;
+			Flip();
+		}
+	}
 
-        if (player.transform.position.x < transform.position.x && lookingRight)
-        {
-            lookingRight = !lookingRight;
-            Flip();
-        }
-        else if (player.transform.position.x > transform.position.x && !lookingRight)
-        {
-            lookingRight = !lookingRight;
-            Flip();
-        }
-    }
+	public void TakeDamage(int damage) {
 
-    public void TakeDamage(int damage)
-    {
+		if (Invulnerable) {
+			GetComponent<SpriteRenderer>().color = Color.cyan;
+			colorTimer.Restart();
+			return;
+		}
 
-        health -= damage;
+		Health -= damage;
 
-        GetComponent<SpriteRenderer>().color = Color.red;
-        colorTimer.Restart();
+		GetComponent<SpriteRenderer>().color = Color.red;
+		colorTimer.Restart();
 
-        if (health <= 0)
-        {
-            if (lookingRight)
-            {
-                Flip();
-            }
-            //Destroy(gameObject);
-            Assets.Scripts.Globals.Score += ScoreWorth;
-        }
+		if (Health <= 0) {
+			//if (lookingRight)
+			//{
+			//    Flip();
+			//}
+			//Destroy(gameObject);
+			GetComponent<SpriteRenderer>().color = Color.gray;
 
-    }
+			FireBack.gameObject.SetActive(true);
+			FireFront.gameObject.SetActive(true);
+			Smoke.gameObject.SetActive(true);
 
-    private void Flip()
-    {
-        transform.Rotate(0f, 180f, 0f);
-    }
+			if (BossType == Type.Queen) {
+				Respawn.gameObject.SetActive(false);
+				if (Stopper != null) {
+					Destroy(Stopper.gameObject);
+				}
+			}
 
-    private void RangeMove()
-    {
-        Vector3 destination = new Vector3(randomX, randomY, transform.position.z);
-        if (transform.position == destination)
-        {
-            RandomPosition();
-            destination = new Vector3(randomX, randomY, transform.position.z);
-            movementCooldown = 1f;
-        }
+			dead = true;
+			Assets.Scripts.Globals.Score += ScoreWorth;
+		}
 
-        if (movementCooldown > 0)
-        {
-            movementCooldown -= Time.deltaTime;
-            if (movementCooldown < 0.5f)
-            {
-                GetComponentInChildren<EnemyWeaponScript>().enabled = true;
-            }
-        }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, destination, Speed);
-            GetComponentInChildren<EnemyWeaponScript>().enabled = false;
-        }
-    }
+	}
 
-    private void MeleeMove()
-    {
+	private void Flip() {
+		transform.Rotate(0f, 180f, 0f);
+	}
+
+	private void RangeMove() {
+		Vector3 destination = new Vector3(randomX, randomY, transform.localPosition.z);
+		if (transform.localPosition == destination) {
+			RandomPosition();
+			destination = new Vector3(randomX, randomY, transform.localPosition.z);
+			movementCooldown = 1f;
+		}
+
+		if (movementCooldown > 0) {
+			movementCooldown -= Time.deltaTime;
+			if (movementCooldown < 0.5f) {
+				//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(true);
+				Weapon.gameObject.SetActive(true);
+			}
+		} else {
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, Speed);
+			//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
+			Weapon.gameObject.SetActive(false);
+		}
+	}
+
+	private void MeleeMove() {
 		if (movementCooldown > 0) {
 			movementCooldown -= Time.deltaTime;
 			//if (animator != null) {
 			//	animator.SetBool("isMoving", false);
 			//}
 		} else {
-			transform.position = Vector3.MoveTowards(
-				transform.position,
-				GameObject.FindWithTag("Player").transform.position, Speed * Time.deltaTime * 60.0f
+			transform.localPosition = Vector3.MoveTowards(
+				transform.localPosition,
+				GameObject.FindWithTag("Player").transform.localPosition, Speed * Time.deltaTime * 60.0f
 			);
 
 			//if (animator != null) {
@@ -153,4 +187,9 @@ public class BossScript : MonoBehaviour
 			}
 		}
 	}
+
+	public float GetHpPercentage() {
+		return (float) Health / startHealth;
+	}
+
 }

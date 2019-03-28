@@ -16,6 +16,7 @@ public class EnemyRespawn : MonoBehaviour {
 
 	public bool Sequential = false;
 	private int sequenceIndex = 0;
+	public bool SpawnInside = false;
 
 	private void Start() {
 		stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
@@ -28,6 +29,11 @@ public class EnemyRespawn : MonoBehaviour {
 			stageDimensions.x,// + Random.Range(4f, 10f), 
 			Random.Range(-2f, 2f), 0
 			);
+
+		if (!SpawnInside) {
+			respawnPosition.x += 3;
+		}
+
 		if (EnemiesAlive < MaxEnemies && (EnemiesToKill > 1 || InfiniteSpawn)) {
 
 			int enemyChoice = Random.Range(0, 4);
@@ -46,40 +52,35 @@ public class EnemyRespawn : MonoBehaviour {
 				switch (enemyChoice) {
 					case 0:
 						if (Enemy1) {
-							Instantiate(Enemy1, respawnPosition, transform.rotation, enemies);
-							EnemiesAlive = EnemiesAlive + 1;
+							SpawnEnemy(Enemy1);
 							break;
 						} else {
 							break;
 						}
 					case 1:
 						if (Enemy2) {
-							Instantiate(Enemy2, respawnPosition, transform.rotation, enemies);
-							EnemiesAlive = EnemiesAlive + 1;
+							SpawnEnemy(Enemy2);
 							break;
 						} else {
 							break;
 						}
 					case 2:
 						if (Enemy3) {
-							Instantiate(Enemy3, respawnPosition, transform.rotation, enemies);
-							EnemiesAlive = EnemiesAlive + 1;
+							SpawnEnemy(Enemy3);
 							break;
 						} else {
 							break;
 						}
 					case 3:
 						if (Enemy4) {
-							Instantiate(Enemy4, respawnPosition, transform.rotation, enemies);
-							EnemiesAlive = EnemiesAlive + 1;
+							SpawnEnemy(Enemy4);
 							break;
 						} else {
 							break;
 						}
 					case 4:
 						if (Enemy5) {
-							Instantiate(Enemy5, respawnPosition, transform.rotation, enemies);
-							EnemiesAlive = EnemiesAlive + 1;
+							SpawnEnemy(Enemy5);
 							break;
 						} else {
 							break;
@@ -90,6 +91,17 @@ public class EnemyRespawn : MonoBehaviour {
 				}
 
 		}
+	}
+
+	private void SpawnEnemy(GameObject enemy) {
+		var newEnemy = Instantiate(enemy, respawnPosition, transform.rotation, enemies);
+		newEnemy.GetComponent<EnemyScript>().Respawn = this;
+		if (newEnemy.GetComponent<EnemyScript>().EnemyType == Type.Archer && SpawnInside) {
+			var position = respawnPosition;
+			position.x -= 3;
+			newEnemy.GetComponent<EnemyScript>().MoveTo(position);
+		}
+		EnemiesAlive = EnemiesAlive + 1;
 	}
 
 	public void EnemyKilled(bool offScreen) {

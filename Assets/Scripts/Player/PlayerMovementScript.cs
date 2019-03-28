@@ -34,7 +34,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	private Timer colorTimer;
 
 	public BuffSystem Buffs;
-
+    public bool destroyed = false;
 
 	void Start() {
 
@@ -133,12 +133,21 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		DodgeCooldown.Update();
 		if (Input.GetKeyDown(KeyCode.LeftShift) && !DodgeCooldown.IsRunning() && !DodgeTimer.IsRunning()) {
-			DodgeTimer.Restart(DodgeDurationTime);
+            if(destroyed)
+            {
+                return;
+            }
+            DodgeTimer.Restart(DodgeDurationTime);
 		}
 	}
 
 	void FixedUpdate() {
-		float moveHorizontal = Input.GetAxis("Horizontal");
+        if(destroyed)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+        float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
 
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
@@ -151,8 +160,7 @@ public class PlayerMovementScript : MonoBehaviour {
 				DodgeCooldown.Restart(DodgeCooldownTime);
 			}
 			//return; // NOTE: early return
-
-			rb.velocity = movement * DodgeSpeed * Time.deltaTime;
+            rb.velocity = movement * DodgeSpeed * Time.deltaTime;
 		} else {
             animator.SetBool("isDodging", false);
             rb.velocity = movement * Speed * Time.deltaTime;
@@ -183,7 +191,7 @@ public class PlayerMovementScript : MonoBehaviour {
 	public void TakeDamage(int damage) {
 
 		// invulnerability frames
-		if (DodgeTimer.IsRunning()) {
+		if (DodgeTimer.IsRunning() || destroyed) {
 			return;
 		}
 
@@ -194,7 +202,9 @@ public class PlayerMovementScript : MonoBehaviour {
 
 		if (Health < 0 || Health == 0) {
             //Destroy(gameObject);
+            destroyed = true;
             animator.SetTrigger("Dead");
+            GetComponentInChildren<WeaponScript>().enabled = false;
             Invoke("Dying", 1);
 		}
 	}

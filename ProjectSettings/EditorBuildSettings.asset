@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menus/Main Menu.unity
+    guid: ce8cde99ba5420445bd8619d021f7715
+  - enabled: 1
     path: Assets/Scenes/Levels/Final Levels/1 Forest Level.unity
     guid: 785c5c25ca5456a4589be5a057c81621
   - enabled: 1
@@ -51,9 +54,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Hehehe.unity
     guid: fc0055c0dd30b442187cc6ffd930d61f
-  - enabled: 1
-    path: Assets/Scenes/Menus/Main Menu.unity
-    guid: ce8cde99ba5420445bd8619d021f7715
   - enabled: 1
     path: Assets/Scenes/Cutscenes/Final Cutscenes/Cutscene 1.unity
     guid: 4e85dade878a346ab9dff21848529523

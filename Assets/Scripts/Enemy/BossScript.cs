@@ -89,7 +89,7 @@ public class BossScript : MonoBehaviour {
 				RangeMove();
 				break;
 			case Type.Queen:
-				if (King.dead || King == null) {
+				if (King.dead) {
 					Invulnerable = false;
 				}
 				MeleeMove();
@@ -140,6 +140,7 @@ public class BossScript : MonoBehaviour {
 			}
 
 			dead = true;
+            animator.SetTrigger("Dead");
 			Assets.Scripts.Globals.Score += ScoreWorth;
 		}
 
@@ -158,12 +159,14 @@ public class BossScript : MonoBehaviour {
 		}
 
 		if (movementCooldown > 0) {
+            animator.SetBool("isMoving", false);
 			movementCooldown -= Time.deltaTime;
 			if (movementCooldown < 0.5f) {
 				//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(true);
 				Weapon.gameObject.SetActive(true);
 			}
 		} else {
+            animator.SetBool("isMoving", true);
 			transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, Speed);
 			//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
 			Weapon.gameObject.SetActive(false);

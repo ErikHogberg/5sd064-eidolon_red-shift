@@ -203,6 +203,7 @@ public class PlayerMovementScript : MonoBehaviour {
 		if (Health < 0 || Health == 0) {
             //Destroy(gameObject);
             destroyed = true;
+			GetComponentInChildren<BatteryBackpackScript>().gameObject.SetActive(false);
             animator.SetTrigger("Dead");
             GetComponentInChildren<WeaponScript>().enabled = false;
             Invoke("Dying", 1);

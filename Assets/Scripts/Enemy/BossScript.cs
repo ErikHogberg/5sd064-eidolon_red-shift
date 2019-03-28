@@ -52,6 +52,8 @@ public class BossScript : MonoBehaviour {
 
 		if (BossType == Type.Queen) {
 			Invulnerable = true;
+			Weapon.gameObject.SetActive(true);
+
 		}
 	}
 

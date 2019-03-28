@@ -104,22 +104,27 @@ public class EnemyWeaponScript : MonoBehaviour
     }
     void Melee()
     {
-        if(playerInRange != null && playerInRange.tag == "Player")
-        {
-            //Mick's edit start
-            if (Sword_Swing != null)
-            {
-                Sword_Swing.Play();
-            }
-            //Mick's edit end
-            PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
+		if (playerInRange != null && playerInRange.tag == "Player") {
+			//Mick's edit start
+			if (Sword_Swing != null) {
+				Sword_Swing.Play();
+			}
+			//Mick's edit end
+			PlayerMovementScript movementScript = playerInRange.GetComponent<PlayerMovementScript>();
 			if (movementScript == null) {
 				movementScript = playerInRange.GetComponentInParent<PlayerMovementScript>();
 			}
-			movementScript.TakeDamage(Damage);   
-            m_Cooldown = Cooldown;
-            GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
-            GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+			if (movementScript == null) {
+				return;
+			}
+			movementScript.TakeDamage(Damage);
+			m_Cooldown = Cooldown;
+			GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
+			var parent = GetComponentInParent<EnemyScript>();
+			if (parent == null) {
+				return;
+			}
+			parent.movementCooldown = 1f;
             GetComponentInParent<Animator>().SetTrigger("Attack");
         } else if (playerInRange != null && playerInRange.tag == "Zombie")
         {
@@ -132,7 +137,11 @@ public class EnemyWeaponScript : MonoBehaviour
             playerInRange.GetComponentInParent<ZombieBehaviourScript>().TakeDamage(Damage);
             m_Cooldown = Cooldown;
             GetComponentInParent<SpriteRenderer>().color = new Color32(164, 164, 164, 255);
-            GetComponentInParent<EnemyScript>().movementCooldown = 1f;
+			var parent = GetComponentInParent<EnemyScript>();
+			if (parent == null) {
+				return;
+			}
+			parent.movementCooldown = 1f;
             GetComponentInParent<Animator>().SetTrigger("Attack");
         }
     }

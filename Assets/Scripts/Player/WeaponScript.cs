@@ -97,6 +97,8 @@ public class WeaponScript : MonoBehaviour {
 			return;
 		}
 
+		GetComponentInParent<PlayerMovementScript>().animator.SetTrigger("Attack");
+
 		int firedShots = 0;
 		foreach (var timer in AttackTimers) {
 			if (!timer.IsRunning()) {

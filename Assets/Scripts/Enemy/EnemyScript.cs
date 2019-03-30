@@ -279,7 +279,11 @@ public class EnemyScript : MonoBehaviour {
             Respawn.EnemyKilled(true);
         }
 
-        this.enabled = false;
-        gameObject.GetComponentInChildren<EnemyWeaponScript>().enabled = false;
+		gameObject.SetActive(false);
+		var weapon = GetComponentInChildren<EnemyWeaponScript>();
+		if (weapon != null) {
+			weapon.gameObject.SetActive(false);
+		}
+		
 	}
 }

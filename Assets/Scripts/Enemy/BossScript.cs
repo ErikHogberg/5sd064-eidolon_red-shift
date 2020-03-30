@@ -173,7 +173,7 @@ public class BossScript : MonoBehaviour {
 			}
 		} else {
 			animator.SetBool("isMoving", true);
-			transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, Speed);
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, Speed * Time.deltaTime * 60.0f);
 			//GetComponentInChildren<EnemyWeaponScript>().gameObject.SetActive(false);
 			Weapon.gameObject.SetActive(false);
 		}

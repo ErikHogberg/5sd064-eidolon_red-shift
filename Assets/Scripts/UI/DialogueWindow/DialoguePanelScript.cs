@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,6 +67,8 @@ public class DialoguePanelScript : MonoBehaviour {
 		pageSpeakerTitles = new string[textPages.Length];
 		//pageSpeakerPortraits = new string[textPages.Length];
 
+		CultureInfo parseCulture = new CultureInfo("en-US", false);
+
 		for (int i = 0; i < textPages.Length; i++) {
 			string page = textPages[i];
 
@@ -89,7 +92,8 @@ public class DialoguePanelScript : MonoBehaviour {
 
 				float[] rgb = new float[colors.Length];
 				for (int j = 0; j < colors.Length; j++) {
-					rgb[j] = (float) double.Parse(colors[j]);
+					// print($"attempting to parse color \"{colors[j]}\"");
+					rgb[j] = (float) double.Parse(colors[j], parseCulture.NumberFormat);
 				}
 
 				if (colors.Length == 3) {

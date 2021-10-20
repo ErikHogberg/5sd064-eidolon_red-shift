@@ -1,4 +1,5 @@
-﻿#if UNITY_EDITOR
+﻿/*
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 
@@ -49,3 +50,4 @@ public class ReplaceWithPrefab : EditorWindow {
 	}
 }
 #endif
+*/
